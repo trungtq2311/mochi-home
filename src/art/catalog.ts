@@ -1,6 +1,7 @@
 // Every painted asset the game can use: file key, processing size and the AI prompt that makes it.
 // Used by scripts/art.ts (processing + PROMPTS.md) and by the room renderer (layout).
 import { ROOMS } from '../meta/rooms.ts';
+import { AREAS } from '../meta/town.ts';
 
 export type ArtKind = 'sprite' | 'item' | 'texture' | 'backdrop';
 
@@ -274,3 +275,100 @@ function roomSpecs(): ArtSpec[] {
 }
 
 export const CATALOG: ArtSpec[] = [...pieces, ...specials, ...obstacles, ...ui, ...mascot, ...roomSpecs()];
+
+// ---------- town (Mochi Bay) ----------
+// Each task element is one isolated isometric picture. Layout (anchor + width in world units) lives with the
+// task data in src/meta/town.ts (`at`, `w`); townArt.ts draws `town/<taskId>_<style|before>` there when present.
+
+const ISO_VIEW = 'Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map.';
+
+/** What each kind of town element is (after renovation). */
+const TOWN_WHAT: Record<string, string> = {
+  paving: 'a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it',
+  sand: 'a flat patch of clean golden beach sand with a few shells and a starfish (isometric diamond shape)',
+  paths: 'two crossing park walkways with a round plaza in the middle, flat on the ground (isometric diamond shape)',
+  pier: 'a long wooden pier on posts standing in shallow water, running diagonally',
+  house: 'a small charming two-storey seaside town building with a gable roof',
+  awning: 'a striped shop awning with a scalloped edge',
+  sign: 'a small round hanging shop sign on a wrought-iron bracket',
+  beacon: 'the glowing glass lantern room on top of a lighthouse, with a red dome roof',
+  vegpatch: 'a small vegetable garden bed with neat rows of crops',
+  mailbox: 'a cute mailbox on a wooden post',
+  fence: 'a short straight garden fence section running diagonally',
+  tree: 'a round leafy fruit tree',
+  trees: 'a small group of trees',
+  palms: 'two leaning palm trees',
+  bench: 'a park bench',
+  lamp: 'an old-fashioned street lamp post',
+  lamps: 'a row of three old-fashioned lamp posts',
+  tables: 'two small outdoor café tables with chairs and parasols',
+  cart: 'a little wooden bread cart with a canopy and wheels, full of loaves',
+  planters: 'two wooden flower boxes full of flowers',
+  flowerbed: 'a round flower bed with a stone border',
+  huts: 'a row of three small beach huts',
+  umbrellas: 'three beach parasols stuck in the sand',
+  loungers: 'two beach sun loungers',
+  lifeguard: 'a wooden lifeguard tower on stilts with a little flag',
+  volley: 'a beach volleyball net with a ball',
+  castle: 'a sandcastle with a tiny flag',
+  lights: 'two poles with a string of round light bulbs between them',
+  bunting: 'two poles with a string of triangle bunting flags between them',
+  menu: 'a café sandwich-board menu sign',
+  bikes: 'a bike rack with two bicycles',
+  fountain: 'a round two-tier stone fountain with water',
+  gazebo: 'a round park gazebo with a conical roof',
+  stall: 'a market stall with a striped canopy and goods on the counter',
+  crates: 'a stack of wooden produce crates',
+  clock: 'a tall street clock on a post',
+  boat: 'a small boat floating on water',
+  nets: 'a wooden rack with fishing nets hanging to dry',
+  buoys: 'three floating buoys',
+  kiosk: 'a tiny ice-cream kiosk with a giant cone on its roof',
+  bookcart: 'a small wooden cart full of books',
+  statue: 'a cute cat statue on a stone pedestal',
+  windmill: 'a tall classic windmill with four sails',
+  picnic: 'a picnic blanket with a basket and fruit',
+  telescope: 'a telescope on a tripod',
+  kites: 'two kites flying high on strings',
+  swing: 'an A-frame wooden swing set',
+  lighthouse: 'a tall striped lighthouse tower without its top lantern',
+  flag: 'a flagpole with a waving flag',
+};
+
+/** The shabby "before" version of each kind. */
+const TOWN_BEFORE: Record<string, string> = {
+  paving: 'a muddy empty lot with puddles, stones and weeds (flat isometric diamond shape)',
+  sand: 'a dirty beach patch with seaweed piles, litter and broken crates (flat isometric diamond shape)',
+  paths: 'worn muddy dirt tracks with puddles and weeds',
+  pier: 'a broken old wooden pier with missing planks and crooked posts in the water',
+  house: 'an abandoned shabby building with grey faded walls, boarded-up windows, holes in the roof and weeds',
+  awning: 'a torn grey rag of an old awning hanging from a bent rail',
+  sign: 'an old blank broken sign hanging crooked from a bracket',
+  beacon: 'a dark broken lighthouse lantern room with cracked glass',
+  lighthouse: 'a dirty cracked grey lighthouse tower with faded stripes and a boarded door',
+  windmill: 'a broken grey windmill with two snapped sails and weeds',
+  gazebo: 'a run-down grey gazebo with a holey roof',
+  huts: 'three shabby grey beach huts with broken doors',
+  boat: 'a wrecked grey boat half sunk and tilted in the water',
+  tree: 'a dead leafless tree', trees: 'a dead tree and a pile of junk', palms: 'a dead palm stump and junk',
+  fence: 'a broken fence with fallen and missing planks',
+  fountain: 'a dry cracked fountain full of dead leaves',
+};
+
+function townSpecs(): ArtSpec[] {
+  const out: ArtSpec[] = [];
+  for (const area of AREAS) {
+    const group = `Town: ${area.name.en}`;
+    for (const task of area.tasks) {
+      const what = TOWN_WHAT[task.kind] ?? task.title.en.toLowerCase();
+      out.push({ key: `town/${task.id}_before`, kind: 'item', size: 768, group, optional: true,
+        prompt: `${TOWN_BEFORE[task.kind] ?? 'a pile of old junk: broken planks, a dusty crate, stones and weeds'} (where ${what} will be built in the ${area.name.en.toLowerCase()} area of a seaside town). ${ISO_VIEW} ${ISOLATED} ${STYLE}` });
+      const styles = task.styles.length ? task.styles : [{ name: { vi: '', en: 'brand new' }, swatch: '#ffffff' }];
+      styles.forEach((st, i) => out.push({ key: `town/${task.id}_${i}`, kind: 'item', size: 768, group,
+        prompt: `${what} for the ${area.name.en.toLowerCase()} of a sunny seaside town (${task.title.en.toLowerCase()}): ${st.name.en.toLowerCase()} style, main color close to ${st.swatch}${st.alt && st.alt.startsWith('#') ? ` with accents close to ${st.alt}` : ''}, freshly restored and charming. ${ISO_VIEW} ${ISOLATED} ${STYLE}` }));
+    }
+  }
+  return out;
+}
+
+CATALOG.push(...townSpecs());
