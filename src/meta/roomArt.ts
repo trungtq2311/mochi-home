@@ -2059,9 +2059,1288 @@ const GARDEN: RoomArt = {
 };
 
 /* =====================================================================
+ * furniture standing out into the room (bedroom, bathroom)
+ * ===================================================================== */
+const pS = (d: number): number => FOC / (FOC - d);
+/** screen point of a room point: x measured on the back-wall line, h above the floor, d in front of the back wall */
+function pj(x: number, h: number, d: number): [number, number] {
+  const s = pS(d);
+  return [VPX + (x - VPX) * s, VPY + (BACK - VPY - h) * s];
+}
+/** (x, h, d) triples -> flat screen polygon */
+function pp(a: number[]): number[] {
+  const out: number[] = [];
+  for (let i = 0; i < a.length; i += 3) out.push(...pj(a[i], a[i + 1], a[i + 2]));
+  return out;
+}
+/** screen rect [x, y, w, h] of a face parallel to the wall at depth d */
+function face(x0: number, x1: number, h0: number, h1: number, d: number): [number, number, number, number] {
+  const [ax, ay] = pj(x0, h1, d), [bx, by] = pj(x1, h0, d);
+  return [ax, ay, bx - ax, by - ay];
+}
+/** box in the room: the side facing the viewer, the top, then the front */
+function pbox(x0: number, x1: number, h0: number, h1: number, d0: number, d1: number, c: string, front = ''): string {
+  let s = '';
+  if (x1 < VPX) s += poly(pp([x1, h0, d0, x1, h1, d0, x1, h1, d1, x1, h0, d1]), dn(c, 0.22), ol(c, 1));
+  if (x0 > VPX) s += poly(pp([x0, h0, d0, x0, h1, d0, x0, h1, d1, x0, h0, d1]), dn(c, 0.22), ol(c, 1));
+  s += poly(pp([x0, h1, d0, x1, h1, d0, x1, h1, d1, x0, h1, d1]), lt(c, 0.22), ol(c, 1));
+  const [x, y, w, hh] = face(x0, x1, h0, h1, d1);
+  return s + rect(x, y, w, hh, front || lg([lt(c, 0.06), dn(c, 0.1)]), ol(c, 1.2));
+}
+/** scalloped hem from x0 to x1 at y (n arcs, depth k) as a path fragment going right to left */
+function scallops(x0: number, x1: number, y: number, n: number, k: number): string {
+  let d = '';
+  for (let i = n; i > 0; i--) { const xa = x0 + ((x1 - x0) * (i - 1)) / n; d += ` Q${r1(xa + (x1 - x0) / n / 2)} ${r1(y + k)} ${r1(xa)} ${r1(y)}`; }
+  return d;
+}
+function bulb(x: number, y: number, c: string, broken = false): string {
+  let s = rect(x - 1.6, y, 3.2, 3, '#3d4a3a') + ell(x, y + 6.5, 3, 4.2, broken ? '#c9c4b8' : c, ol(broken ? '#9a9384' : c, 0.7));
+  s += broken ? pl([x - 2, y + 5, x, y + 7, x + 1.5, y + 5.5], '#6f685c', 0.7) : circ(x - 1, y + 5.2, 1, '#ffffff', op(0.85));
+  return s;
+}
+function paperBall(x: number, y: number, r: number): string {
+  return circ(x, y, r, '#efe9dc', ol('#cfc6b4', 1)) + pl([x - r * 0.6, y - r * 0.2, x, y + r * 0.3, x + r * 0.5, y - r * 0.4], '#a69d8c', 0.8) + pl([x - r * 0.3, y + r * 0.6, x + r * 0.2, y + r * 0.1], '#a69d8c', 0.8);
+}
+
+/* =====================================================================
+ * BEDROOM
+ * ===================================================================== */
+const BD_WIN = { x: 56, y: 142, w: 64, h: 118 };
+
+function bdWallpaper(st?: number): string {
+  const W = 400, H = 384;
+  if (st === undefined) {
+    let s = rect(0, 0, W, H, lg(['#bcb0a2', '#9f9386']));
+    s += rect(0, 0, W, H, patt(36, 36, circ(9, 9, 3.2, '#857869', op(0.22)) + circ(27, 27, 3.2, '#857869', op(0.22)) + circ(27, 9, 1.4, '#857869', op(0.18))));
+    s += ell(250, 96, 70, 34, rg([[0, '#7d6a4c', 0.04], [0.72, '#7d6a4c', 0.16], [0.88, '#6b583c', 0.3], [1, '#6b583c', 0]]));
+    s += ell(36, 250, 34, 60, rg([[0, '#6e5d42', 0.12], [0.8, '#6e5d42', 0.2], [1, '#6e5d42', 0]]));
+    for (const [x, y, l] of [[230, 120, 60], [252, 124, 90], [276, 118, 50], [370, 40, 110]]) s += rect(x, y, 3, l, lg([[0, '#6e5d42', 0.35], [1, '#6e5d42', 0]]));
+    s += pth('M300 22 H330 V150 Q326 160 318 156 L314 150 L308 158 L300 150 Z', '#d9cfbd', op(0.9));
+    s += pth('M330 22 Q352 70 344 118 Q338 96 330 92 Z', '#a89c8c', ol('#a89c8c', 1));
+    s += pth('M160 22 H178 V64 Q174 80 166 82 Q172 70 168 62 Z', '#cfc3aa', ol('#cfc3aa', 1));
+    s += poly([350, 200, 372, 194, 386, 210, 380, 232, 356, 236, 346, 220], '#4a3f35', 'stroke="#ece3d0" stroke-width="3" stroke-linejoin="round"');
+    s += g(rect(340, 210, 54, 7, '#d9c48a', op(0.92)), rot(-24, 366, 214)) + g(rect(340, 210, 54, 7, '#d9c48a', op(0.92)), rot(28, 366, 214));
+    s += crack([200, 40, 208, 70, 200, 92, 212, 118]) + crack([20, 120, 30, 150, 22, 176, 34, 200]) + crack([282, 196, 290, 222, 284, 240]);
+    const R = rng(17);
+    for (let i = 0; i < 36; i++) s += circ(R() * 400, 252 + R() * 30, 1 + R() * 3, '#5d6b45', op(0.12 + R() * 0.18));
+    return s;
+  }
+  let p: string;
+  if (st === 0) {
+    p = patt(24, 24, rect(0, 0, 24, 24, '#c9b6e4') + circ(6, 6, 1.7, '#ffffff', op(0.85)) + circ(18, 18, 1.7, '#ffffff', op(0.85)) + sparkle(18, 6, 2.6, '#f6efff') + sparkle(6, 18, 1.8, '#a993cf'));
+  } else if (st === 1) {
+    p = patt(96, 72, rect(0, 0, 96, 72, '#bfe0f5') + cloud(28, 24, 0.42, '#eaf6fd') + cloud(76, 60, 0.34, '#eaf6fd') + circ(70, 18, 1.4, '#ffffff') + circ(14, 56, 1.2, '#ffffff') + circ(50, 42, 1, '#ffffff'));
+  } else {
+    const fl = (x: number, y: number): string => {
+      let f = '';
+      for (let a = 0; a < 360; a += 72) f += ell(x, y - 2.6, 1.8, 2.8, '#ffffff', rot(a, x, y));
+      return f + circ(x, y, 1.3, '#f08a5e');
+    };
+    p = patt(28, 40, rect(0, 0, 28, 40, '#f6c9a8') + rect(0, 0, 13, 40, '#f9dcc6') + rect(14, 0, 1.2, 40, '#fff4ea') + rect(26.5, 0, 1.2, 40, '#efb894') + fl(6.5, 10) + fl(6.5, 30) + ell(6.5, 20, 1.2, 2.6, '#8cc49a'));
+  }
+  let s = rect(0, 0, W, H, p);
+  s += rect(0, 0, W, H, lg([[0, '#000', 0.12], [0.3, '#000', 0], [0.82, '#000', 0], [1, '#000', 0.1]]));
+  s += rect(0, 0, W, H, rgU([[0, '#fff8e6', 0.36], [1, '#fff8e6', 0]], 88, 200, 180));
+  return s;
+}
+
+/** crown moulding, wainscot panels under a chair rail, skirting board */
+function bdTrim(placed: Placed): string {
+  const ok = placed.wallpaper !== undefined;
+  const c = ok ? '#fbf6ee' : '#c4b9a8';
+  let s = rect(0, 0, 400, 18, lg([lt(c, 0.3), c])) + rect(0, 18, 400, 4, dn(c, 0.14)) + rect(0, 22, 400, 12, lg([[0, '#000', 0.12], [1, '#000', 0]]));
+  s += rect(0, 288, 400, 76, lg([lt(c, 0.05), dn(c, 0.07)]));
+  for (let x = 8; x < 400; x += 56) s += rr(x, 300, 44, 54, 2, 'none', `stroke="${dn(c, 0.16)}" stroke-width="1.4"`) + rect(x + 1.5, 301.5, 41, 1.4, '#ffffff', op(0.5));
+  if (!ok) {
+    s += poly([10, 302, 50, 302, 50, 322, 41, 331, 31, 321, 19, 337, 10, 330], '#5a4e42') + poly([10, 330, 19, 337, 31, 321, 28, 318, 18, 330], '#8a7d6b');
+    s += crack([66, 302, 74, 318, 68, 336]) + crack([352, 306, 358, 326, 352, 340]);
+    s += rect(0, 288, 400, 76, lg([[0, '#6b5a40', 0.08], [1, '#6b5a40', 0.22]]));
+  }
+  s += rect(0, 283, 400, 6, lg([lt(c, 0.35), dn(c, 0.08)]), ol(c, 0.8)) + rect(0, 289, 400, 6, lg([[0, '#000', 0.14], [1, '#000', 0]]));
+  s += rect(0, 362, 400, 4, lt(c, 0.4)) + rect(0, 366, 400, 16, lg([c, dn(c, 0.1)])) + rect(0, 362, 400, 1.2, dk(c), op(0.6));
+  s += rect(0, 381, 400, 16, lg([[0, '#000', 0.24], [1, '#000', 0]]));
+  return s;
+}
+
+function bdFloor(st?: number): string {
+  if (st === undefined) {
+    let s = rect(0, 380, 400, 260, '#7d7367');
+    s += plankFloor(['#8c8276', '#82786c', '#958b7f', '#796f64', '#887e72'], '#574e45', '#5c5249', 13);
+    s += rect(0, 380, 400, 260, lg([[0, '#c9c0b0', 0.35], [1, '#c9c0b0', 0.1]]));
+    for (const [x, y, rx, ry] of [[70, 440, 60, 16], [320, 470, 70, 20], [200, 560, 90, 22]]) s += ell(x, y, rx, ry, rg([[0, '#e2dbcf', 0.45], [1, '#e2dbcf', 0]]));
+    s += paperBall(40, 482, 7) + paperBall(358, 432, 5.5) + paperBall(236, 590, 8);
+    s += pth('M150 522 q-3 -12 5 -15 l11 -1 q3 8 -3 10 l-1 8 q-5 5 -12 -2 Z', '#c86b6b', ol('#c86b6b', 0.8)) + pth('M156 508 l10 -1', 'none', sk('#f3e3c3', 2));
+    s += crack([30, 404, 56, 412, 70, 428]) + crack([300, 548, 322, 538, 340, 542]);
+    for (const [x, y] of [[110, 566], [372, 520], [196, 400]]) s += ell(x, y, 7, 3.5, '#bdb5a6', op(0.9)) + ell(x + 3, y - 1, 4, 2.4, '#d6cfc2');
+    return s;
+  }
+  let s: string;
+  if (st === 0) {
+    const pal = ['#d9a066', '#d09659', '#e0aa72', '#cf9a5f', '#d8a26a'];
+    s = rect(0, 380, 400, 260, pal[0]) + plankFloor(pal, dn(pal[0], 0.3), dn(pal[0], 0.22), 33);
+  } else if (st === 1) {
+    const c = '#c7b3df';
+    s = rect(0, 380, 400, 260, lg([dn(c, 0.08), c]));
+    for (let j = 0; ; j++) { const y = depthY(5 * j); if (y > 640) break; s += rect(0, y, 400, 0.9 * pk(y), j % 2 ? lt(c, 0.3) : dn(c, 0.1), op(0.35)); }
+    const R = rng(55);
+    let d1 = '', d2 = '';
+    for (let i = 0; i < 420; i++) {
+      const y = 383 + Math.pow(R(), 0.8) * 257, x = R() * 400, r = 0.5 + 0.7 * pk(y);
+      const seg = `M${r1(x - r)} ${r1(y)} h${r1(r * 2)} `;
+      if (R() < 0.5) d1 += seg; else d2 += seg;
+    }
+    s += pth(d1, 'none', sk(lt(c, 0.45), 1.1) + op(0.6)) + pth(d2, 'none', sk(dn(c, 0.2), 1.1) + op(0.5));
+  } else {
+    const pal = ['#c08a56', '#a56f40'];
+    s = rect(0, 380, 400, 260, pal[0]);
+    const rows: number[] = [];
+    for (let j = 0; ; j++) { const y = depthY(30 * j); rows.push(Math.min(y, 700)); if (y > 650) break; }
+    let lines = '';
+    for (let j = 0; j < rows.length - 1; j++) for (let i = -9; i < 9; i++) {
+      const q = fq(200 + 30 * i, 230 + 30 * i, rows[j], rows[j + 1]);
+      if (Math.max(q[2], q[4]) < 0 || Math.min(q[0], q[6]) > 400) continue;
+      const cc = clipPoly(q);
+      if (cc.length < 6) continue;
+      const alt = (i + j) % 2 === 0;
+      s += poly(cc, alt ? pal[0] : pal[1], `stroke="${dn(pal[0], 0.35)}" stroke-width="0.9"`);
+      for (const k of [0.25, 0.5, 0.75]) {
+        const [a, b] = alt ? qp(q, k, 0.05) : qp(q, 0.05, k), [e, f] = alt ? qp(q, k, 0.95) : qp(q, 0.95, k);
+        if (onCanvas(a) && onCanvas(e) && f < 640) lines += `M${r1(a)} ${r1(b)} L${r1(e)} ${r1(f)} `;
+      }
+    }
+    s += pth(lines, 'none', sk(dn(pal[0], 0.3), 0.7) + op(0.5));
+  }
+  s += rect(0, 380, 400, 260, lg([[0, '#000', 0.1], [0.14, '#000', 0], [0.6, '#fff', 0], [1, '#fff', 0.06]]));
+  s += ell(100, 440, 70, 30, rg([[0, '#fff', 0.26], [1, '#fff', 0]]));
+  return s;
+}
+
+function bdWindow(st?: number): string {
+  const { x, y, w, h } = BD_WIN;
+  const cx = x + w / 2;
+  if (st === undefined) {
+    let s = windowUnit(x, y, w, h, '#8f8170', true);
+    s += ln(30, 134, 146, 124, '#5d5248', 3) + circ(146, 124, 3.5, '#5d5248') + pth('M30 134 L24 152', 'none', sk('#5d5248', 2.4));
+    s += pth('M112 128 L142 125 C140 162 144 196 138 222 L134 240 L129 228 L125 248 L119 232 L114 244 Z', lg(['#a39b8b', '#857d6e']), ol('#9a9283', 1.2));
+    s += pl([122, 131, 124, 200], '#6f685c', 0.8, op(0.6)) + pl([132, 129, 133, 210], '#6f685c', 0.8, op(0.6));
+    return s;
+  }
+  const c = ['#b59ad6', '#9fd8c4', '#f0956b'][st];
+  let s = windowUnit(x, y, w, h, '#fbf7f0', false);
+  if (st === 0) {
+    const drape = pth('M26 131 H66 C62 172 56 208 52 226 C54 254 64 278 70 300 H20 C22 276 28 252 34 226 C30 200 27 166 26 131 Z', folds(c, 3), ol(c, 1.2));
+    const ruffle = pth('M30 222 q4 -6 8 0 q4 -6 8 0 q4 -6 8 0 q4 -6 8 0 v9 q-4 6 -8 0 q-4 6 -8 0 q-4 6 -8 0 q-4 6 -8 0 Z', lt(c, 0.5), ol(c, 0.9));
+    const pleats = pth('M32 133 v8 M42 133 v8 M52 133 v8 M62 133 v8', 'none', sk(dn(c, 0.3), 1.2) + op(0.6));
+    s += g(drape + pleats + ruffle) + g(drape + pleats + ruffle, mirror(cx));
+    s += rect(16, 126, 144, 4, lg(['#ffffff', '#d9d2c4']), ol('#d9d2c4', 0.8)) + circ(16, 128, 5, '#ffffff', ol('#d9d2c4', 1)) + circ(160, 128, 5, '#ffffff', ol('#d9d2c4', 1));
+  } else if (st === 1) {
+    const sheer = pth('M26 131 H56 C54 190 58 250 56 300 H22 C26 250 24 190 26 131 Z', folds('#ffffff', 3), `${op(0.8)} ${ol('#e6e6e6', 0.8)}`);
+    s += g(sheer) + g(sheer, mirror(cx));
+    s += rect(18, 127, 140, 3, '#e8e2d4', ol('#cfc6b4', 0.6)) + circ(18, 128.5, 3.5, '#e8e2d4') + circ(158, 128.5, 3.5, '#e8e2d4');
+    const bx = x - 5, bw = w + 10;
+    s += rect(bx, 134, bw, 44, lg([lt(c, 0.2), c]), ol(c, 1.1));
+    s += pth(`M${bx + 6} 150 H${bx + bw - 6} M${bx + 6} 162 H${bx + bw - 6}`, 'none', sk(dn(c, 0.15), 0.8) + op(0.6));
+    for (let k = 0; k < 3; k++) s += rr(bx - 1, 172 + k * 9, bw + 2, 12, 6, lg([lt(c, 0.28), c, dn(c, 0.22)]), ol(c, 1));
+    s += rect(bx + 4, 134, 3, 68, dn(c, 0.22), op(0.6)) + rect(bx + bw - 7, 134, 3, 68, dn(c, 0.22), op(0.6));
+    s += ln(bx + bw - 2, 140, bx + bw - 2, 236, '#e8e2d4', 1) + circ(bx + bw - 2, 238, 2.6, '#e2b84a', ol('#e2b84a', 0.6));
+    s += rr(bx - 3, 130, bw + 6, 6, 2, '#ffffff', ol('#e6dfd2', 0.8));
+  } else {
+    let panel = pth('M24 131 H56 V298 H24 Z', folds(c, 3), ol(c, 1.2));
+    panel += rect(24, 131, 32, 10, dn(c, 0.12), op(0.5));
+    for (let yy = 141; yy < 296; yy += 10) panel += circ(57.5, yy, 2.6, '#fff3e0', ol('#f0d9b8', 0.6));
+    for (let xx = 27; xx < 58; xx += 7.5) panel += circ(xx, 300, 2.6, '#fff3e0', ol('#f0d9b8', 0.6));
+    s += g(panel) + g(panel, mirror(cx));
+    s += rect(14, 125, 148, 5, lg(['#c99a62', '#8a5a35']), ol('#8a5a35', 0.8)) + circ(14, 127.5, 5.5, '#a5713f', ol('#8a5a35', 1)) + circ(162, 127.5, 5.5, '#a5713f', ol('#8a5a35', 1));
+    for (const rx of [27, 36, 45, 54, 122, 131, 140, 149]) s += circ(rx, 130, 3, 'none', sk('#8a5a35', 1.2));
+  }
+  return s;
+}
+
+const GL: [number, number, number, number, number, number] = [150, 166, 204, 226, 258, 166];
+function bdGarland(st?: number): string {
+  const [x0, y0, qx, qy, x1, y1] = GL;
+  const nails = circ(x0, y0, 2.2, '#5d5248') + circ(x1, y1, 2.2, '#5d5248');
+  if (st === undefined) {
+    let s = nails + pth(`M${x0} ${y0} Q158 230 186 252`, 'none', sk('#4a4a40', 1.2)) + pth(`M${x1} ${y1} Q256 196 246 216`, 'none', sk('#4a4a40', 1.2));
+    for (const t of [0.3, 0.62, 0.95]) { const [bx, by] = qb(x0, y0, 158, 230, 186, 252, t); s += bulb(bx, by, '#c9c4b8', true); }
+    s += bulb(246, 216, '#c9c4b8', true) + cobweb(x1, y1 - 2, 14, -1);
+    return s;
+  }
+  let s = '';
+  if (st === 0) {
+    s += pth(`M${x0} ${y0} Q${qx} ${qy} ${x1} ${y1}`, 'none', sk('#3d5a3a', 1.2)) + pth(`M${x0} ${y0} Q${qx} ${qy - 26} ${x1} ${y1}`, 'none', sk('#3d5a3a', 1));
+    const pts: [number, number][] = [];
+    for (let i = 1; i < 12; i++) { const [bx, by] = qb(x0, y0, qx, qy, x1, y1, i / 12); pts.push([bx, by]); }
+    for (let i = 1; i < 9; i++) { const [bx, by] = qb(x0, y0, qx, qy - 26, x1, y1, (i + 0.5) / 9.5); pts.push([bx, by]); }
+    for (const [bx, by] of pts) s += glow(bx, by + 6, 13, '#ffd27a', 0.5);
+    for (const [bx, by] of pts) s += bulb(bx, by, '#ffe39a');
+  } else if (st === 1) {
+    s += pth(`M${x0} ${y0} Q${qx} ${qy} ${x1} ${y1}`, 'none', sk('#ffffff', 1.6));
+    const cols = ['#ff8fa8', '#ffd27a', '#8fd3c8', '#b59ad6', '#ffffff'];
+    for (let i = 0; i < 9; i++) {
+      const [px, py, tx, ty] = qb(x0, y0, qx, qy, x1, y1, (i + 0.75) / 10);
+      const c = cols[i % cols.length], nx = -ty, ny = tx;
+      const f = [px - tx * 6.5, py - ty * 6.5, px + tx * 6.5, py + ty * 6.5, px + nx * 16, py + ny * 16];
+      s += poly(f, lg([lt(c, 0.2), c, dn(c, 0.1)]), ol(c, 0.8));
+      s += circ(px + nx * 6, py + ny * 6, 1.3, i % cols.length === 4 ? '#ff8fa8' : '#ffffff', op(0.85));
+    }
+  } else {
+    s += circ(204, 134, 2.2, '#5d5248') + pth('M150 160 L204 134 L258 160', 'none', sk('#d9cfbd', 1));
+    s += pth('M144 160 Q170 157 204 161 T264 159', 'none', sk('#8a6a48', 4.5)) + pth('M146 159 Q170 156 202 160', 'none', sk('#b08a5e', 1.2)) + circ(178, 159, 1.4, '#6b4a2a');
+    const hang: [number, number, number, string][] = [[156, 34, 8, '#f2d16b'], [178, 56, 9, '#ffffff'], [204, 42, 10, '#9ec9ef'], [228, 60, 9, '#f2d16b'], [252, 30, 8, '#f4a6c0']];
+    hang.forEach(([hx, L, r, c], i) => {
+      s += ln(hx, 161, hx, 161 + L - r, '#d9cfbd', 0.8);
+      s += star5(hx, 161 + L, r, c, i * 9 - 18) + star5(hx - r * 0.12, 161 + L - r * 0.1, r * 0.45, lt(c, 0.5), i * 9 - 18);
+    });
+  }
+  return nails + s;
+}
+
+/** small table lamps for the nightstand, base standing at (x, y) */
+function bdLamp(x: number, y: number, kind: number): string {
+  let s = glow(x, y - 34, 46, '#fff1c1', 0.5);
+  if (kind === 0) {
+    s += pth(`M${x - 6} ${y} Q${x - 10} ${y - 9} ${x - 5} ${y - 16} H${x + 5} Q${x + 10} ${y - 9} ${x + 6} ${y} Z`, lg(['#f7f1e3', '#d9cbb0'], 0, 0, 1, 0), ol('#cdbb98', 0.9));
+    s += pth(`M${x - 5} ${y - 9} q5 3 10 0`, 'none', sk('#5b8bb5', 1.2)) + rect(x - 1, y - 22, 2, 6, '#c9a24b');
+    s += pth(`M${x - 9} ${y - 38} H${x + 9} L${x + 15} ${y - 21} H${x - 15} Z`, lg(['#fff8e6', '#f4e2b8', '#d9bf86'], 0, 0, 1, 0), ol('#d9bf86', 1));
+    s += pth(`M${x - 5} ${y - 37} L${x - 8} ${y - 22} M${x} ${y - 37} V${y - 22} M${x + 5} ${y - 37} L${x + 8} ${y - 22}`, 'none', sk('#e2cc98', 0.7));
+  } else if (kind === 1) {
+    s += pth(`M${x - 6} ${y} Q${x - 8} ${y - 8} ${x - 3} ${y - 14} V${y - 20} H${x + 3} V${y - 14} Q${x + 8} ${y - 8} ${x + 6} ${y} Z`, lg([[0, '#cfe9f2', 0.9], [1, '#9fd4e6', 0.9]], 0, 0, 1, 0), ol('#8fbfd0', 0.9));
+    s += rect(x - 2.5, y - 8, 1.4, 6, '#ffffff', op(0.7));
+    s += rr(x - 13, y - 36, 26, 15, 2, lg(['#ffffff', '#efe9dc'], 0, 0, 1, 0), ol('#d9d2c4', 1)) + ell(x, y - 21, 13, 2, '#fff6d8');
+  } else {
+    s += rr(x - 3, y - 14, 6, 14, 2, '#fbf3e0', ol('#e2d6bc', 0.8));
+    s += pth(`M${x - 15} ${y - 13} Q${x - 15} ${y - 30} ${x} ${y - 30} Q${x + 15} ${y - 30} ${x + 15} ${y - 13} Z`, lg(['#ffe6b8', '#f6c27a']), ol('#e9a85a', 1));
+    for (const [dx, dy, r] of [[-7, -20, 2.4], [2, -25, 2], [8, -17, 1.8], [-1, -16, 1.4]]) s += circ(x + dx, y + dy, r, '#fff8ea', op(0.9));
+    s += ell(x, y - 13, 15, 2.2, '#fff4cc');
+  }
+  return s;
+}
+
+function bdNightstand(st?: number): string {
+  const x0 = 92, x1 = 132, d = 32;
+  let s = shadow(103, 407, 30, 5);
+  if (st === undefined) {
+    const c = '#8d8273';
+    const [ax, ay, aw, ah] = face(x0, x1, 4, 50, d);
+    let b = pbox(x0, x1, 4, 50, 0, d, c);
+    b += rect(ax + 4, ay + 4, aw - 8, 18, '#2f2a24') + cobweb(ax + 4, ay + 4, 11, 1);
+    b += rr(ax + 4, ay + 26, aw - 8, ah - 30, 1.5, lt(c, 0.06), ol(c, 0.8)) + circ(ax + aw / 2, ay + 26 + (ah - 30) / 2, 1.8, '#5d554b');
+    b += rect(ax + 2, ay + ah, 4, 5, dn(c, 0.3)) + rect(ax + aw - 6, ay + ah, 4, 2, dn(c, 0.3));
+    s += g(b, rot(-3, ax, ay + ah));
+    s += g(rr(56, 412, 34, 12, 2, lg([lt(c, 0.1), dn(c, 0.1)]), ol(c, 1)) + rect(60, 412, 26, 3, '#2f2a24') + circ(73, 419, 1.6, '#5d554b'), rot(9, 73, 418));
+    s += g(pth('M96 338 H108 L113 354 H91 Z', lg(['#b5ab97', '#958a76']), ol('#8a8070', 1)) + poly([99, 354, 104, 346, 108, 354], '#4a4339'), rot(-64, 102, 346));
+    s += ell(118, 337, 5, 2.4, '#6d655a') + ln(118, 337, 112, 330, '#6d655a', 2);
+    return s;
+  }
+  if (st === 0) {
+    const c = '#a5713f';
+    const [ax, ay, aw, ah] = face(x0, x1, 8, 50, d);
+    s += rect(ax + 2, ay + ah - 1, 4, 10, dn(c, 0.3)) + rect(ax + aw - 6, ay + ah - 1, 4, 10, dn(c, 0.3));
+    s += pbox(x0, x1, 8, 50, 0, d, c);
+    s += rr(ax + 3, ay + 3, aw - 6, 15, 1.5, lg([lt(c, 0.14), c]), ol(c, 0.8)) + circ(ax + aw / 2, ay + 10.5, 2, '#e2b84a', ol('#b98d2e', 0.6));
+    s += rect(ax + 3, ay + 21, aw - 6, ah - 24, lg([dn(c, 0.45), dn(c, 0.3)]));
+    s += booksRow(ax + 5, ax + aw - 5, ay + ah - 3, 17, rng(61), 0);
+    s += bdLamp(100, 341, 0);
+    s += circ(119, 339, 5, '#fbf7ee', ol('#e05a5a', 1.4)) + circ(115.5, 334, 2, '#e05a5a') + circ(122.5, 334, 2, '#e05a5a') + pth('M119 339 V336 M119 339 L121 340', 'none', sk('#333', 0.8));
+    return s;
+  }
+  if (st === 1) {
+    const c = '#f2efe8';
+    const [ax, ay, aw, ah] = face(x0, x1, 12, 50, d);
+    s += ln(ax + 4, ay + ah - 1, ax + 1, ay + ah + 13, '#d9c49a', 2.6) + ln(ax + aw - 4, ay + ah - 1, ax + aw - 1, ay + ah + 13, '#d9c49a', 2.6);
+    s += pbox(x0, x1, 12, 50, 0, d, c);
+    const dh = (ah - 8) / 2;
+    for (let k = 0; k < 2; k++) s += rr(ax + 3, ay + 3 + k * (dh + 2), aw - 6, dh, 2, lg(['#ffffff', '#ece8de']), ol('#d9d2c4', 0.9)) + circ(ax + aw / 2, ay + 3 + k * (dh + 2) + dh / 2, 2, '#d4a64a', ol('#a8771e', 0.6));
+    s += bdLamp(102, 341, 1);
+    s += rr(113, 333, 10, 9, 1.5, '#e9e4da', ol('#cfc6b4', 0.8)) + ell(116, 330, 4, 3.4, '#6aa84f') + ell(120, 329, 3.5, 3, '#5a9a45') + ell(118, 327, 3, 3, '#7cc36a');
+    return s;
+  }
+  const c = '#9cc3e0';
+  const tx = 104, ty = 336, rx = 23, ry = 6, by = 398;
+  s += rect(tx - 16, by - 2, 4, 8, '#c9a06a') + rect(tx + 12, by - 2, 4, 8, '#c9a06a');
+  s += pth(`M${tx - rx} ${ty} V${by} A${rx} ${ry} 0 0 0 ${tx + rx} ${by} V${ty} Z`, lg([lt(c, 0.2), c, dn(c, 0.18)], 0, 0, 1, 0), ol(c, 1.2));
+  let sc = `M${tx - rx} ${ty} H${tx + rx} V${ty + 6}`;
+  sc += scallops(tx - rx, tx + rx, ty + 6, 6, 9);
+  s += pth(sc + ' Z', '#ffffff', ol('#d9e6ef', 0.8));
+  s += rr(tx - 10, 366, 20, 4, 2, '#ffffff', ol('#d9e6ef', 0.6));
+  s += ell(tx, ty, rx, ry, lg([lt(c, 0.45), lt(c, 0.2)]), ol(c, 1.1));
+  s += bdLamp(99, 337, 2);
+  s += rr(112, 328, 8, 9, 2, '#f4a6c0', ol('#e07f9a', 0.8)) + pth('M120 330 q4 0 4 3 q0 3 -4 3', 'none', sk('#e07f9a', 1.2));
+  return s;
+}
+
+function bdWardrobe(st?: number): string {
+  const x0 = 280, x1 = 334, d = 30, H = 214;
+  const [wx, wy, ww, wh] = face(x0, x1, 6, H, d);
+  let s = shadow(316, 404, 34, 5, 0.26) + rect(wx + 5, wy + 4, ww, wh, '#000', op(0.1));
+  if (st === undefined) {
+    const c = '#8d8273';
+    s += rect(wx + 2, wy + wh, 4, 6, dn(c, 0.3)) + rect(wx + ww - 6, wy + wh, 4, 6, dn(c, 0.3));
+    s += pbox(x0, x1, 6, H, 0, d, c);
+    const hw = ww / 2;
+    s += rect(wx + hw, wy + 3, hw - 3, wh - 36, '#2f2a24') + ln(wx + hw, wy + 14, wx + ww - 3, wy + 14, '#6d655a', 1.5);
+    for (const hx of [wx + hw + 7, wx + hw + 19]) s += pth(`M${hx} ${wy + 14} v3 l-6 6 h12 Z`, 'none', sk('#9a9384', 1));
+    s += pth(`M${wx + hw + 22} ${wy + 18} l-7 6 l-2 24 l10 2 l4 -24 Z`, '#7f8a74', ol('#7f8a74', 0.8));
+    s += rr(wx + 3, wy + 3, hw - 5, wh - 36, 1.5, lg([lt(c, 0.08), dn(c, 0.05)]), ol(c, 0.9)) + rr(wx + hw - 7, wy + 90, 2.6, 16, 1.3, '#5d554b');
+    s += g(rr(wx + hw + 1, wy + 3, hw - 4, wh - 36, 1.5, lg([lt(c, 0.04), dn(c, 0.12)]), ol(c, 0.9)) + rr(wx + hw + 5, wy + 90, 2.6, 16, 1.3, '#5d554b'), rot(10, wx + ww - 3, wy + 4));
+    s += rr(wx + 3, wy + wh - 30, ww - 6, 26, 1.5, lt(c, 0.04), ol(c, 0.8)) + rect(wx + 3, wy + wh - 30, ww - 6, 4, '#2f2a24');
+    s += pth(`M${wx + 8} ${wy + wh + 12} q6 -14 18 -10 q8 -8 16 2 q10 0 8 10 Z`, '#8f6f62', ol('#8f6f62', 0.8)) + pth(`M${wx + 20} ${wy + wh + 10} q10 -10 22 -4 l4 8 Z`, '#6f7d8a', ol('#6f7d8a', 0.8));
+    s += rect(wx + 4, wy - 22, 30, 20, '#b9935f', ol('#b9935f', 1)) + rect(wx + 4, wy - 22, 30, 4, '#a07a48') + rect(wx + 17, wy - 22, 4, 20, '#d9c48a', op(0.8));
+    s += g(rect(wx + 30, wy - 16, 22, 14, '#a8875a', ol('#a8875a', 1)), rot(8, wx + 41, wy - 2));
+    s += cobweb(wx + 3, wy + 3, 16, 1);
+    s += rect(wx, wy, ww, wh, lg([[0, '#d8d0c2', 0.2], [1, '#d8d0c2', 0.05]]));
+    return s;
+  }
+  if (st === 0) {
+    const c = '#c8955c';
+    s += circ(wx + 5, wy + wh + 3, 4, dn(c, 0.3)) + circ(wx + ww - 5, wy + wh + 3, 4, dn(c, 0.3));
+    s += pbox(x0, x1, 6, H, 0, d, c);
+    const hw = (ww - 6) / 2;
+    s += cabDoor(wx + 3, wy + 4, hw - 1, wh - 40, 0, c, '#4a3a2a', wx + 3 + hw - 6, wy + 100) + cabDoor(wx + 4 + hw, wy + 4, hw - 1, wh - 40, 0, c, '#4a3a2a', wx + 9 + hw, wy + 100);
+    s += cabDrawer(wx + 3, wy + wh - 33, ww - 6, 28, 0, c, '#4a3a2a');
+    s += rr(wx - 5, wy - 9, ww + 10, 10, 2, lg([lt(c, 0.3), c]), ol(c, 1.2)) + rect(wx - 2, wy + 1, ww + 4, 3, dn(c, 0.2));
+    const b = '#c9a26b';
+    const weave = patt(8, 6, rect(0, 0, 8, 6, b) + rect(0, 0, 4, 3, dn(b, 0.15)) + rect(4, 3, 4, 3, dn(b, 0.15)));
+    s += pth(`M${wx + 8} ${wy - 9} L${wx + 10} ${wy - 30} H${wx + 40} L${wx + 42} ${wy - 9} Z`, weave, ol(b, 1)) + rr(wx + 8, wy - 33, 34, 5, 2, lt(b, 0.1), ol(b, 0.8));
+    return s;
+  }
+  if (st === 1) {
+    const c = '#f0ede6', gold = '#d4a64a';
+    s += ln(wx + 5, wy + wh - 2, wx + 3, wy + wh + 7, gold, 2.6) + ln(wx + ww - 5, wy + wh - 2, wx + ww - 3, wy + wh + 7, gold, 2.6);
+    s += pbox(x0, x1, 6, H, 0, d, c);
+    const hw = (ww - 6) / 2;
+    s += cabDoor(wx + 3, wy + 4, hw - 1, wh - 10, 1, c, gold, wx + hw - 1, wy + 112) + cabDoor(wx + 4 + hw, wy + 4, hw - 1, wh - 10, 1, c, gold, wx + 8 + hw, wy + 112);
+    const mx = wx + 6, mw = hw - 7, my = wy + 12, mh = wh - 28;
+    const arch = `M${mx} ${my + mh} V${my + mw / 2} A${mw / 2} ${mw / 2} 0 0 1 ${mx + mw} ${my + mw / 2} V${my + mh} Z`;
+    s += pth(arch, lg(['#e6f3f8', '#b9d6e2', '#d9ecf3'], 0, 0, 1, 1), ol('#c9a24b', 1.2));
+    s += g(pth(`M${mx} ${my + 60} L${mx + mw} ${my + 30} V${my + 44} L${mx} ${my + 74} Z M${mx} ${my + 90} L${mx + mw} ${my + 64} V${my + 70} L${mx} ${my + 96} Z`, '#ffffff', op(0.55)), clip(pth(arch, '#fff')));
+    s += rr(wx - 3, wy - 6, ww + 6, 7, 2, '#ffffff', ol('#d9d2c4', 1));
+    const lv = '#5a9a45';
+    s += rr(wx + 30, wy - 20, 16, 14, 2, '#e9e4da', ol('#cfc6b4', 0.8));
+    s += pth(`M${wx + 34} ${wy - 12} Q${wx + 24} ${wy + 10} ${wx + 28} ${wy + 40} M${wx + 36} ${wy - 12} Q${wx + 32} ${wy + 6} ${wx + 38} ${wy + 22}`, 'none', sk('#4f7d3a', 1));
+    for (const [lx, ly, a] of [[30, -18, -30], [27, 2, 20], [26, 16, -20], [29, 32, 30], [35, 8, -10], [38, 20, 25], [42, -20, 30], [37, -24, 0]]) s += ell(wx + lx, wy + ly, 3.4, 2.2, ly < -15 ? '#6cb86c' : lv, `${rot(a, wx + lx, wy + ly)} ${ol(lv, 0.5)}`);
+    return s;
+  }
+  const c = '#a9d3c4';
+  s += rect(wx + 4, wy + wh - 2, 5, 8, '#c99a62') + rect(wx + ww - 9, wy + wh - 2, 5, 8, '#c99a62');
+  s += poly(pp([x0, 6, 0, x0, H - 20, 0, x0, H - 20, d, x0, 6, d]), dn(c, 0.22), ol(c, 1));
+  const top = wy + 12;
+  s += pth(`M${wx} ${wy + wh} V${top + 8} Q${wx} ${top - 22} ${wx + ww / 2} ${top - 24} Q${wx + ww} ${top - 22} ${wx + ww} ${top + 8} V${wy + wh} Z`, lg([lt(c, 0.12), c, dn(c, 0.1)], 0, 0, 1, 0), ol(c, 1.3));
+  const hw = (ww - 8) / 2;
+  for (const dx of [wx + 4, wx + 4 + hw]) {
+    s += rr(dx, top + 4, hw - 1, wh - 50, 2, lt(c, 0.08), ol(c, 1));
+    let sl = '', hl = '';
+    for (let yy = top + 12; yy < top + wh - 52; yy += 6) { sl += `M${r1(dx + 4)} ${r1(yy)} H${r1(dx + hw - 5)} `; hl += `M${r1(dx + 4)} ${r1(yy + 1.4)} H${r1(dx + hw - 5)} `; }
+    s += pth(sl, 'none', sk(dn(c, 0.22), 1.2)) + pth(hl, 'none', sk(lt(c, 0.4), 0.8));
+  }
+  s += circ(wx + 4 + hw - 6, top + 100, 2.6, '#c99a62', ol('#a5713f', 0.6)) + circ(wx + 4 + hw + 5, top + 100, 2.6, '#c99a62', ol('#a5713f', 0.6));
+  s += rr(wx + 4, wy + wh - 34, ww - 8, 28, 2, lt(c, 0.06), ol(c, 1)) + rr(wx + ww / 2 - 8, wy + wh - 22, 16, 3, 1.5, '#c99a62');
+  s += pth(`M${wx + 10} ${top - 4} Q${wx + ww / 2} ${top - 18} ${wx + ww - 10} ${top - 4}`, 'none', sk(lt(c, 0.4), 1.2) + op(0.8));
+  const hb = (x: number, yb: number, w: number, h: number, col: string): string => {
+    const stp = patt(6, 10, rect(0, 0, 6, 10, '#ffffff') + rect(0, 0, 3, 10, col));
+    return rect(x, yb - h, w, h, stp, ol(col, 0.9)) + ell(x + w / 2, yb - h, w / 2 + 1.5, 3, lt(col, 0.3), ol(col, 0.9)) + ell(x + w / 2, yb, w / 2, 2.4, dn(col, 0.1));
+  };
+  s += hb(wx + 12, top - 20, 22, 14, '#f4a6c0') + hb(wx + 16, top - 34, 14, 10, '#f2d16b');
+  return s;
+}
+
+function bdBed(st?: number): string {
+  const x0 = 140, x1 = 262, D = 90, M = 40, F = 22;
+  const [tl, tlY] = pj(x0, M, 0), [tr] = pj(x1, M, 0), [bl, blY] = pj(x0, M, D), [br] = pj(x1, M, D);
+  const topPath = (r: number): string => `M${r1(tl)} ${r1(tlY)} H${r1(tr)} L${r1(br)} ${r1(blY - r)} Q${r1(br)} ${r1(blY)} ${r1(br - r)} ${r1(blY)} H${r1(bl + r)} Q${r1(bl)} ${r1(blY)} ${r1(bl)} ${r1(blY - r)} Z`;
+  const [mx, my, mw, mh] = face(x0, x1, F, M, D);
+  const [kx, ky, kw, kh] = face(x0 - 2, x1 + 2, 6, F, D);
+  const legs = (c: string): string => rect(kx + 4, ky + kh - 2, 6, 10, c, ol(c, 0.8)) + rect(kx + kw - 10, ky + kh - 2, 6, 10, c, ol(c, 0.8));
+  let s = shadow(201, 471, 98, 8, 0.3);
+  if (st === undefined) {
+    const c = '#bdb29e', wood = '#8a7a66';
+    s += g(rr(232, 270, 16, 112, 2, lg([lt(wood, 0.1), wood]), ol(wood, 1)) + crack([236, 290, 240, 306, 236, 320], 0.9), rot(-12, 240, 380));
+    s += legs(dn(wood, 0.2));
+    s += rect(kx, ky, kw, kh, lg([lt(wood, 0.06), dn(wood, 0.1)]), ol(wood, 1.2)) + crack([kx + 60, ky + 2, kx + 66, ky + 10, kx + 62, ky + kh - 2], 1);
+    s += g(rr(kx - 18, ky + 4, 30, 6, 1.5, wood, ol(wood, 0.8)), rot(-18, kx + 10, ky + 7));
+    s += pth(topPath(6), lg([lt(c, 0.1), c]), ol(c, 1.2));
+    s += rr(mx, my - 3, mw, mh + 3, 6, lg([c, dn(c, 0.14)]), ol(c, 1.2));
+    s += pth(`M${r1(mx + 8)} ${r1(my - 2)} Q${r1(mx + mw / 2)} ${r1(my + 8)} ${r1(mx + mw - 8)} ${r1(my - 2)}`, 'none', sk(dn(c, 0.2), 1) + op(0.6));
+    for (const [px, py, rx, ry, o] of [[176, 380, 26, 10, 0.3], [236, 398, 16, 6, 0.4], [150, 400, 12, 5, 0.35], [210, 362, 14, 5, 0.25]]) s += ell(px, py, rx, ry, '#8a6a3e', op(o));
+    s += pth('M154 344 Q170 336 196 342 Q214 336 226 346 Q214 356 196 352 Q176 360 154 344 Z', '#9d9484', ol('#8a8173', 0.8));
+    s += pth('M214 384 c4 -10 12 -10 10 -2 c-2 6 -12 6 -8 -2 c3 -6 10 -6 9 0', 'none', sk('#6f685c', 1.4));
+    for (let i = 0; i < 6; i++) s += ln(mx + 14 + i * 26, my + 4, mx + 14 + i * 26, my + mh - 4, dn(c, 0.18), 1, op(0.5));
+    return s;
+  }
+  const c = ['#e88fa3', '#2f4868', '#8fb08a'][st];
+  const wood = ['#b07a4a', '#2f4868', '#f4f1ea'][st];
+  // headboard on the wall
+  if (st === 0) {
+    s += pth('M132 380 V300 Q132 284 148 282 Q201 252 254 282 Q270 284 270 300 V380 Z', lg([lt(wood, 0.15), wood, dn(wood, 0.12)], 0, 0, 1, 0), ol(wood, 1.4));
+    s += pth('M142 380 V304 Q142 294 154 292 Q201 266 248 292 Q260 294 260 304 V380 Z', 'none', sk(dn(wood, 0.25), 1.2) + op(0.6));
+    s += circ(201, 280, 5, '#e88fa3', ol('#c86b80', 0.8)) + ell(193, 282, 4, 2, '#7cc36a', rot(-20, 193, 282)) + ell(209, 282, 4, 2, '#7cc36a', rot(20, 209, 282));
+  } else if (st === 1) {
+    s += rr(130, 266, 142, 116, 16, lg([lt(wood, 0.25), wood, dn(wood, 0.1)]), ol(wood, 1.4));
+    let ln2 = '';
+    for (let r = 0; r < 4; r++) for (let i = 0; i < 8; i++) {
+      const bx = 146 + i * 16 + (r % 2) * 8, by = 282 + r * 16;
+      if (bx > 258) continue;
+      s += circ(bx, by, 1.8, dn(wood, 0.35));
+      ln2 += `M${bx - 8} ${by - 8} L${bx} ${by} L${bx + 8} ${by - 8} `;
+    }
+    s += pth(ln2, 'none', sk(lt(wood, 0.2), 0.9) + op(0.6));
+    s += pth('M140 274 Q201 268 262 274', 'none', sk(lt(wood, 0.45), 1.6) + op(0.6));
+  } else {
+    const rail = (d: string, w: number): string => pth(d, 'none', sk('#b9b2a2', w + 1.6)) + pth(d, 'none', sk(wood, w));
+    let sp = '';
+    for (let x = 150; x < 256; x += 13) sp += `M${x} 300 V352 `;
+    s += rail(sp, 2.2) + rail('M136 380 V282 M266 380 V282', 4.5) + rail('M136 298 Q201 260 266 298', 3.2) + rail('M136 352 H266', 3) + rail('M150 300 Q201 280 252 300', 2);
+    for (const bx of [136, 266]) s += circ(bx, 278, 5.5, rg(['#fff3c4', '#d4a64a', '#a8771e'], 0.35, 0.35, 0.7), ol('#c9a24b', 0.8));
+    s += circ(201, 274, 4, rg(['#fff3c4', '#d4a64a', '#a8771e'], 0.35, 0.35, 0.7), ol('#c9a24b', 0.8));
+  }
+  // frame + mattress
+  const frameC = st === 2 ? '#ffffff' : wood;
+  s += legs(st === 1 ? '#c9a24b' : dn(frameC === '#ffffff' ? '#cfc6b4' : wood, 0.15));
+  s += rect(kx, ky, kw, kh, lg([lt(frameC, 0.1), dn(frameC, 0.12)]), ol(st === 2 ? '#cfc6b4' : frameC, 1.2));
+  if (st === 2) { let rf = `M${kx} ${ky} H${kx + kw} V${ky + kh - 4}`; rf += scallops(kx, kx + kw, ky + kh - 4, 12, 6); s += pth(rf + ' Z', '#ffffff', ol('#d9d2c4', 0.9)); }
+  s += pth(topPath(6), '#f7f3ec', ol('#d9d2c4', 1));
+  s += rr(mx, my - 3, mw, mh + 3, 6, lg(['#ffffff', '#e6e0d4']), ol('#d9d2c4', 1));
+  // pillows
+  const pillow = (x: number, col: string): string => rr(x, 326, 50, 22, 10, lg([lt(col, 0.4), col]), ol(col, 1)) + pth(`M${x + 8} 331 q17 4 34 0`, 'none', sk('#ffffff', 1.2) + op(0.5));
+  const pc = ['#fbe9ee', '#f2f6fb', '#fbf7ef'][st];
+  s += pillow(149, pc) + pillow(203, pc);
+  // quilt over the front part, hanging over the foot
+  const [ql, qlY] = pj(x0 - 4, M + 3, 30), [qr] = pj(x1 + 4, M + 3, 30), [qbl, qblY] = pj(x0 - 4, M + 3, D + 2), [qbr] = pj(x1 + 4, M + 3, D + 2);
+  const hemY = my + mh + 2;
+  const quilt = `M${r1(ql)} ${r1(qlY)} H${r1(qr)} L${r1(qbr)} ${r1(qblY)} V${r1(hemY)}${scallops(qbl, qbr, hemY, 9, st === 1 ? 0 : 7)} V${r1(qblY)} Z`;
+  const q = [ql, qlY, qr, qlY, qbr, qblY, qbl, qblY];
+  if (st === 0) {
+    s += pth(quilt, lg([lt(c, 0.12), c, dn(c, 0.1)]), ol(c, 1.2));
+    const pal = [c, '#f7e1d0', lt(c, 0.35), '#fbe9ee', '#f2c4a8'];
+    for (let i = 0; i < 6; i++) for (let j = 0; j < 3; j++) s += poly(qpoly(q, [i / 6, j / 3, (i + 1) / 6, j / 3, (i + 1) / 6, (j + 1) / 3, i / 6, (j + 1) / 3]), pal[(i + j * 2) % pal.length], `stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2 1.5"`);
+    const fw = (qbr - qbl) / 6;
+    for (let i = 0; i < 6; i++) s += rect(qbl + i * fw, qblY, fw, hemY - qblY, pal[(i + 1) % pal.length], `stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2 1.5"`);
+    s += pth(quilt, 'none', ol(c, 1.2));
+    s += g(rr(184, 344, 34, 20, 8, '#ffffff', ol('#e3d6cf', 1)) + pth('M193 352 q-3 -4 0 -6 q3 -2 4 2 q1 -4 4 -2 q3 2 0 6 l-4 4 Z', '#e88fa3'), rot(-6, 201, 354));
+  } else if (st === 1) {
+    s += pth(quilt, lg([lt(c, 0.12), c, dn(c, 0.12)]), ol(c, 1.2));
+    let stp = '';
+    for (let i = 1; i < 12; i++) { const [a, b] = qp(q, i / 12, 0), [e, f] = qp(q, i / 12, 1); stp += `M${r1(a)} ${r1(b)} L${r1(e)} ${r1(f)} V${r1(hemY - 1)} `; }
+    s += pth(stp, 'none', sk('#ffffff', 0.9) + op(0.55));
+    s += poly(qpoly(q, [-0.01, 0.62, 1.01, 0.62, 1.01, 0.8, -0.01, 0.8]), lg(['#f0c55a', '#d9a52b']), ol('#d9a52b', 1));
+    for (let i = 0; i <= 12; i++) { const [a, b] = qp(q, i / 12, 0.8); s += ln(a, b, a, b + 3, '#d9a52b', 1); }
+    s += g(rr(186, 342, 30, 22, 5, '#d9a52b', ol('#b98d2e', 1)) + pth('M190 346 l22 14 M212 346 l-22 14', 'none', sk('#fbf0d6', 1.2)), rot(-8, 201, 353));
+  } else {
+    s += pth(quilt, lg([lt(c, 0.15), c, dn(c, 0.1)]), ol(c, 1.2));
+    let dots = '';
+    for (let i = 0; i < 9; i++) for (let j = 0; j < 4; j++) { const [a, b] = qp(q, (i + 0.5 + (j % 2) * 0.5) / 9.5, (j + 0.5) / 4); dots += `M${r1(a - 1.4)} ${r1(b)} q1.4 -2.4 2.8 0 q-1.4 2.4 -2.8 0 Z `; }
+    s += pth(dots, '#ffffff', op(0.7));
+    const k = '#f3ead8';
+    s += poly(qpoly(q, [-0.02, 0.56, 1.02, 0.56, 1.02, 0.84, -0.02, 0.84]), k, ol('#d9c9a6', 1));
+    let knit = '';
+    for (let i = 0; i < 22; i++) { const [a, b] = qp(q, i / 22, 0.62), [e, f] = qp(q, (i + 0.5) / 22, 0.7), [m, n] = qp(q, (i + 1) / 22, 0.62); knit += `M${r1(a)} ${r1(b)} L${r1(e)} ${r1(f)} L${r1(m)} ${r1(n)} `; }
+    s += pth(knit, 'none', sk('#d9c9a6', 0.8));
+    s += g(rr(186, 342, 30, 22, 10, '#e88fa3', ol('#c86b80', 1)) + circ(201, 353, 3, '#ffffff', op(0.8)), rot(5, 201, 353));
+  }
+  return s;
+}
+
+function bdRug(st?: number): string {
+  const ya = depthY(66), yb = depthY(150);
+  const q = fq(120, 280, ya, yb);
+  if (st === undefined) {
+    let s = poly(q.map((v, i) => (i % 2 ? v + 4 : v + 2)), '#000', op(0.12));
+    s += poly(q, lg(['#948573', '#7e705f']), ol('#8e8070', 1.2));
+    for (const v of [0.2, 0.35, 0.65, 0.8]) s += poly(qpoly(q, [0, v, 1, v, 1, v + 0.06, 0, v + 0.06]), '#7a6aa8', op(0.25));
+    const [a, b] = qp(q, 0.3, 0.7), [e, f] = qp(q, 0.75, 0.55);
+    s += ell(a, b, 18, 7, '#3a3029') + ell(e, f, 10, 4, '#3a3029') + ell(qp(q, 0.55, 0.85)[0], qp(q, 0.55, 0.85)[1], 30, 9, '#5f5244', op(0.35));
+    s += poly([q[4], q[5], q[4] - 40, q[5], q[4] - 6, q[5] - 30], '#a39684', ol('#8e8070', 1)) + poly([q[4], q[5], q[4] - 40, q[5], q[4] - 6, q[5] - 30], lg([[0, '#fff', 0.2], [1, '#000', 0.15]], 0, 0, 1, 1));
+    for (let i = 0; i <= 14; i++) { const [x, y] = qp(q, i / 14, 1); if (i < 12) s += ln(x, y, x - 1 + (i % 3), y + 5 + (i % 2) * 2, '#8e8070', 1); }
+    return s;
+  }
+  if (st === 0) {
+    const c = '#f2b8c6', cx = 200, cy = 512, rx = 128, ry = 50;
+    let s = ell(cx, cy + 5, rx + 4, ry + 3, '#000', op(0.14));
+    const R = rng(81);
+    let fluff = '';
+    for (let i = 0; i < 70; i++) { const a = (i / 70) * Math.PI * 2; fluff += `M${r1(cx + Math.cos(a) * rx)} ${r1(cy + Math.sin(a) * ry)} l${r1(Math.cos(a) * (3 + R() * 4))} ${r1(Math.sin(a) * (2 + R() * 3))} `; }
+    s += pth(fluff, 'none', sk(c, 4));
+    s += ell(cx, cy, rx, ry, rg([lt(c, 0.35), c, dn(c, 0.06)], 0.5, 0.45, 0.6), ol(c, 1));
+    s += ell(cx, cy, rx * 0.72, ry * 0.72, 'none', sk(lt(c, 0.5), 3) + op(0.7)) + ell(cx, cy, rx * 0.4, ry * 0.4, 'none', sk(lt(c, 0.5), 2.4) + op(0.7));
+    let tuft = '';
+    for (let i = 0; i < 160; i++) { const a = R() * Math.PI * 2, rr0 = Math.sqrt(R()) * 0.95; const x = cx + Math.cos(a) * rx * rr0, y = cy + Math.sin(a) * ry * rr0; tuft += `M${r1(x)} ${r1(y)} q1.5 -2 3 0 `; }
+    s += pth(tuft, 'none', sk(dn(c, 0.12), 0.8) + op(0.5));
+    return s;
+  }
+  if (st === 1) {
+    const c = '#6f9bd3';
+    let s = poly(q.map((v, i) => (i % 2 ? v + 5 : v)), '#000', op(0.14));
+    for (let i = 0; i <= 16; i++) { const [a, b] = qp(q, i / 16, 1); s += ln(a, b, a - 1, b + 7, '#f2f6fb', 1.6); }
+    s += poly(q, '#f2f6fb', ol(c, 1.2));
+    const bands: [number, number, string][] = [[0.06, 0.16, c], [0.2, 0.24, '#2f4868'], [0.28, 0.3, '#f2d16b'], [0.36, 0.46, c], [0.54, 0.64, c], [0.7, 0.72, '#f2d16b'], [0.76, 0.8, '#2f4868'], [0.84, 0.94, c]];
+    for (const [v0, v1, col] of bands) s += poly(qpoly(q, [0, v0, 1, v0, 1, v1, 0, v1]), col);
+    s += poly(qpoly(q, [0.42, 0.47, 0.58, 0.47, 0.58, 0.53, 0.42, 0.53]), '#2f4868');
+    s += poly(q, lg([[0, '#fff', 0.1], [1, '#000', 0.06]]));
+    return s;
+  }
+  const c = '#e8dcc0', line = '#4a3a2e';
+  let s = poly(q.map((v, i) => (i % 2 ? v + 5 : v)), '#000', op(0.14));
+  for (let i = 0; i <= 20; i++) { const [a, b] = qp(q, i / 20, 1); s += ln(a, b, a + (i % 2) - 0.5, b + 6, c, 1.4); }
+  s += poly(q, lg([lt(c, 0.3), c]), ol(dn(c, 0.1), 1.2));
+  let lat = '';
+  for (let m = -8; m <= 14; m++) {
+    for (const dir of [1, -1]) {
+      const pts: number[] = [];
+      for (let k = 0; k <= 12; k++) {
+        const v = k / 12, u = (m + dir * v * 6) / 8;
+        if (u < 0 || u > 1) continue;
+        const [x, y] = qp(q, u, v);
+        pts.push(x + Math.sin(k * 1.7 + m) * 0.8, y);
+      }
+      if (pts.length >= 4) lat += 'M' + P(pts).replace(/ /g, ' L') + ' ';
+    }
+  }
+  s += pth(lat, 'none', sk(line, 1.5) + op(0.75));
+  const R = rng(83);
+  let fz = '';
+  for (let i = 0; i < 120; i++) { const [x, y] = qp(q, 0.03 + R() * 0.94, 0.03 + R() * 0.94); fz += `M${r1(x)} ${r1(y)} q1 -1.6 2 0 `; }
+  s += pth(fz, 'none', sk('#ffffff', 0.9) + op(0.6));
+  return s;
+}
+
+/** armchair in the front-left corner (drawn 10px right of its design position) */
+function bdArmchair(st?: number): string {
+  return g(bdArmchairRaw(st), 'transform="translate(10 0)"');
+}
+function bdArmchairRaw(st?: number): string {
+  let s = shadow(82, 534, 46, 6, 0.26);
+  if (st === undefined) {
+    const c = '#9a8c78';
+    let b = rr(46, 444, 72, 60, 16, lg([lt(c, 0.1), c, dn(c, 0.12)], 0, 0, 1, 0), ol(c, 1.4));
+    b += rr(40, 486, 84, 36, 8, lg([c, dn(c, 0.18)]), ol(c, 1.4));
+    b += rr(34, 472, 16, 46, 7, lg([lt(c, 0.06), dn(c, 0.1)], 0, 0, 1, 0), ol(c, 1.2)) + rr(114, 472, 16, 46, 7, lg([lt(c, 0.06), dn(c, 0.1)], 0, 0, 1, 0), ol(c, 1.2));
+    b += poly([66, 452, 92, 450, 98, 474, 76, 482, 60, 470], '#6e624f') + circ(72, 462, 6, '#f4efe4') + circ(80, 466, 7, '#ece6da') + circ(86, 458, 5, '#f4efe4');
+    b += pth('M100 494 c0 -10 10 -10 8 -2 c-2 6 -10 6 -6 -2 c3 -6 10 -6 9 0', 'none', sk('#7a7466', 1.4));
+    b += rect(52, 500, 16, 14, '#b5a58c', `${ol('#8a7d6b', 0.8)} stroke-dasharray="2 1.5"`);
+    b += rect(46, 520, 6, 8, dn(c, 0.3));
+    s += g(b, rot(-6, 82, 528));
+    s += rect(106, 524, 22, 5, '#4f7fbf', ol('#4f7fbf', 0.6)) + rect(108, 519, 19, 5, '#c86b6b', ol('#c86b6b', 0.6)) + rect(105, 529, 24, 5, '#e2b84a', ol('#e2b84a', 0.6));
+    s += cobweb(46, 444, 14, 1);
+    return s;
+  }
+  if (st === 0) {
+    const c = '#e58fa0', gold = '#c9a24b';
+    s += ln(56, 520, 52, 536, gold, 3) + ln(108, 520, 112, 536, gold, 3);
+    s += pth('M40 524 V478 Q40 438 82 438 Q124 438 124 478 V524 Z', lg([lt(c, 0.2), c, dn(c, 0.15)], 0, 0, 1, 0), ol(c, 1.4));
+    s += pth('M52 490 Q52 452 82 452 Q112 452 112 490', lg([dn(c, 0.12), dn(c, 0.04)]), sk(dn(c, 0.2), 1));
+    s += pth('M64 488 Q62 462 68 455 M82 488 V452 M100 488 Q102 462 96 455', 'none', sk(dn(c, 0.25), 1.2) + op(0.7));
+    s += rr(50, 488, 64, 16, 8, lg([lt(c, 0.35), c]), ol(c, 1.2));
+    s += rr(40, 500, 84, 24, 10, lg([c, dn(c, 0.16)]), ol(c, 1.3));
+    s += circ(82, 478, 10, '#fbf0d6', ol('#e9d4a8', 1)) + circ(82, 478, 4, 'none', sk('#e9d4a8', 1));
+    s += pth('M48 470 Q50 450 64 444', 'none', sk('#ffffff', 2) + op(0.35));
+    return s;
+  }
+  if (st === 1) {
+    const c = '#d8b47a';
+    const weave = patt(7, 7, rect(0, 0, 7, 7, c) + ln(0, 0, 7, 7, dn(c, 0.22), 0.8) + ln(7, 0, 0, 7, dn(c, 0.22), 0.8) + circ(3.5, 3.5, 1, lt(c, 0.3)));
+    const fan = 'M82 492 m-46 0 a46 58 0 0 1 92 0 Z';
+    s += pth(fan, weave, ol(c, 1.4));
+    let sc = '';
+    for (let i = 0; i <= 14; i++) { const a = Math.PI + (i / 14) * Math.PI; sc += `M${r1(82 + Math.cos(a) * 46)} ${r1(492 + Math.sin(a) * 58)} m-4 0 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0 `; }
+    s += pth(sc, c, ol(c, 0.8));
+    s += pth('M82 492 m-34 0 a34 44 0 0 1 68 0', 'none', sk(dn(c, 0.3), 1.2) + op(0.6));
+    for (let i = 1; i < 8; i++) { const a = Math.PI + (i / 8) * Math.PI; s += ln(82 + Math.cos(a) * 14, 492 + Math.sin(a) * 18, 82 + Math.cos(a) * 42, 492 + Math.sin(a) * 53, dn(c, 0.28), 1, op(0.5)); }
+    s += pth('M58 504 H106 L98 532 H66 Z', weave, ol(c, 1.2)) + ell(82, 532, 16, 3, dn(c, 0.3));
+    s += ell(82, 500, 36, 10, lg(['#ffffff', '#efe9dc']), ol('#d9d2c4', 1.2));
+    s += g(rr(64, 470, 26, 22, 8, '#e88fa3', ol('#c86b80', 1)) + pth('M70 481 h14', 'none', sk('#ffffff', 1) + op(0.6)), rot(-10, 77, 481));
+    s += g(rr(80, 472, 22, 20, 8, '#9fd8c4', ol('#6fb5a0', 1)), rot(12, 91, 482));
+    return s;
+  }
+  const c = '#3f7a5a';
+  s += rect(52, 522, 6, 12, '#6b4a2a') + rect(106, 522, 6, 12, '#6b4a2a');
+  s += pth('M52 500 V448 Q52 428 82 428 Q112 428 112 448 V500 Z', lg([lt(c, 0.18), c, dn(c, 0.15)], 0, 0, 1, 0), ol(c, 1.4));
+  for (let r = 0; r < 3; r++) for (let i = 0; i < 3; i++) s += circ(68 + i * 14 + (r % 2) * 7, 444 + r * 14, 1.6, dn(c, 0.35));
+  s += pth('M52 452 Q36 452 38 474 L40 500 H56 Z M112 452 Q128 452 126 474 L124 500 H108 Z', lg([lt(c, 0.1), dn(c, 0.12)], 0, 0, 1, 0), ol(c, 1.3));
+  s += rr(36, 482, 20, 40, 8, lg([lt(c, 0.14), dn(c, 0.1)], 0, 0, 1, 0), ol(c, 1.3)) + rr(108, 482, 20, 40, 8, lg([lt(c, 0.14), dn(c, 0.1)], 0, 0, 1, 0), ol(c, 1.3));
+  s += ell(46, 484, 10, 6, lt(c, 0.2), ol(c, 1)) + ell(118, 484, 10, 6, lt(c, 0.2), ol(c, 1));
+  s += rr(52, 492, 60, 14, 6, lg([lt(c, 0.3), c]), ol(c, 1.2)) + rr(48, 504, 68, 20, 4, lg([c, dn(c, 0.18)]), ol(c, 1.3));
+  const k = '#f3ead8';
+  let th = 'M106 446 Q120 444 124 452 L128 512 Q124 518 118 514 L114 470 Q110 462 104 462 Z';
+  s += pth(th, lg([lt(k, 0.2), k]), ol('#d9c9a6', 1.1));
+  th = '';
+  for (let yy = 456; yy < 510; yy += 6) th += `M${116 + (yy - 456) * 0.07} ${yy} l3 3 l3 -3 `;
+  s += pth(th, 'none', sk('#d9c9a6', 0.8));
+  s += g(rr(64, 466, 30, 24, 8, '#e2b84a', ol('#b98d2e', 1)) + circ(79, 478, 2, '#b98d2e'), rot(-8, 79, 478));
+  return s;
+}
+
+function bdCatbed(st?: number): string {
+  const cx = 312, base = 532;
+  let s = shadow(cx, base, 34, 6, 0.26);
+  if (st === undefined) {
+    const c = '#b9935f';
+    let b = rect(284, 496, 56, 36, lg([lt(c, 0.1), c, dn(c, 0.12)], 0, 0, 1, 0), ol(c, 1.2));
+    b += poly([284, 496, 274, 480, 296, 484, 300, 496], dn(c, 0.06), ol(c, 1)) + poly([340, 496, 352, 478, 330, 484, 324, 496], lt(c, 0.08), ol(c, 1));
+    b += pth('M292 496 q4 -12 14 -10 l6 4 q8 -10 16 -2 l2 8 Z', '#e9e4da', ol('#bdb5a6', 0.8)) + pth('M298 490 h10 M314 488 h8', 'none', sk('#8a8478', 0.8));
+    b += ell(316, 518, 16, 8, '#7a5a35', op(0.4)) + poly([330, 532, 340, 518, 340, 532], '#8a6a42');
+    b += rect(306, 496, 12, 36, '#d9c48a', op(0.7));
+    s += g(b, rot(-4, cx, base));
+    return s;
+  }
+  if (st === 0) {
+    const c = '#f4a6c0';
+    s += pth(`M${cx - 38} 512 V520 A38 13 0 0 0 ${cx + 38} 520 V512 Z`, lg([c, dn(c, 0.22)]), ol(c, 1.2));
+    let fl = '';
+    for (let i = 0; i < 32; i++) { const a = (i / 32) * Math.PI * 2; fl += `M${r1(cx + Math.cos(a) * 38)} ${r1(512 + Math.sin(a) * 16)} l${r1(Math.cos(a) * 3)} ${r1(Math.sin(a) * 2)} `; }
+    s += pth(fl, 'none', sk(lt(c, 0.1), 3));
+    s += ell(cx, 512, 38, 16, rg([lt(c, 0.1), lt(c, 0.35), c], 0.5, 0.4, 0.62), ol(c, 1.2));
+    s += ell(cx, 509, 21, 8, dn(c, 0.2)) + ell(cx, 511, 19, 6.5, lg([lt(c, 0.45), lt(c, 0.15)]));
+    s += pth(`M${cx - 30} 512 Q${cx} 498 ${cx + 30} 512`, 'none', sk('#ffffff', 1.6) + op(0.5));
+    s += pth('M282 532 q6 -6 12 0 q-6 6 -12 0 Z M294 532 l5 -4 v8 Z', '#8fd3ff', ol('#4f9fd6', 0.8)) + circ(285, 531, 0.9, '#2a2a2a');
+    return s;
+  }
+  if (st === 1) {
+    const c = '#c9a26b';
+    const weave = patt(8, 6, rect(0, 0, 8, 6, c) + rect(0, 0, 4, 3, dn(c, 0.15)) + rect(4, 3, 4, 3, dn(c, 0.15)));
+    s += pth('M278 506 Q280 532 296 532 H328 Q344 532 346 506 Z', weave, ol(c, 1.2)) + pth('M278 506 Q280 532 296 532 H328 Q344 532 346 506 Z', lg([[0, '#fff', 0.1], [1, '#000', 0.15]]));
+    const pl0 = patt(10, 10, rect(0, 0, 10, 10, '#f3e3c3') + rect(0, 0, 4, 10, '#c94a4a', op(0.6)) + rect(0, 0, 10, 4, '#c94a4a', op(0.6)));
+    s += ell(cx, 504, 30, 8, pl0, ol('#c94a4a', 0.8));
+    s += pth('M296 502 Q290 518 294 524 L302 522 Q300 512 306 504 Z', pl0, ol('#c94a4a', 0.8));
+    s += ell(cx, 505, 34, 9, 'none', sk(dn(c, 0.1), 4)) + ell(cx, 505, 34, 9, 'none', `stroke="${lt(c, 0.25)}" stroke-width="1.4" stroke-dasharray="3 2"`);
+    s += circ(334, 498, 5, '#e2463a', ol('#b5352c', 0.8)) + pth('M330 495 q4 2 8 0', 'none', sk('#ffffff', 0.8));
+    return s;
+  }
+  const c = '#8fb3c9';
+  const stripes = patt(8, 8, rect(0, 0, 8, 8, c) + rect(0, 0, 3, 8, '#ffffff', op(0.5)), 'rotate(20)');
+  s += ln(305, 446, 319, 474, '#a5713f', 2.2) + ln(319, 446, 305, 474, '#a5713f', 2.2) + ln(312, 443, 312, 468, '#a5713f', 2.2);
+  s += poly([276, 532, 312, 458, 348, 532], stripes, ol(c, 1.2));
+  s += poly([276, 532, 312, 458, 348, 532], lg([[0, '#fff', 0.15], [0.5, '#fff', 0], [1, '#000', 0.12]], 0, 0, 1, 0));
+  s += pth('M296 532 Q312 490 328 532 Z', '#3a4a58') + ell(312, 528, 13, 4.5, '#f4a6c0', ol('#e07f9a', 0.6));
+  const flag = (x: number, y: number, col: string): string => poly([x - 4, y, x + 4, y, x, y + 7], col, ol(col, 0.5));
+  s += pth('M292 494 Q312 500 332 494', 'none', sk('#ffffff', 0.8)) + flag(296, 495, '#f2d16b') + flag(306, 497.5, '#f4a6c0') + flag(318, 497.5, '#ffffff') + flag(328, 495, '#f2d16b');
+  return s;
+}
+
+function bdSun(placed: Placed): string {
+  const ok = placed.window !== undefined;
+  return poly([60, 392, 122, 392, 214, 470, 104, 470], lg([[0, '#fff3c4', ok ? 0.32 : 0.07], [1, '#fff3c4', 0]]), NOPE);
+}
+
+function bdBeams(placed: Placed): string {
+  const R = rng(19);
+  if (placed.window === undefined) {
+    let s = '';
+    for (let i = 0; i < 24; i++) s += circ(60 + R() * 220, 150 + R() * 260, 0.8 + R() * 1.4, '#e8e0cf', op(0.3 + R() * 0.4));
+    return g(s, NOPE);
+  }
+  let s = poly([58, 146, 118, 146, 240, 470, 126, 470], lg([[0, '#fffbe8', 0.16], [1, '#fffbe8', 0]]));
+  s += poly([66, 146, 86, 146, 176, 470, 146, 470], lg([[0, '#fffbe8', 0.1], [1, '#fffbe8', 0]]));
+  for (let i = 0; i < 12; i++) { const t = R(); s += sparkle(84 + t * 110 + (R() - 0.5) * 50, 160 + t * 260, 1.2 + R() * 1.6, '#fffbe8', op(0.5 + R() * 0.4)); }
+  return g(s, NOPE);
+}
+
+const BEDROOM: RoomArt = {
+  items: { floor: bdFloor, wallpaper: bdWallpaper, window: bdWindow, garland: bdGarland, nightstand: bdNightstand, wardrobe: bdWardrobe, bed: bdBed, rug: bdRug, armchair: bdArmchair, catbed: bdCatbed },
+  layers: ['wallpaper', 'floor', bdTrim, 'window', 'garland', 'wardrobe', 'nightstand', 'rug', bdSun, 'bed', 'armchair', 'catbed', bdBeams, (_p, f) => moodLayer(f, '#3a3f55')],
+};
+
+/* =====================================================================
+ * BATHROOM
+ * ===================================================================== */
+const BA_WIN = { x: 64, y: 138, w: 58, h: 80 };
+const BA_TILE_Y = 232;
+
+/** path with rounded corners through the screen points of a polygon */
+function roundPoly(a: number[], r: number): string {
+  const n = a.length / 2;
+  let d = '';
+  for (let i = 0; i < n; i++) {
+    const px = a[2 * i], py = a[2 * i + 1];
+    const j = (i + n - 1) % n, k = (i + 1) % n;
+    const ax = a[2 * j], ay = a[2 * j + 1], bx = a[2 * k], by = a[2 * k + 1];
+    const la = Math.hypot(ax - px, ay - py) || 1, lb = Math.hypot(bx - px, by - py) || 1;
+    const ra = Math.min(r, la / 2), rb = Math.min(r, lb / 2);
+    d += `${i ? 'L' : 'M'}${r1(px + ((ax - px) * ra) / la)} ${r1(py + ((ay - py) * ra) / la)} Q${r1(px)} ${r1(py)} ${r1(px + ((bx - px) * rb) / lb)} ${r1(py + ((by - py) * rb) / lb)} `;
+  }
+  return d + 'Z';
+}
+/** glass with a soft reflection, clipped to `shape` */
+function mirrorGlass(shape: string): string {
+  let v = rect(250, 170, 84, 126, lg(['#eaf4f8', '#bcd6e2', '#d8eaf1'], 0, 0, 1, 1));
+  v += poly([250, 270, 290, 170, 312, 170, 250, 325], '#ffffff', op(0.45)) + poly([262, 296, 314, 170, 324, 170, 272, 296], '#ffffff', op(0.3));
+  v += ell(292, 290, 40, 14, '#a8c7d4', op(0.35));
+  return g(v, clip(shape));
+}
+
+function baWalltiles(st?: number): string {
+  const y0 = BA_TILE_Y, H = 384;
+  if (st === undefined) {
+    let s = rect(0, 0, 400, y0, lg(['#c4bfae', '#aaa594']));
+    s += ell(230, 70, 80, 36, rg([[0, '#7d6a4c', 0.04], [0.72, '#7d6a4c', 0.16], [0.88, '#6b583c', 0.3], [1, '#6b583c', 0]]));
+    for (const [x, y, l] of [[214, 96, 60], [238, 100, 84], [262, 96, 40]]) s += rect(x, y, 3, l, lg([[0, '#6e5d42', 0.35], [1, '#6e5d42', 0]]));
+    s += pth('M330 20 Q352 34 348 60 Q340 50 332 54 Q338 40 330 20 Z', '#d6cfbd', ol('#bdb5a2', 1)) + pth('M30 60 q20 -8 34 4 q-14 10 -34 -4 Z', '#d6cfbd', ol('#bdb5a2', 1));
+    s += crack([150, 30, 158, 60, 150, 86, 162, 110]) + crack([360, 100, 352, 130, 364, 160]);
+    const tile = patt(22, 22, rect(0, 0, 22, 22, '#c9c6b4') + rect(0, 0, 22, 1.3, '#8f8b7a') + rect(0, 0, 1.3, 22, '#8f8b7a') + rect(2, 2, 18, 2, '#fff', op(0.18)));
+    s += rect(0, y0, 400, H - y0, tile) + rect(0, y0, 400, H - y0, lg([[0, '#5a4a30', 0.1], [1, '#5a4a30', 0.32]]));
+    for (const [x, y] of [[22, 254], [44, 298], [176, 276], [242, 254], [352, 320], [374, 254], [132, 342]]) s += rect(x + 0.6, y + 0.6, 21, 21, '#7c705c') + rect(x + 0.6, y + 0.6, 21, 4, '#000', op(0.2));
+    s += crack([200, 236, 208, 262, 202, 286, 214, 306]) + crack([300, 240, 320, 254, 326, 276]);
+    const R = rng(91);
+    for (let i = 0; i < 70; i++) s += circ(R() * 400, 330 + R() * 50, 0.8 + R() * 2.6, '#4f5f3a', op(0.18 + R() * 0.3));
+    for (let i = 0; i < 26; i++) s += circ(R() * 120, R() * 60, 0.8 + R() * 2.4, '#4f5f3a', op(0.15 + R() * 0.2));
+    s += rect(0, y0 - 6, 400, 8, '#a8a493', ol('#a8a493', 0.8));
+    return s;
+  }
+  const [c, up] = [['#a8dcc8', '#f6f3ea'], ['#f2b8c0', '#fbeef0'], ['#2f4868', '#eef1f5']][st];
+  let s = rect(0, 0, 400, y0, up);
+  if (st === 1) s += rect(0, 0, 400, y0, patt(18, 18, circ(4.5, 4.5, 1.3, c, op(0.45)) + circ(13.5, 13.5, 1.3, c, op(0.45))));
+  if (st === 2) s += rect(0, 0, 400, y0, patt(24, 10, rect(11, 0, 1.4, 10, c, op(0.16))));
+  let p: string;
+  if (st === 0) {
+    const t = (x: number, y: number): string => rr(x + 0.7, y + 0.7, 22.6, 10.6, 1.8, c) + rect(x + 3, y + 2, 16, 1.6, '#ffffff', op(0.5)) + rect(x + 2, y + 8.6, 20, 1.2, dn(c, 0.1), op(0.6));
+    p = patt(24, 24, rect(0, 0, 24, 24, '#f4f7f4') + t(0, 0) + t(-12, 12) + t(12, 12));
+  } else if (st === 1) {
+    p = patt(20, 20, rect(0, 0, 20, 20, '#ffffff') + rr(0.8, 0.8, 18.4, 18.4, 2, c) + ell(6, 6, 3.5, 2, '#ffffff', op(0.4)));
+  } else {
+    const sc = (x: number, y: number): string => circ(x, y, 10, c, 'stroke="#eef1f5" stroke-width="1.3"') + pth(`M${x - 6} ${y + 3} Q${x} ${y + 9} ${x + 6} ${y + 3}`, 'none', sk(lt(c, 0.25), 1.2));
+    p = patt(20, 20, rect(0, 0, 20, 20, '#eef1f5') + sc(10, 0) + sc(0, 10) + sc(20, 10) + sc(10, 20));
+  }
+  s += rect(0, y0, 400, H - y0, p);
+  s += rect(0, y0, 400, H - y0, lg([[0, '#fff', 0.1], [1, '#000', 0.1]]));
+  s += rect(0, 0, 400, y0, lg([[0, '#000', 0.1], [0.35, '#000', 0], [1, '#000', 0.04]]));
+  s += rect(0, y0 - 7, 400, 8, lg(['#ffffff', '#dcd8cc']), ol('#d9d4c6', 0.8)) + rect(0, y0 + 1, 400, 3, dn(c, 0.15)) + rect(0, y0 + 4, 400, 8, lg([[0, '#000', 0.14], [1, '#000', 0]]));
+  s += rect(0, 0, 400, H, rgU([[0, '#fff8e6', 0.32], [1, '#fff8e6', 0]], 94, 180, 170));
+  return s;
+}
+
+function baTrim(placed: Placed): string {
+  const ok = placed.walltiles !== undefined;
+  const c = ok ? '#ffffff' : '#bdb8a8';
+  let s = rect(0, 0, 400, 16, lg([lt(c, 0.3), c])) + rect(0, 16, 400, 3, dn(c, 0.14)) + rect(0, 19, 400, 12, lg([[0, '#000', 0.12], [1, '#000', 0]]));
+  s += rect(0, 364, 400, 18, lg([c, dn(c, 0.12)])) + rect(0, 364, 400, 1.2, dk(c), op(0.6));
+  s += rect(0, 381, 400, 14, lg([[0, '#000', 0.22], [1, '#000', 0]]));
+  return s;
+}
+
+function baTiles(st?: number): string {
+  const R = rng(71 + (st ?? 9));
+  let s = '';
+  if (st === undefined) {
+    s += rect(0, 380, 400, 260, '#7f7a6c');
+    const rows: number[] = [];
+    for (let j = 0; ; j++) { const y = depthY(20 * j); rows.push(Math.min(y, 690)); if (y > 650) break; }
+    for (let j = 0; j < rows.length - 1; j++) for (let i = -12; i < 12; i++) {
+      const q = fq(200 + 20 * i, 220 + 20 * i, rows[j], rows[j + 1]);
+      const miss = R() < 0.07 && rows[j] < 470, col = pick(['#b3ae9e', '#a8a393', '#bbb6a6', '#a19c8c'], R);
+      if (Math.max(q[2], q[4]) < 0 || Math.min(q[0], q[6]) > 400) continue;
+      const cc = clipPoly(q);
+      if (cc.length < 6) continue;
+      s += poly(cc, miss ? '#5a5248' : col, `stroke="#77705f" stroke-width="0.9"`);
+      if (!miss && R() < 0.18 && q[0] > 0 && q[2] < 400 && q[5] < 640) {
+        const a = qp(q, 0.2 + R() * 0.6, 0), b = qp(q, 0.2 + R() * 0.6, 1);
+        s += crack([a[0], a[1], (a[0] + b[0]) / 2 + 2, (a[1] + b[1]) / 2, b[0], b[1]], 0.8);
+      }
+    }
+    s += rect(0, 380, 400, 260, lg([[0, '#4a3c2a', 0.2], [1, '#4a3c2a', 0.06]]));
+    s += ell(310, 432, 34, 7, '#7a8a90', op(0.55)) + ell(304, 430, 14, 2.5, '#ffffff', op(0.35)) + ell(120, 520, 26, 6, '#7a8a90', op(0.45));
+    for (const [x, y, rx, ry] of [[90, 470, 50, 12], [230, 560, 60, 16], [360, 500, 40, 10]]) s += ell(x, y, rx, ry, '#5a4a32', op(0.22));
+    s += pth('M220 584 c6 -8 18 -6 20 2 c-6 6 -16 6 -20 -2 Z', '#e9e0c6', ol('#c9bf9f', 0.8));
+    return s;
+  }
+  if (st === 0) {
+    s += rect(0, 380, 400, 260, '#d3d3cc');
+    const r = 13, hh = r * Math.sqrt(3);
+    for (let i = -16; i <= 16; i++) for (let j = -1; j <= 9; j++) {
+      const cx = 200 + i * 1.5 * r, cd = j * hh + (i % 2 ? hh / 2 : 0);
+      const pts: number[] = [];
+      for (let k = 0; k < 6; k++) { const a = (k * Math.PI) / 3; pts.push(...pj(cx + r * Math.cos(a), 0, Math.max(0, Math.min(180, cd + r * Math.sin(a))))); }
+      if (cd > 185) continue;
+      const cc = clipPoly(pts);
+      if (cc.length < 6) continue;
+      const roll = R();
+      s += poly(cc, roll < 0.1 ? '#bcd9d0' : roll < 0.3 ? '#ecece6' : '#f7f7f3', `stroke="#c4c4bc" stroke-width="1"`);
+    }
+  } else if (st === 1) {
+    s += rect(0, 380, 400, 260, '#e8eef2');
+    const rows: number[] = [];
+    for (let j = 0; ; j++) { const y = depthY(10 * j); rows.push(Math.min(y, 690)); if (y > 650) break; }
+    const pal = ['#5f9fc9', '#4f8fbf', '#7fb8dc', '#3f7fb0', '#a9d3ee', '#ffffff', '#5f9fc9', '#7fb8dc'];
+    for (let j = 0; j < rows.length - 1; j++) for (let i = -21; i < 21; i++) {
+      const q = fq(200 + 10 * i, 210 + 10 * i, rows[j], rows[j + 1]);
+      const col = pick(pal, R);
+      if (Math.max(q[2], q[4]) < 0 || Math.min(q[0], q[6]) > 400) continue;
+      const cc = clipPoly(q);
+      if (cc.length >= 6) s += poly(cc, col, `stroke="#e8eef2" stroke-width="0.8"`);
+    }
+  } else {
+    s += rect(0, 380, 400, 260, '#e6d8c8');
+    const cols = ['#c66b47', '#5f8f8a', '#e8b84a', '#8a7a6a', '#ffffff', '#2f4868', '#d9a38a'];
+    let chips = '';
+    const byCol = new Map<string, string>();
+    for (let i = 0; i < 420; i++) {
+      const y = 382 + Math.pow(R(), 0.75) * 258, x = 2 + R() * 396, k = 0.5 + pk(y) * 0.75, a = R() * 6.28;
+      const pts = [0, 1, 2, 3].map((n) => { const t = a + n * 1.6 + R() * 0.6, rr0 = k * (1 + R() * 1.4); return `${r1(x + Math.cos(t) * rr0)} ${r1(y + Math.sin(t) * rr0 * 0.6)}`; });
+      const c = cols[Math.floor(R() * cols.length)];
+      byCol.set(c, (byCol.get(c) ?? '') + `M${pts.join(' L')} Z `);
+    }
+    for (const [c, d] of byCol) chips += pth(d, c, op(0.75));
+    s += chips;
+    let grid = '';
+    for (const xw of [120, 160, 200, 240, 280]) grid += `M${r1(fx(xw, 382))} 382 L${r1(fx(xw, 640))} 640 `;
+    for (let j = 1; j < 6; j++) { const y = depthY(36 * j); if (y < 640) grid += `M0 ${r1(y)} H400 `; }
+    s += pth(grid, 'none', sk('#cbbba8', 1.2));
+  }
+  s += rect(0, 380, 400, 260, lg([[0, '#000', 0.1], [0.15, '#000', 0], [1, '#fff', 0.08]]));
+  s += ell(170, 440, 80, 26, rg([[0, '#fff', 0.26], [1, '#fff', 0]]));
+  return s;
+}
+
+function baWindow(st?: number): string {
+  const { x, y, w, h } = BA_WIN;
+  if (st === undefined) {
+    let s = windowUnit(x, y, w, h, '#8f8170', true);
+    s += rect(x, y, w, h, '#6b6a52', op(0.2));
+    return s;
+  }
+  if (st === 0) {
+    let s = windowUnit(x, y, w, h, '#fbf7f0', false);
+    const c = '#f2d16b';
+    const gin = patt(8, 8, rect(0, 0, 8, 8, '#ffffff') + rect(0, 0, 4, 8, c, op(0.7)) + rect(0, 0, 8, 4, c, op(0.7)));
+    let cur = `M${x - 4} 184 H${x + w + 4} V220`;
+    cur += scallops(x - 4, x + w + 4, 220, 6, 7);
+    s += pth(cur + ' Z', gin, ol('#d9b84a', 1)) + pth(cur + ' Z', folds('#888888', 4), op(0.2));
+    s += rect(x - 6, 181, w + 12, 3, '#ffffff', ol('#d9d2c4', 0.6));
+    let val = `M${x - 6} 132 H${x + w + 6} V146`;
+    val += scallops(x - 6, x + w + 6, 146, 5, 8);
+    s += pth(val + ' Z', gin, ol('#d9b84a', 1)) + rect(x - 8, 129, w + 16, 4, '#ffffff', ol('#d9d2c4', 0.6));
+    return s;
+  }
+  if (st === 1) {
+    let s = windowUnit(x, y, w, h, '#f4efe4', false);
+    let v = '';
+    const cols = ['#7fb2d9', '#5fb3b3', '#f2d16b', '#e88fa3', '#9b7fd1', '#7fb2d9'];
+    for (let i = 0; i < 4; i++) for (let j = 0; j < 5; j++) {
+      const cx = x + (i + 0.5) * (w / 4), cy = y + (j + 0.5) * (h / 5);
+      v += poly([cx, cy - h / 10, cx + w / 8, cy, cx, cy + h / 10, cx - w / 8, cy], cols[(i + j * 2) % cols.length], op(0.72));
+    }
+    for (let i = 0; i < 5; i++) for (let j = 0; j < 6; j++) { const cx = x + i * (w / 4), cy = y + j * (h / 5); v += poly([cx, cy - h / 10, cx + w / 8, cy, cx, cy + h / 10, cx - w / 8, cy], '#ffffff', op(0.35)); }
+    let lead = '';
+    for (let i = 0; i <= 4; i++) for (let j = 0; j <= 5; j++) { const px = x + i * (w / 4), py = y + j * (h / 5); if (i < 4 && j < 5) lead += `M${r1(px)} ${r1(py)} L${r1(px + w / 4)} ${r1(py + h / 5)} M${r1(px + w / 4)} ${r1(py)} L${r1(px)} ${r1(py + h / 5)} `; }
+    v += pth(lead, 'none', sk('#3a3a3a', 1.1));
+    v += circ(x + w / 2, y + h * 0.42, 9, '#f2d16b', ol('#3a3a3a', 1.1)) + circ(x + w / 2, y + h * 0.42, 4, '#e07b2f', ol('#3a3a3a', 0.8));
+    s += g(v, clip(rect(x, y, w, h, '#fff')));
+    s += rect(x + w / 2 - 2, y, 4, h, '#f4efe4', ol('#f4efe4', 0.8)) + rect(x, y + h * 0.48 - 2, w, 4, '#f4efe4', ol('#f4efe4', 0.8));
+    return s;
+  }
+  const c = '#a5713f';
+  let s = windowUnit(x, y, w, h, '#fbf7f0', false);
+  const shutter = (sx: number): string => {
+    let t = rr(sx, y - 8, 26, h + 14, 2, lg([lt(c, 0.15), c, dn(c, 0.1)], 0, 0, 1, 0), ol(c, 1.2));
+    let sl = '';
+    for (let yy = y - 2; yy < y + h + 2; yy += 5) sl += `M${sx + 4} ${yy} H${sx + 22} `;
+    t += pth(sl, 'none', sk(dn(c, 0.25), 1.1)) + rect(sx + 12, y - 2, 2, h + 2, dn(c, 0.2), op(0.6));
+    return t;
+  };
+  s += shutter(x - 36) + shutter(x + w + 10);
+  s += herbPot(x + 14, y + h + 4, '#c96f4a') + herbPot(x + w - 14, y + h + 4, '#e9e4da');
+  s += rr(x + w / 2 - 5, y + h - 8, 10, 12, 2, '#9fd4e6', ol('#7fb8cc', 0.8)) + circ(x + w / 2, y + h - 12, 3, '#f27aa0') + ln(x + w / 2, y + h - 10, x + w / 2, y + h - 6, '#4f8f45', 1);
+  return s;
+}
+
+function bottle(x: number, yb: number, w: number, h: number, c: string, cap: string): string {
+  return rr(x - w / 2, yb - h, w, h, w * 0.3, lg([lt(c, 0.25), c, dn(c, 0.15)], 0, 0, 1, 0), ol(c, 0.8)) + rect(x - w * 0.22, yb - h - 4, w * 0.44, 4.5, cap, ol(cap, 0.5)) + rect(x - w / 2 + 1.5, yb - h + 3, 1.4, h - 6, '#ffffff', op(0.5));
+}
+function baShelf(st?: number): string {
+  const x0 = 150, x1 = 238, y = 198;
+  if (st === undefined) {
+    const c = '#8a7d6b';
+    let s = poly([x0 + 4, y + 6, x0 + 14, y + 6, x0 + 4, y + 16], '#3a3a3a') + pl([x1 - 14, y + 6, x1 - 6, y + 6, x1 - 8, y + 12], '#3a3a3a', 1.6);
+    s += g(rr(x0, y, x1 - x0, 6, 1.5, c, ol(c, 1)) + bottle(x0 + 24, y, 9, 14, '#9a9a7a', '#6a6a5a') + cobweb(x0, y + 6, 14, 1), rot(9, x0 + 6, y + 3));
+    s += g(bottle(0, 0, 9, 16, '#7f8a74', '#5a5a4a'), `transform="translate(${x1 - 10} ${y + 52}) rotate(-90)"`);
+    s += ell(x1 - 20, y + 54, 12, 2.5, '#6b6a52', op(0.6));
+    return s;
+  }
+  if (st === 0) {
+    const c = '#a5713f';
+    let s = rect(x0 + 4, y + 6, x1 - x0, 4, '#000', op(0.12));
+    s += rr(x0, y, x1 - x0, 7, 1.5, lg([lt(c, 0.2), c]), ol(c, 1));
+    s += poly([x0 + 8, y + 7, x0 + 20, y + 7, x0 + 8, y + 19], dn(c, 0.2), ol(c, 0.8)) + poly([x1 - 8, y + 7, x1 - 20, y + 7, x1 - 8, y + 19], dn(c, 0.2), ol(c, 0.8));
+    s += bottle(x0 + 14, y, 12, 22, '#d98a3a', '#2e2e2e') + pth(`M${x0 + 14} ${y - 26} h7 v3`, 'none', sk('#2e2e2e', 1.6));
+    s += rr(x0 + 26, y - 20, 18, 20, 3, '#eef6f6', `${op(0.9)} ${ol('#b9c9c9', 0.8)}`) + circ(x0 + 31, y - 6, 3.4, '#ffffff') + circ(x0 + 38, y - 5, 3.4, '#ffffff') + circ(x0 + 34, y - 11, 3.4, '#ffffff') + rect(x0 + 25, y - 23, 20, 4, '#c9a06a', ol('#c9a06a', 0.6));
+    s += herbPot(x0 + 58, y, '#e9e4da');
+    s += rr(x0 + 70, y - 12, 14, 12, 6, '#7fc8d6', ol('#5fa6b6', 0.8)) + pth(`M${x0 + 72} ${y - 8} q5 3 10 0`, 'none', sk('#ffffff', 1) + op(0.7));
+    return s;
+  }
+  if (st === 1) {
+    let s = '';
+    for (const yy of [y - 26, y]) {
+      s += rect(x0 + 4, yy + 6, x1 - x0, 4, '#000', op(0.1)) + rr(x0, yy, x1 - x0, 6, 1.5, lg(['#ffffff', '#dcdcd6']), ol('#d0d0c8', 1));
+    }
+    s += rect(x0 + 2, y - 26, 3, 32, '#e6e6e0', ol('#d0d0c8', 0.6)) + rect(x1 - 5, y - 26, 3, 32, '#e6e6e0', ol('#d0d0c8', 0.6));
+    const roll = (x: number, yb: number, col: string): string => rr(x, yb - 9, 20, 9, 4.5, lg([lt(col, 0.3), col]), ol(col, 0.8)) + circ(x + 20, yb - 4.5, 4.5, lt(col, 0.2), ol(col, 0.8)) + circ(x + 20, yb - 4.5, 1.6, dn(col, 0.15));
+    s += roll(x0 + 8, y - 26, '#a8dcc8') + roll(x0 + 10, y - 35, '#f2b8c0') + roll(x0 + 40, y - 26, '#f7f1e3');
+    s += rr(x0 + 70, y - 40, 10, 14, 1.5, '#fbf3e0', ol('#e2d6bc', 0.6)) + pth(`M${x0 + 75} ${y - 40} q-2 -4 0 -7 q2 3 0 7 Z`, '#ffb547');
+    s += bottle(x0 + 14, y, 10, 18, '#ffffff', '#c9a24b') + bottle(x0 + 28, y, 9, 14, '#e9e4da', '#c9a24b');
+    s += rr(x0 + 42, y - 12, 26, 12, 3, '#d9b27a', ol('#b58c55', 0.8)) + circ(x0 + 50, y - 13, 3, '#f27aa0') + circ(x0 + 58, y - 14, 3, '#f6c23e');
+    s += rr(x0 + 72, y - 16, 10, 16, 4, '#ffffff', ol('#d0d0c8', 0.8)) + ell(x0 + 77, y - 18, 3, 4, '#6aa84f');
+    return s;
+  }
+  const brass = '#c9a24b';
+  let s = rect(x0 + 4, y + 7, x1 - x0, 3, '#000', op(0.08));
+  s += rr(x0, y, x1 - x0, 5, 2, lg([[0, '#e6f6fb', 0.85], [1, '#9fd4e6', 0.85]]), ol('#8fc4d6', 0.8));
+  s += rect(x0 + 2, y + 1, x1 - x0 - 4, 1.2, '#ffffff', op(0.8));
+  s += ln(x0, y - 14, x1, y - 14, brass, 1.8) + ln(x0 + 2, y - 14, x0 + 2, y + 2, brass, 1.6) + ln(x1 - 2, y - 14, x1 - 2, y + 2, brass, 1.6);
+  s += pth(`M${x0 + 2} ${y + 5} q0 10 10 12 M${x1 - 2} ${y + 5} q0 10 -10 12`, 'none', sk(brass, 2));
+  s += circ(x0 + 2, y - 14, 2.4, brass) + circ(x1 - 2, y - 14, 2.4, brass);
+  s += pth(`M${x0 + 12} ${y} Q${x0 + 8} ${y - 10} ${x0 + 14} ${y - 16} H${x0 + 22} Q${x0 + 28} ${y - 10} ${x0 + 24} ${y} Z`, lg([[0, '#f4a6c0', 0.85], [1, '#e07f9a', 0.85]], 0, 0, 1, 0), ol('#e07f9a', 0.8)) + rect(x0 + 15, y - 22, 6, 6, brass, ol(brass, 0.5));
+  s += rr(x0 + 34, y - 20, 12, 20, 2, lg([[0, '#fff3c4', 0.8], [1, '#f2d16b', 0.8]], 0, 0, 1, 0), ol('#d9b84a', 0.8)) + circ(x0 + 40, y - 23, 3.4, brass);
+  s += ell(x0 + 58, y - 8, 7, 8, lg([[0, '#d9cff2', 0.85], [1, '#9b7fd1', 0.85]], 0, 0, 1, 0), ol('#9b7fd1', 0.8)) + rect(x0 + 56, y - 19, 4, 4, brass) + circ(x0 + 58, y - 21, 2.6, brass);
+  s += rr(x0 + 70, y - 6, 14, 6, 2, '#ffffff', ol('#d0d0c8', 0.6)) + ell(x0 + 77, y - 7, 5, 1.6, '#f2b8c0');
+  return s;
+}
+
+function towel(x: number, yTop: number, w: number, h: number, c: string, band: string, kind: number): string {
+  let s = rr(x, yTop - 5, w, 8, 3, lg([lt(c, 0.25), c]), ol(c, 1));
+  s += pth(`M${x} ${yTop} H${x + w} V${yTop + h} H${x} Z`, lg([lt(c, 0.1), c, dn(c, 0.1)], 0, 0, 1, 0), ol(c, 1));
+  s += rect(x, yTop + h - 14, w, 4, band) + rect(x, yTop + h - 8, w, 2, band);
+  if (kind === 1) for (let k = 0; k < Math.floor(w / 5); k++) s += ln(x + 2.5 + k * 5, yTop + h, x + 2.5 + k * 5, yTop + h + 4, c, 1.2);
+  if (kind === 2) for (let k = 0; k <= Math.floor(w / 7); k++) s += circ(x + Math.min(w - 2, 2 + k * 7), yTop + h + 2, 2.6, '#ffffff', ol('#e6e0d2', 0.6));
+  s += pth(`M${x + 3} ${yTop + 6} V${yTop + h - 18}`, 'none', sk('#ffffff', 1.4) + op(0.3));
+  return s;
+}
+function baTowels(st?: number): string {
+  const y = 254, x0 = 154, x1 = 232;
+  const bar = (c: string): string => rect(x0 - 4, y - 4, 6, 8, c, ol(c, 0.6)) + rect(x1 - 2, y - 4, 6, 8, c, ol(c, 0.6)) + rr(x0 - 2, y - 2, x1 - x0 + 4, 4, 2, lg([lt(c, 0.4), c]), ol(c, 0.6));
+  if (st === undefined) {
+    let s = rect(x0 - 4, y - 4, 6, 8, '#7a6a5a') + pl([x0, y, 180, y + 6, 206, y + 2, x1, y - 2], '#8a7a6a', 3.2) + rect(x1 - 2, y + 4, 6, 8, '#7a6a5a');
+    const c = '#a39b8b';
+    s += g(pth(`M176 ${y + 2} H206 L208 ${y + 54} L202 ${y + 48} L196 ${y + 58} L188 ${y + 50} L180 ${y + 56} L174 ${y + 46} Z`, lg([lt(c, 0.06), dn(c, 0.12)], 0, 0, 1, 0), ol(c, 1)) + circ(188, y + 24, 3, '#6f685c') + circ(198, y + 36, 2, '#6f685c') + ell(184, y + 40, 6, 4, '#7a6a4a', op(0.4)), rot(8, 190, y));
+    s += rect(x1 + 1, y + 10, 2, 30, lg([[0, '#8a5a3a', 0.5], [1, '#8a5a3a', 0]]));
+    return s;
+  }
+  if (st === 0) {
+    let s = bar('#d9dee3');
+    s += towel(160, y, 34, 56, '#f4b183', '#ffffff', 1) + towel(192, y + 2, 32, 50, '#fbefe0', '#f4b183', 1);
+    return s;
+  }
+  if (st === 1) {
+    const c = '#7fc8d6', w = '#c99a62';
+    let s = rr(x0 - 4, y - 10, x1 - x0 + 8, 10, 2, lg([lt(w, 0.2), w]), ol(w, 1));
+    const hook = (hx: number): string => pth(`M${hx} ${y - 5} v8 q0 5 5 5`, 'none', sk('#9aa5ad', 2.2)) + circ(hx, y - 5, 2.4, '#c9d1d8');
+    const hang = (hx: number, col: string, band: string, l: number): string => pth(`M${hx - 4} ${y + 4} Q${hx - 18} ${y + 20} ${hx - 16} ${y + l} H${hx + 16} Q${hx + 18} ${y + 20} ${hx + 4} ${y + 4} Z`, lg([lt(col, 0.2), col, dn(col, 0.12)], 0, 0, 1, 0), ol(col, 1)) + rect(hx - 16, y + l - 10, 32, 3, band) + pth(`M${hx - 6} ${y + 10} Q${hx - 8} ${y + 26} ${hx - 8} ${y + l - 14}`, 'none', sk(dn(col, 0.15), 1) + op(0.6));
+    s += hang(170, c, '#ffffff', 58) + hang(216, '#ffffff', c, 50) + hang(193, '#5fa6b6', '#ffffff', 64);
+    s += hook(170) + hook(193) + hook(216);
+    return s;
+  }
+  const c = '#f2d16b';
+  let s = bar('#2e2e2e');
+  s += towel(164, y, 52, 60, c, '#ffffff', 2);
+  s += pth(`M${x0 - 14} ${y - 22} v8`, 'none', sk('#2e2e2e', 2)) + circ(x0 - 14, y - 6, 9, 'none', sk('#2e2e2e', 2));
+  s += pth(`M${x0 - 22} ${y - 2} Q${x0 - 14} ${y + 4} ${x0 - 6} ${y - 2} L${x0 - 4} ${y + 30} H${x0 - 24} Z`, lg(['#ffffff', '#ece6d8'], 0, 0, 1, 0), ol('#d9d2c4', 1)) + rect(x0 - 24, y + 22, 20, 3, c);
+  return s;
+}
+
+function baMirror(st?: number): string {
+  return g(baMirrorRaw(st), 'transform="translate(-4 0)"');
+}
+function baMirrorRaw(st?: number): string {
+  const cx = 291, cy = 232;
+  if (st === undefined) {
+    let m = rr(262, 188, 58, 86, 3, '#8f8778', ol('#8f8778', 1.2));
+    const shape = rect(267, 193, 48, 76, '#fff');
+    m += rect(267, 193, 48, 76, lg(['#8d989a', '#6c7577']));
+    const R = rng(13);
+    let spots = '';
+    for (let i = 0; i < 26; i++) spots += circ(268 + R() * 46, 194 + R() * 74, 0.8 + R() * 2.4, '#4a4238', op(0.3 + R() * 0.3));
+    m += g(spots, clip(shape));
+    m += poly([300, 193, 315, 193, 315, 214, 306, 206], '#3a3a3a');
+    const ox = 284, oy = 236;
+    for (let i = 0; i < 6; i++) { const a = (i / 6) * Math.PI * 2 + 0.4, L = 14 + (i % 3) * 8; m += pl([ox, oy, ox + Math.cos(a) * L * 0.5 + 2, oy + Math.sin(a) * L * 0.5, ox + Math.cos(a) * L, oy + Math.sin(a) * L], '#e9f0f0', 0.8, op(0.8)); }
+    m += cobweb(262, 188, 16, 1);
+    return circ(cx, 182, 2, '#4d4136') + ln(cx, 182, 270, 190, '#6b5a45', 1) + ln(cx, 182, 312, 190, '#6b5a45', 1) + g(m, rot(-7, cx, 182));
+  }
+  if (st === 0) {
+    const gold = '#c9a24b';
+    let s = circ(cx + 3, cy + 4, 42, '#000', op(0.14));
+    s += circ(cx, cy, 42, lg(['#f7de8f', '#c8952f', '#f2d277', '#a8771e'], 0, 0, 1, 1), ol(gold, 1.4));
+    s += circ(cx, cy, 36, lg(['#a8771e', '#f3d684'], 0, 0, 1, 1));
+    const shape = circ(cx, cy, 34, '#fff');
+    s += mirrorGlass(shape);
+    for (let a = 0; a < 360; a += 30) { const t = (a * Math.PI) / 180; s += circ(cx + Math.cos(t) * 39, cy + Math.sin(t) * 39, 1.6, '#fff3c4', op(0.8)); }
+    return s;
+  }
+  if (st === 1) {
+    const c = '#a5713f';
+    const arch = (x0: number, y0: number, w: number, h: number): string => `M${x0} ${y0 + h} V${y0 + w / 2} A${w / 2} ${w / 2} 0 0 1 ${x0 + w} ${y0 + w / 2} V${y0 + h} Z`;
+    let s = pth(arch(262, 178, 64, 116), '#000', op(0.14));
+    s += pth(arch(259, 174, 64, 116), lg([lt(c, 0.2), c, dn(c, 0.15)], 0, 0, 1, 0), ol(c, 1.4));
+    const sh = arch(266, 181, 50, 102);
+    s += mirrorGlass(pth(sh, '#fff')) + pth(sh, 'none', sk(dn(c, 0.25), 1));
+    s += rr(255, 288, 72, 7, 2, lg([lt(c, 0.25), c]), ol(c, 1));
+    s += herbPot(270, 288, '#e9e4da');
+    return s;
+  }
+  let s = rr(258, 186, 72, 100, 5, '#000', op(0.14));
+  s += rr(255, 182, 72, 100, 5, lg(['#ffffff', '#ece8de'], 0, 0, 1, 0), ol('#d9d2c4', 1.2));
+  s += mirrorGlass(rr(265, 192, 52, 80, 2, '#fff'));
+  const bulbs: [number, number][] = [];
+  for (let k = 0; k < 4; k++) bulbs.push([260, 196 + k * 24], [322, 196 + k * 24]);
+  for (let k = 0; k < 3; k++) bulbs.push([274 + k * 17, 186.5]);
+  for (const [bx, by] of bulbs) s += glow(bx, by, 9, '#fff2c0', 0.7) + circ(bx, by, 3.8, rg(['#ffffff', '#fff3c4', '#f2d16b'], 0.4, 0.4, 0.7), ol('#e8c66a', 0.6));
+  return s;
+}
+
+function baBathtub(st?: number): string {
+  const x0 = 80, x1 = 240, H = 56, D = 72;
+  const rim = pp([x0, H, 0, x1, H, 0, x1, H, D, x0, H, D]);
+  const inner = pp([x0 + 10, H, 8, x1 - 10, H, 8, x1 - 10, H, D - 10, x0 + 10, H, D - 10]);
+  const [flx, fly] = pj(x0, H, D), [frx] = pj(x1, H, D);
+  const yb = pj(x0, 12, D - 6)[1], floorY = pj(x0, 0, D)[1];
+  const bowl = `M${r1(flx)} ${r1(fly - 2)} C${r1(flx)} ${r1(yb - 16)} ${r1(flx + 22)} ${r1(yb)} ${r1(flx + 52)} ${r1(yb)} H${r1(frx - 52)} C${r1(frx - 22)} ${r1(yb)} ${r1(frx)} ${r1(yb - 16)} ${r1(frx)} ${r1(fly - 2)} Z`;
+  const innerP = roundPoly(inner, 18);
+  const water = (c: string): string => g(pth(roundPoly(pp([x0 + 10, 44, 6, x1 - 10, 44, 6, x1 - 10, 44, D - 4, x0 + 10, 44, D - 4]), 18), lg([lt(c, 0.3), c])) + pth(`M${r1(flx + 40)} ${r1(fly - 26)} q14 -4 30 0 M${r1(flx + 96)} ${r1(fly - 22)} q12 -3 24 0`, 'none', sk('#ffffff', 1.4) + op(0.7)), clip(pth(innerP, '#fff')));
+  const clawFeet = (c: string): string => {
+    let f = '';
+    for (const fx0 of [flx + 30, frx - 30]) f += pth(`M${r1(fx0 - 7)} ${r1(yb - 6)} Q${r1(fx0 - 9)} ${r1(yb + 8)} ${r1(fx0 - 4)} ${r1(floorY - 4)} H${r1(fx0 + 4)} Q${r1(fx0 + 9)} ${r1(yb + 8)} ${r1(fx0 + 7)} ${r1(yb - 6)} Z`, lg([lt(c, 0.35), c, dn(c, 0.2)], 0, 0, 1, 0), ol(c, 0.9)) + ell(fx0, floorY - 3, 6, 2.4, dn(c, 0.15));
+    return f;
+  };
+  const tap = (c: string, x: number): string => pth(`M${x} ${r1(pj(x, H, 2)[1])} V300 Q${x} 292 ${x + 8} 292 Q${x + 16} 292 ${x + 16} 300 V304`, 'none', sk(c, 3.4)) + pth(`M${x} ${r1(pj(x, H, 2)[1])} V300 Q${x} 292 ${x + 8} 292 Q${x + 16} 292 ${x + 16} 300 V304`, 'none', sk('#ffffff', 1) + op(0.5)) + circ(x - 6, 318, 3.4, c, ol(c, 0.6)) + circ(x + 6, 318, 3.4, c, ol(c, 0.6));
+  let s = shadow(150, floorY - 2, 112, 9, 0.28);
+  if (st === undefined) {
+    const c = '#d9d2bc';
+    s += clawFeet('#7a6a5a');
+    s += rect(frx - 40, floorY - 10, 16, 8, '#a95f45', ol('#7a4030', 0.8)) + rect(frx - 38, floorY - 16, 14, 7, '#b5684c', ol('#7a4030', 0.8));
+    s += pth(bowl, lg([lt(c, 0.1), c, dn(c, 0.18)]), ol(c, 1.3));
+    s += pth(roundPoly(rim, 22), lg([lt(c, 0.15), c]), ol(c, 1.2));
+    s += pth(innerP, lg(['#8f8670', '#b9b29c']), ol(dn(c, 0.2), 1));
+    s += g(pth(roundPoly(pp([x0 + 10, 46, 4, x1 - 10, 46, 4, x1 - 10, 46, D - 4, x0 + 10, 46, D - 4]), 18), 'none', sk('#6b5a3a', 3) + op(0.5)) + ell(170, 352, 20, 5, '#6b5a3a', op(0.5)) + ell(124, 346, 4, 2, '#8a6a3e') + ell(138, 356, 3.5, 1.6, '#a0703e') + ell(190, 344, 3, 1.4, '#8a6a3e'), clip(pth(innerP, '#fff')));
+    s += tap('#8a7a6a', 112) + pth(`M128 ${r1(pj(128, H, 2)[1] - 2)} v8`, 'none', sk('#8fd3ff', 1.4) + op(0.7));
+    s += rect(122, fly + 2, 10, 40, lg([[0, '#8a5a3a', 0.45], [1, '#8a5a3a', 0]])) + rect(196, fly + 4, 6, 26, lg([[0, '#8a5a3a', 0.35], [1, '#8a5a3a', 0]]));
+    s += poly([frx - 70, fly - 1, frx - 56, fly - 1, frx - 62, fly + 7], '#7a7260');
+    s += cobweb(flx + 4, fly - 2, 12, 1);
+    return s;
+  }
+  const steam = pth(`M120 312 q-8 -12 0 -24 q8 -12 0 -24 M150 304 q8 -12 0 -24 q-8 -12 0 -24 M182 312 q-8 -12 0 -22`, 'none', sk('#ffffff', 2.4) + op(0.32));
+  if (st === 0) {
+    const c = '#f5f5f2', gold = '#d4a64a';
+    s += clawFeet(gold);
+    s += pth(bowl, lg([lt(c, 0.4), c, dn(c, 0.12)], 0, 0, 1, 0), ol('#d9d6cc', 1.3));
+    s += pth(`M${r1(flx + 14)} ${r1(fly + 8)} Q${r1(flx + 18)} ${r1(yb - 8)} ${r1(flx + 48)} ${r1(yb - 6)}`, 'none', sk('#ffffff', 2.4) + op(0.8));
+    s += pth(roundPoly(rim, 22), lg(['#ffffff', '#eeeeea']), ol('#d9d6cc', 1.2));
+    s += pth(innerP, lg(['#d9e2e6', '#f4f7f8']), ol('#d0d4d4', 1));
+    s += water('#9fd4e6');
+    let bub = '';
+    const R = rng(29);
+    for (let i = 0; i < 26; i++) { const u = 0.08 + R() * 0.84, v = 0.15 + R() * 0.75, [bx, by] = qp(inner, u, v); bub += `M${r1(bx + 3)} ${r1(by)} a3 3 0 1 0 -6 0 a3 3 0 1 0 6 0 `; }
+    s += g(pth(bub, '#ffffff', `${op(0.9)} stroke="#cfe6ee" stroke-width="0.6"`), clip(pth(innerP, '#fff')));
+    s += ell(186, 346, 9, 6, '#ffd34d', ol('#d9a52b', 0.8)) + circ(192, 339, 5, '#ffd34d', ol('#d9a52b', 0.8)) + poly([196, 339, 202, 340, 196, 342], '#f08a3c') + circ(193, 337.5, 1, '#2a2a2a');
+    s += tap(gold, 104) + steam;
+    return s;
+  }
+  const [, , fw, fh] = face(x0, x1, 0, H, D);
+  if (st === 1) {
+    const c = '#f2a7b5';
+    s += pth(`M${r1(flx)} ${r1(fly - 4)} H${r1(frx)} V${r1(floorY - 6)} Q${r1(frx)} ${r1(floorY)} ${r1(frx - 6)} ${r1(floorY)} H${r1(flx + 6)} Q${r1(flx)} ${r1(floorY)} ${r1(flx)} ${r1(floorY - 6)} Z`, lg([lt(c, 0.2), c, dn(c, 0.15)]), ol(c, 1.3));
+    s += rr(flx + 8, fly + 10, fw - 16, fh - 22, 8, 'none', sk(dn(c, 0.15), 1.4) + op(0.7));
+    s += rect(flx, floorY - 8, fw, 3, '#e6ebef', ol('#aab4bc', 0.6));
+    s += pth(roundPoly(rim, 16), lg([lt(c, 0.35), lt(c, 0.1)]), ol(c, 1.2));
+    s += pth(innerP, lg([dn(c, 0.1), lt(c, 0.3)]), ol(c, 1));
+    s += water('#a9dcec');
+    let foam = '';
+    for (const [u, v, r] of [[0.3, 0.5, 9], [0.4, 0.4, 8], [0.5, 0.55, 10], [0.62, 0.45, 8], [0.72, 0.6, 7], [0.22, 0.7, 6], [0.82, 0.38, 6]]) { const [bx, by] = qp(inner, u, v); foam += `M${r1(bx + r)} ${r1(by)} a${r} ${r * 0.6} 0 1 0 ${-2 * r} 0 a${r} ${r * 0.6} 0 1 0 ${2 * r} 0 `; }
+    s += g(pth(foam, '#ffffff', 'stroke="#f2d4dc" stroke-width="0.8"'), clip(pth(innerP, '#fff')));
+    s += tap('#c9d1d8', 104) + steam;
+    return s;
+  }
+  const c = '#b07a4a';
+  s += rect(flx, fly, fw, fh, lg([lt(c, 0.1), c, dn(c, 0.12)], 0, 0, 1, 0), ol(c, 1.3));
+  let sl = '';
+  for (let k = 1; k < 14; k++) sl += `M${r1(flx + (fw * k) / 14)} ${r1(fly + 3)} V${r1(floorY - 6)} `;
+  s += pth(sl, 'none', sk(dn(c, 0.25), 1.1)) + rect(flx, floorY - 6, fw, 6, dn(c, 0.3));
+  s += pth(roundPoly(rim, 14), lg(['#ffffff', '#ebe8e0']), ol('#d9d6cc', 1.2));
+  s += pth(innerP, lg(['#d9e2e6', '#f4f7f8']), ol('#d0d4d4', 1));
+  s += water('#bfe3ea');
+  const tray = pp([x0 - 4, H + 2, 28, x1 + 4, H + 2, 28, x1 + 4, H + 2, 44, x0 - 4, H + 2, 44]);
+  s += poly(tray, lg([lt('#8a5a35', 0.2), '#8a5a35']), ol('#8a5a35', 1)) + rect(tray[6], tray[7], tray[4] - tray[6], 3, dn('#8a5a35', 0.25));
+  const [tx, ty] = qp(tray, 0.35, 0.5), [ux, uy] = qp(tray, 0.62, 0.5);
+  s += rr(tx - 4, ty - 12, 8, 12, 1.5, '#fbf3e0', ol('#e2d6bc', 0.6)) + glow(tx, ty - 16, 12, '#ffd27a', 0.7) + pth(`M${r1(tx)} ${r1(ty - 12)} q-2.5 -4 0 -8 q2.5 4 0 8 Z`, '#ffb547');
+  s += rect(ux - 10, uy - 4, 20, 5, '#4f7fbf', ol('#4f7fbf', 0.6)) + rect(ux - 9, uy - 3, 18, 1.2, '#ffffff', op(0.7));
+  s += tap('#2e2e2e', 104) + steam;
+  return s;
+}
+
+function baSink(st?: number): string {
+  return g(baSinkRaw(st), 'transform="translate(-4 0)"');
+}
+function baSinkRaw(st?: number): string {
+  const x0 = 252, x1 = 330, H = 64, D = 40;
+  const [ax, ay, aw, ah] = face(x0, x1, 0, H, D);
+  const [bx, by] = pj((x0 + x1) / 2, H, 18);
+  const faucet = (c: string): string => pth(`M${r1(bx)} ${r1(pj(291, H, 3)[1])} V306 Q${r1(bx)} 298 ${r1(bx + 7)} 298 Q${r1(bx + 13)} 298 ${r1(bx + 13)} 305`, 'none', sk(c, 3)) + pth(`M${r1(bx)} ${r1(pj(291, H, 3)[1])} V306`, 'none', sk('#ffffff', 1) + op(0.5)) + rr(bx - 11, pj(291, H, 3)[1] - 4, 6, 4, 1.5, c) + rr(bx + 5, pj(291, H, 3)[1] - 4, 6, 4, 1.5, c);
+  let s = shadow(ax + aw / 2, ay + ah, aw / 2 + 8, 5, 0.26);
+  if (st === undefined) {
+    const c = '#d9d2bc';
+    s += rect(320, 408, 26, 22, lg(['#7f8a90', '#5f6a70']), ol('#5f6a70', 1)) + ell(333, 408, 13, 3, '#4a555a') + ell(333, 408.5, 10, 2, '#9fc4d6');
+    s += pth(`M${r1(bx - 4)} 344 V362 Q${r1(bx - 4)} 372 ${r1(bx + 6)} 372 Q${r1(bx + 16)} 372 ${r1(bx + 16)} 362 V352 H${r1(bx + 30)} V342`, 'none', sk('#7a7266', 5));
+    s += circ(bx + 16, 366, 1.6, '#8fd3ff') + pth(`M${r1(bx + 16)} 372 v4 M${r1(bx + 16)} 384 v4`, 'none', sk('#8fd3ff', 1.4) + op(0.8)) + ell(bx + 30, 410, 12, 3, '#7a8a90', op(0.5));
+    s += pth(`M${r1(bx - 34)} 318 H${r1(bx + 34)} Q${r1(bx + 34)} 344 ${r1(bx)} 346 Q${r1(bx - 34)} 344 ${r1(bx - 34)} 318 Z`, lg([lt(c, 0.15), c, dn(c, 0.18)], 0, 0, 1, 0), ol(c, 1.2));
+    s += ell(bx, 318, 34, 7, lt(c, 0.1), ol(c, 1.1)) + ell(bx, 319, 27, 5, lg(['#8f8670', '#b9b29c']));
+    s += poly([bx + 18, 312, bx + 30, 313, bx + 26, 320], '#5a5248') + crack([bx - 20, 324, bx - 14, 332, bx - 18, 340], 0.9);
+    s += rect(bx - 6, 324, 6, 20, lg([[0, '#8a5a3a', 0.5], [1, '#8a5a3a', 0]]));
+    s += pth(`M${r1(bx)} 312 V300 Q${r1(bx)} 294 ${r1(bx + 6)} 294 Q${r1(bx + 11)} 294 ${r1(bx + 11)} 300 V303`, 'none', sk('#8a7a6a', 3)) + circ(bx + 11, 308, 1.4, '#8fd3ff');
+    return s;
+  }
+  if (st === 0) {
+    const c = '#a87447';
+    s += pbox(x0, x1, 4, H - 6, 0, D, c);
+    s += rect(ax + 4, ay + ah - 4, 5, 4, dn(c, 0.4)) + rect(ax + aw - 9, ay + ah - 4, 5, 4, dn(c, 0.4));
+    const hw = (aw - 8) / 2;
+    s += cabDoor(ax + 3, ay + 10, hw, ah - 18, 0, c, '#3a2a1a', ax + 3 + hw - 6, ay + 24) + cabDoor(ax + 5 + hw, ay + 10, hw, ah - 18, 0, c, '#3a2a1a', ax + 11 + hw, ay + 24);
+    s += pbox(x0 - 3, x1 + 3, H - 6, H, -1, D + 3, '#f3efe6');
+    s += pth(`M${r1(bx - 20)} ${r1(by - 4)} Q${r1(bx - 20)} ${r1(by + 12)} ${r1(bx)} ${r1(by + 12)} Q${r1(bx + 20)} ${r1(by + 12)} ${r1(bx + 20)} ${r1(by - 4)} Z`, lg(['#ffffff', '#e2e2dc'], 0, 0, 1, 0), ol('#d0d0c8', 1)) + ell(bx, by - 4, 20, 5, '#ffffff', ol('#d0d0c8', 1)) + ell(bx, by - 3.5, 16, 3.5, '#dfe8ec');
+    s += faucet('#d4a64a');
+    s += bottle(ax + aw - 10, ay - 4, 8, 13, '#a8dcc8', '#d4a64a') + rr(ax + 6, ay - 16, 8, 12, 2, '#f2b8c0', ol('#e07f9a', 0.6)) + ln(ax + 8, ay - 16, ax + 7, ay - 26, '#7fc8d6', 1.6) + ln(ax + 12, ay - 16, ax + 13, ay - 25, '#f6c23e', 1.6);
+    return s;
+  }
+  if (st === 1) {
+    const c = '#f5f5f2';
+    const fy = pj(291, 0, 18)[1];
+    s = shadow(bx, fy, 22, 4, 0.24);
+    s += pth(`M${r1(bx - 9)} 348 L${r1(bx - 13)} ${r1(fy)} H${r1(bx + 13)} L${r1(bx + 9)} 348 Z`, lg([lt(c, 0.4), c, dn(c, 0.15)], 0, 0, 1, 0), ol('#d9d6cc', 1.2)) + rr(bx - 15, fy - 4, 30, 5, 2, c, ol('#d9d6cc', 1));
+    s += pth(`M${r1(bx - 38)} 318 H${r1(bx + 38)} Q${r1(bx + 38)} 348 ${r1(bx)} 350 Q${r1(bx - 38)} 348 ${r1(bx - 38)} 318 Z`, lg([lt(c, 0.4), c, dn(c, 0.12)], 0, 0, 1, 0), ol('#d9d6cc', 1.2));
+    s += rr(bx - 40, 312, 80, 9, 4, lg(['#ffffff', '#ebebe6']), ol('#d9d6cc', 1.1)) + ell(bx, 316, 28, 3.6, '#dfe8ec');
+    s += pth(`M${r1(bx - 30)} 330 Q${r1(bx - 26)} 344 ${r1(bx - 8)} 346`, 'none', sk('#ffffff', 2) + op(0.8));
+    s += faucet('#c9d1d8');
+    s += rr(bx + 22, 306, 12, 6, 3, '#f6c23e', ol('#d9a52b', 0.6)) + ell(bx + 28, 306, 4, 1.2, '#ffffff', op(0.6));
+    const b = '#c9a26b';
+    const weave = patt(8, 6, rect(0, 0, 8, 6, b) + rect(0, 0, 4, 3, dn(b, 0.15)) + rect(4, 3, 4, 3, dn(b, 0.15)));
+    s += pth('M318 392 H346 L343 414 H321 Z', weave, ol(b, 1)) + rr(320, 384, 24, 9, 4, '#7fc8d6', ol('#5fa6b6', 0.8)) + rr(317, 390, 30, 4, 2, lt(b, 0.1), ol(b, 0.8));
+    return s;
+  }
+  const c = '#2f4868', gold = '#d4a64a';
+  s += ln(ax + 5, ay + ah - 8, ax + 4, ay + ah, gold, 3) + ln(ax + aw - 5, ay + ah - 8, ax + aw - 4, ay + ah, gold, 3);
+  s += pbox(x0, x1, 8, H - 6, 0, D, c);
+  const dh = (ah - 26) / 3;
+  for (let k = 0; k < 3; k++) s += rr(ax + 4, ay + 9 + k * (dh + 2), aw - 8, dh, 2, lg([lt(c, 0.14), c]), ol(c, 0.9)) + rr(ax + aw / 2 - 9, ay + 9 + k * (dh + 2) + dh / 2 - 1.3, 18, 2.6, 1.3, gold);
+  const marble = patt(40, 20, rect(0, 0, 40, 20, '#f7f7f4') + pth('M0 6 q10 4 18 0 t22 4 M6 20 q8 -6 20 -8', 'none', sk('#c9c9c4', 0.8)));
+  s += pbox(x0 - 3, x1 + 3, H - 6, H, -1, D + 3, '#f2f2ee', marble);
+  s += poly(pp([x0 - 3, H, -1, x1 + 3, H, -1, x1 + 3, H, D + 3, x0 - 3, H, D + 3]), marble, ol('#d9d9d4', 1));
+  s += ell(bx, by, 20, 5.5, lg(['#c9d3d8', '#eef3f5']), ol('#c9c9c4', 0.9));
+  s += faucet(gold);
+  s += rr(ax + 6, ay - 14, 10, 13, 2, '#ffffff', ol('#d0d0c8', 0.6)) + ell(ax + 11, ay - 16, 3.5, 4, '#6aa84f') + bottle(ax + aw - 10, ay - 2, 8, 14, '#2e2e2e', gold);
+  return s;
+}
+
+function baBathmat(st?: number): string {
+  const q = fq(110, 240, 456, 512);
+  if (st === undefined) {
+    const c = '#8f9a84';
+    let s = poly(q.map((v, i) => (i % 2 ? v + 3 : v + 2)), '#000', op(0.12));
+    s += poly(q, lg([c, dn(c, 0.12)]), ol(c, 1.2));
+    const R = rng(37);
+    for (let i = 0; i < 30; i++) { const [x, y] = qp(q, 0.05 + R() * 0.9, 0.08 + R() * 0.84); s += circ(x, y, 0.8 + R() * 2.2, '#3f4a2e', op(0.35)); }
+    const [hx, hy] = qp(q, 0.7, 0.4);
+    s += ell(hx, hy, 9, 3.5, '#5a5248') + ell(qp(q, 0.3, 0.6)[0], qp(q, 0.3, 0.6)[1], 22, 6, '#5f5a44', op(0.35));
+    for (let i = 0; i <= 12; i++) { const [x, y] = qp(q, i / 12, 1); if (i % 3) s += ln(x, y, x - 1 + (i % 2) * 2, y + 4 + (i % 3), c, 1); }
+    s += poly([q[0], q[1], q[0] + 24, q[1], q[0] + 4, q[1] + 14], '#a6af9a', ol(c, 0.8));
+    return s;
+  }
+  if (st === 0) {
+    const c = '#eef4fa', cx = 172, cy = 486;
+    let s = ell(cx, cy + 4, 88, 22, '#000', op(0.12));
+    const blobs: [number, number, number, number][] = [[cx, cy + 4, 84, 20], [cx - 54, cy - 6, 30, 16], [cx - 18, cy - 14, 34, 18], [cx + 22, cy - 12, 32, 17], [cx + 56, cy - 4, 28, 15]];
+    for (const [x, y, rx, ry] of blobs) s += ell(x, y, rx + 1.6, ry + 1.6, '#c9d9e8');
+    for (const [x, y, rx, ry] of blobs) s += ell(x, y, rx, ry, lg(['#ffffff', c, '#dbe7f2']));
+    let st2 = '';
+    for (const [x, y, rx, ry] of blobs) st2 += `M${r1(x - rx * 0.8)} ${r1(y + ry * 0.2)} A${r1(rx * 0.8)} ${r1(ry * 0.75)} 0 0 1 ${r1(x + rx * 0.8)} ${r1(y + ry * 0.2)} `;
+    s += pth(st2, 'none', `stroke="#9ec9ef" stroke-width="1" stroke-dasharray="3 2.5" opacity="0.8"`);
+    s += ell(cx - 24, cy - 2, 2.2, 3, '#4a5a6a') + ell(cx + 24, cy - 2, 2.2, 3, '#4a5a6a') + pth(`M${cx - 6} ${cy + 4} q6 5 12 0`, 'none', sk('#4a5a6a', 1.4)) + ell(cx - 34, cy + 4, 5, 2.4, '#f7aab4', op(0.7)) + ell(cx + 34, cy + 4, 5, 2.4, '#f7aab4', op(0.7));
+    return s;
+  }
+  if (st === 1) {
+    const c = '#e88a6a';
+    let s = poly(q.map((v, i) => (i % 2 ? v + 4 : v)), '#000', op(0.12));
+    for (let i = 0; i <= 14; i++) { const [a, b] = qp(q, i / 14, 1); s += ln(a, b, a, b + 5, '#fbefe0', 1.3); const [e, f] = qp(q, i / 14, 0); s += ln(e, f, e, f - 3, '#fbefe0', 1.1); }
+    s += poly(q, '#fbefe0', ol(c, 1.1));
+    for (let k = 0; k < 7; k++) if (k % 2 === 0) s += poly(qpoly(q, [k / 7, 0, (k + 1) / 7, 0, (k + 1) / 7, 1, k / 7, 1]), c);
+    s += poly(qpoly(q, [0, 0.45, 1, 0.45, 1, 0.55, 0, 0.55]), '#f2d16b', op(0.85));
+    s += poly(q, lg([[0, '#fff', 0.12], [1, '#000', 0.06]]));
+    return s;
+  }
+  const c = '#c08a56';
+  let s = poly(q.map((v, i) => (i % 2 ? v + 4 : v)), '#000', op(0.14));
+  s += poly(qpoly(q, [0.04, 0, 0.1, 0, 0.1, 1, 0.04, 1]), dn(c, 0.25)) + poly(qpoly(q, [0.9, 0, 0.96, 0, 0.96, 1, 0.9, 1]), dn(c, 0.25));
+  for (let k = 0; k < 6; k++) {
+    const v0 = k / 6 + 0.015, v1 = (k + 1) / 6 - 0.03;
+    const sl = qpoly(q, [0, v0, 1, v0, 1, v1, 0, v1]);
+    s += poly(sl, lg([lt(c, 0.2), c]), ol(c, 0.9));
+    const [a, b] = qp(q, 0.08, (v0 + v1) / 2), [e, f] = qp(q, 0.92, (v0 + v1) / 2);
+    s += ln(a, b, e, f, dn(c, 0.18), 0.6, op(0.6));
+  }
+  return s;
+}
+
+function baPlant(st?: number): string {
+  const cx = 314, base = 536;
+  let s = shadow(cx, base - 2, 28, 5, 0.25);
+  if (st === undefined) {
+    const c = '#8d7f6c';
+    s += pth(`M${cx - 4} 500 Q${cx - 14} 472 ${cx - 26} 470 M${cx} 500 Q${cx + 2} 466 ${cx + 12} 452 M${cx + 4} 500 Q${cx + 16} 480 ${cx + 26} 482`, 'none', sk('#7a6646', 2));
+    s += ell(cx - 26, 471, 6, 2.6, '#8b6b3e', rot(30, cx - 26, 471)) + ell(cx + 12, 452, 5, 2.4, '#9a7a48', rot(-50, cx + 12, 452)) + ell(cx + 26, 483, 5, 2.4, '#8b6b3e', rot(-20, cx + 26, 483));
+    s += pth(`M${cx - 20} 502 H${cx + 20} L${cx + 15} ${base} H${cx - 15} Z`, lg([lt(c, 0.1), dn(c, 0.12)], 0, 0, 1, 0), ol(c, 1.2)) + rr(cx - 23, 496, 46, 8, 2, lt(c, 0.08), ol(c, 1.1));
+    s += poly([cx + 8, 496, cx + 16, 496, cx + 13, 508], '#3a3029') + crack([cx - 8, 504, cx - 4, 516, cx - 9, 530], 1);
+    s += ell(cx - 30, base - 2, 8, 2.5, '#5a4632', op(0.7));
+    return s;
+  }
+  if (st === 0) {
+    const c = '#4f9a5a';
+    const fr = [[cx, 498, cx - 26, 470, cx - 36, 488], [cx, 498, cx + 26, 470, cx + 34, 488], [cx, 498, cx - 20, 452, cx - 32, 444], [cx, 498, cx + 20, 452, cx + 30, 444], [cx, 498, cx - 6, 444, cx - 14, 424], [cx, 498, cx + 8, 444, cx + 16, 424], [cx, 498, cx, 456, cx + 2, 432]];
+    for (const f of fr) s += frond(f, c, 10, 9);
+    s += pth(`M${cx - 20} 498 H${cx + 20} L${cx + 16} ${base} H${cx - 16} Z`, lg(['#ffffff', '#e8e4dc', '#c9c3b8'], 0, 0, 1, 0), ol('#e0dbd0', 1.2)) + rr(cx - 22, 494, 44, 7, 3, '#f7f4ee', ol('#e0dbd0', 1.1));
+    s += rect(cx - 18.5, 512, 37, 4, '#5f9fc9') + rect(cx - 18, 519, 36, 1.6, '#5f9fc9');
+    return s;
+  }
+  if (st === 1) {
+    const c = '#5f8f4a';
+    const leaf = (x: number, h: number, a: number, w: number): string => g(pth(`M${x - w} 500 Q${x - w * 1.1} ${500 - h * 0.6} ${x} ${500 - h} Q${x + w * 1.1} ${500 - h * 0.6} ${x + w} 500 Z`, lg([lt(c, 0.2), c, dn(c, 0.2)], 0, 0, 1, 0), 'stroke="#d9c94a" stroke-width="1.2" stroke-linejoin="round"') + pth(`M${x - w * 0.5} ${500 - h * 0.2} q${w * 0.5} -3 ${w} 0 M${x - w * 0.5} ${500 - h * 0.45} q${w * 0.5} -3 ${w} 0`, 'none', sk(dn(c, 0.3), 1) + op(0.5)), rot(a, x, 500));
+    s += leaf(cx - 10, 62, -14, 6) + leaf(cx + 10, 58, 14, 6) + leaf(cx - 2, 84, -3, 7) + leaf(cx + 6, 72, 6, 6) + leaf(cx - 14, 46, -26, 5);
+    const t = '#c96f4a';
+    s += pth(`M${cx - 20} 500 H${cx + 20} L${cx + 15} ${base} H${cx - 15} Z`, lg([lt(t, 0.15), t, dn(t, 0.15)], 0, 0, 1, 0), ol(t, 1.2)) + rr(cx - 23, 494, 46, 9, 2, lt(t, 0.1), ol(t, 1.1));
+    return s;
+  }
+  const c = '#3f7a5a';
+  const lf = (x: number, y: number, a: number, k: number): string => g(pth('M0 0 Q-9 -14 0 -30 Q9 -14 0 0 Z', lg([lt(c, 0.25), c, dn(c, 0.15)], 0, 0, 1, 0), ol(c, 0.9)) + pth('M0 -2 V-27', 'none', sk(dn(c, 0.3), 0.8)), `transform="translate(${x} ${y}) rotate(${a}) scale(${k})"`);
+  s += pth(`M${cx} 498 Q${cx - 4} 470 ${cx - 6} 452 M${cx + 2} 498 Q${cx + 8} 466 ${cx + 12} 446`, 'none', sk('#4f7d3a', 1.6));
+  s += lf(cx - 6, 498, -60, 1) + lf(cx + 6, 498, 60, 1) + lf(cx - 4, 494, -30, 1.15) + lf(cx + 4, 494, 28, 1.1) + lf(cx, 496, 4, 1.2);
+  const spathe = (x: number, y: number, a: number): string => g(pth('M0 0 Q-7 -8 0 -18 Q7 -8 0 0 Z', '#ffffff', ol('#d9e6d9', 0.8)) + rr(-1.4, -14, 2.8, 9, 1.4, '#f2e6a0'), `transform="translate(${x} ${y}) rotate(${a})"`);
+  s += spathe(cx - 6, 452, -10) + spathe(cx + 12, 446, 14);
+  const b = '#d9b27a';
+  const weave = patt(8, 6, rect(0, 0, 8, 6, b) + rect(0, 0, 4, 3, dn(b, 0.15)) + rect(4, 3, 4, 3, dn(b, 0.15)));
+  s += pth(`M${cx - 21} 498 H${cx + 21} L${cx + 17} ${base} H${cx - 17} Z`, weave, ol(b, 1.2)) + pth(`M${cx - 21} 498 H${cx + 21} L${cx + 17} ${base} H${cx - 17} Z`, lg([[0, '#fff', 0.15], [0.5, '#fff', 0], [1, '#000', 0.15]], 0, 0, 1, 0)) + rr(cx - 23, 494, 46, 7, 3, lt(b, 0.1), ol(b, 1.1));
+  return s;
+}
+
+function baSun(placed: Placed): string {
+  const ok = placed.window !== undefined;
+  return poly([70, 392, 126, 392, 196, 452, 98, 452], lg([[0, '#fff3c4', ok ? 0.3 : 0.06], [1, '#fff3c4', 0]]), NOPE);
+}
+
+function baBeams(placed: Placed, frac: number): string {
+  const R = rng(23);
+  let s = '';
+  if (placed.window === undefined) {
+    for (let i = 0; i < 20; i++) s += circ(70 + R() * 200, 150 + R() * 240, 0.8 + R() * 1.4, '#e8e0cf', op(0.3 + R() * 0.4));
+  } else {
+    s += poly([66, 142, 120, 142, 222, 440, 118, 440], lg([[0, '#fffbe8', 0.16], [1, '#fffbe8', 0]]));
+  }
+  if (frac > 0.5) for (let i = 0; i < 9; i++) s += sparkle(60 + R() * 280, 170 + R() * 260, 1.6 + R() * 2.2, '#ffffff', op((0.4 + R() * 0.5) * frac));
+  return g(s, NOPE);
+}
+
+const BATHROOM: RoomArt = {
+  items: { tiles: baTiles, walltiles: baWalltiles, window: baWindow, shelf: baShelf, towels: baTowels, mirror: baMirror, bathtub: baBathtub, sink: baSink, bathmat: baBathmat, plant: baPlant },
+  layers: ['walltiles', 'tiles', baTrim, 'window', 'shelf', 'towels', 'mirror', baSun, 'bathtub', 'sink', 'bathmat', 'plant', baBeams, (_p, f) => moodLayer(f, '#3a4a5a')],
+};
+
+/* =====================================================================
  * public API
  * ===================================================================== */
-const ART: Record<string, RoomArt> = { living: LIVING, kitchen: KITCHEN, garden: GARDEN };
+const ART: Record<string, RoomArt> = { living: LIVING, kitchen: KITCHEN, garden: GARDEN, bedroom: BEDROOM, bathroom: BATHROOM };
 
 /** icon framing per item: `box` is the region of the room drawing to show (x, y, w, h).
  *  crop = square swatch tile (for surfaces), otherwise the item is fitted into the icon. */
@@ -2099,6 +3378,30 @@ const ICONS: Record<string, Record<string, IconSpec>> = {
     tree: { box: [222, 106, 160, 308] },
     swing: { box: [28, 172, 140, 262] },
     lanterns: { box: [140, 116, 120, 120], crop: true, bg: ['#2f3d66', '#4a5a8a'] },
+  },
+  bedroom: {
+    floor: { box: [150, 440, 100, 100], crop: true },
+    wallpaper: { box: [150, 60, 90, 90], crop: true },
+    window: { box: [8, 116, 160, 190] },
+    garland: { box: [138, 128, 132, 132] },
+    nightstand: { box: [40, 284, 104, 140] },
+    wardrobe: { box: [272, 130, 84, 284] },
+    bed: { box: [106, 252, 190, 226] },
+    rug: { box: [54, 436, 292, 146], sy: 1.6 },
+    armchair: { box: [36, 400, 108, 142] },
+    catbed: { box: [266, 446, 92, 92] },
+  },
+  bathroom: {
+    tiles: { box: [150, 440, 100, 100], crop: true },
+    walltiles: { box: [150, 200, 90, 90], crop: true },
+    window: { box: [24, 124, 136, 112] },
+    shelf: { box: [144, 150, 100, 72] },
+    towels: { box: [136, 236, 106, 90] },
+    mirror: { box: [246, 168, 92, 132] },
+    bathtub: { box: [40, 250, 220, 206] },
+    sink: { box: [240, 286, 116, 140] },
+    bathmat: { box: [56, 446, 214, 72], sy: 1.8 },
+    plant: { box: [274, 416, 82, 124] },
   },
 };
 
@@ -2167,11 +3470,18 @@ export function mascotSVG(mood: 'happy' | 'sad' | 'wow'): string {
 function mochiBody(mood: 'happy' | 'sad' | 'wow'): string {
   const fur = '#fff5e4', fur2 = '#f6dcb8', org = '#f5a35a', orgD = '#e0843a', line = '#7a4a2e', pink = '#f7aab4', eye = '#3b2622';
   let s = '';
-  s += pth('M14 122 C16 100 34 89 60 89 C86 89 104 100 106 122 Z', lg([fur, fur2]), sk(line, 2.2));
-  s += pth('M20 122 C22 108 30 99 42 95 C40 106 40 114 44 122 Z', org, op(0.95));
-  s += pth('M92 97 C98 102 102 110 103 122 H90 C92 112 92 104 92 97 Z', org, op(0.95));
+  // body: a soft rounded bust that ends inside the 120×120 box, with two front paws
+  const body = 'M17 106 C17 94 35 88 60 88 C85 88 103 94 103 106 C103 114 96 118 86 118 H34 C24 118 17 114 17 106 Z';
+  s += pth(body, lg([fur, fur2]), sk(line, 2.2));
+  s += g(pth('M10 122 C14 106 28 97 42 95 C40 106 40 114 44 122 Z', org, op(0.95)) + pth('M92 95 C100 100 106 110 108 122 H90 C92 112 92 104 92 95 Z', org, op(0.95)), clip(pth(body, '#fff')));
+  s += pth(body, 'none', sk(line, 2.2));
   s += pth('M32 97 Q60 111 88 97 L86 104 Q60 118 34 104 Z', '#e0566e', sk('#a93a50', 1.2));
-  s += circ(60, 111, 5.5, lg(['#ffe27a', '#e0a92a']), sk('#a8771e', 1.2)) + ln(60, 112, 60, 116, '#a8771e', 1.2) + circ(58.3, 109.3, 1.5, '#ffffff', op(0.85));
+  s += circ(60, 110.5, 5.5, lg(['#ffe27a', '#e0a92a']), sk('#a8771e', 1.2)) + ln(60, 111.5, 60, 115.5, '#a8771e', 1.2) + circ(58.3, 108.8, 1.5, '#ffffff', op(0.85));
+  const pawY = mood === 'wow' ? 108 : 112.5;
+  for (const px of [41, 79]) {
+    s += ell(px, pawY, 10, 5.6, lg([fur, fur2]), sk(line, 1.8));
+    s += pth(`M${px - 4} ${pawY + 1} v3.2 M${px} ${pawY + 1.6} v3.2 M${px + 4} ${pawY + 1} v3.2`, 'none', sk(line, 1.1) + op(0.7));
+  }
   const earTilt = mood === 'sad' ? 24 : mood === 'wow' ? -6 : 0;
   const earL = pth('M21 52 L16 13 Q17 7 23 10 L54 31 Z', org, sk(line, 2.2)) + pth('M25 43 L22 19 L45 33 Z', pink);
   s += g(earL, rot(-earTilt, 30, 42)) + g(earL, `transform="translate(120 0) scale(-1 1) rotate(${-earTilt} 30 42)"`);

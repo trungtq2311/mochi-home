@@ -152,6 +152,32 @@ export const LAYOUT: Record<string, RoomLayout> = {
       lanterns: { cx: 200, y: 108, w: 350, top: true },
     },
   },
+  bedroom: {
+    horizon: 382, wall: 'wallpaper', floor: 'floor',
+    items: {
+      window: { cx: 88, y: 302, w: 150 },
+      garland: { cx: 204, y: 230, w: 124 },
+      wardrobe: { cx: 315, y: 406, w: 70, ground: true },
+      nightstand: { cx: 104, y: 408, w: 52, ground: true },
+      rug: { cx: 200, y: 580, w: 284, flat: true },
+      bed: { cx: 200, y: 472, w: 196, ground: true },
+      armchair: { cx: 92, y: 536, w: 100, ground: true },
+      catbed: { cx: 312, y: 534, w: 74, ground: true },
+    },
+  },
+  bathroom: {
+    horizon: 382, wall: 'walltiles', floor: 'tiles',
+    items: {
+      window: { cx: 93, y: 234, w: 128 },
+      shelf: { cx: 194, y: 218, w: 92 },
+      towels: { cx: 184, y: 320, w: 104 },
+      mirror: { cx: 288, y: 296, w: 84 },
+      bathtub: { cx: 150, y: 450, w: 214, ground: true },
+      sink: { cx: 296, y: 416, w: 100, ground: true },
+      bathmat: { cx: 163, y: 516, w: 196, flat: true },
+      plant: { cx: 314, y: 538, w: 74, ground: true },
+    },
+  },
 };
 
 /** What an item looks like when not yet renovated (optional images). */
@@ -178,6 +204,17 @@ const BEFORE: Record<string, string> = {
   flowers: 'a weedy empty flower bed with dry soil',
   bench: 'a broken old garden bench with missing slats',
   lanterns: 'a sagging tangled string with broken lantern bulbs, horizontal, spanning wide',
+  garland: 'a broken string of fairy-light bulbs hanging from one nail, the other end fallen down, dusty dead bulbs',
+  nightstand: 'a wobbly old grey bedside table with a missing drawer and a tipped-over broken lamp, cobwebs',
+  wardrobe: 'an old grey wardrobe with one door hanging off its hinge, empty hangers inside, a pile of clothes and dusty boxes on top',
+  bed: 'a bare stained old mattress on a cracked bed frame with no headboard, a crumpled grey sheet and a spring poking out',
+  armchair: 'a tilted old armchair with torn fabric, stuffing coming out and a missing leg propped on books',
+  catbed: 'a soggy torn cardboard box with crumpled newspaper inside',
+  towels: 'a bent towel bar with one dirty grey ragged towel with holes',
+  mirror: 'a tilted dusty wall mirror with cracked spotted glass and a chipped corner',
+  bathtub: 'an old rusty stained bathtub with a grime ring, dead leaves inside and a dripping tap, one foot replaced by bricks',
+  sink: 'a cracked old wall-hung washbasin with a rusty leaking pipe dripping into a bucket',
+  bathmat: 'a soggy moldy grey-green bath mat with holes, lying flat on the floor seen in perspective',
 };
 
 /** Shape hints per item so the image fits its slot. */
@@ -192,6 +229,17 @@ const SHAPE: Record<string, string> = {
   shelf: 'a small wall shelf, front view',
   cabinets: 'a kitchen counter with lower cabinets and a sink, wide',
   dining: 'a dining table with two chairs, wide',
+  garland: 'a decorative garland hanging on a wall in a gentle curve between two nails, wide and short, front view',
+  nightstand: 'a small bedside table with a little table lamp on top, front view',
+  wardrobe: 'a tall narrow two-door wardrobe standing on the floor, front view',
+  bed: 'a single bed seen from its foot end, the headboard against the back wall, the mattress top seen in perspective, pillows and a quilt',
+  armchair: 'a small cozy armchair, front view',
+  catbed: 'a cozy pet bed for a cat, small, front view',
+  towels: 'bath towels hanging from a wall-mounted towel bar or hooks, front view',
+  mirror: 'a bathroom mirror hanging on a wall, front view',
+  bathtub: 'a bathtub against the back wall seen from the front and slightly above, wide, with a wall tap',
+  sink: 'a bathroom washbasin with a tap, front view',
+  bathmat: 'a bath mat lying flat on the floor, seen in perspective from the front and above, wide',
 };
 
 function roomSpecs(): ArtSpec[] {
