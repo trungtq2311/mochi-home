@@ -7,9 +7,10 @@ import { Engine } from '../match3/engine.ts';
 import { CARPET_LEVEL, getLevel, ICE_LEVEL, TOY_LEVEL } from '../match3/levels.ts';
 import { Renderer } from '../match3/renderer.ts';
 import { festivalPointsFor, festival, recordLevel } from '../meta/events.ts';
-import { mascotSVG, roomSVG } from '../meta/roomArt.ts';
+import { mascotSVG } from '../meta/roomArt.ts';
+import { townBackdropSVG } from '../meta/townArt.ts';
 import { boosterIcon, btn, closeAllModals, countUp, h, icon, mochiSay, modal } from './dom.ts';
-import { confetti, currentRoom, leaveHome, placedFor } from './home.ts';
+import { confetti, leaveHome, townState } from './home.ts';
 import { nav } from './nav.ts';
 import { goalIcon, showBuyBooster, showLevelStart, showSettings } from './popups.ts';
 
@@ -56,8 +57,8 @@ export function startGame(n: number, picked: BoosterId[]) {
   const streakBefore = save.streak;
 
   // ----- DOM -----
-  const room = currentRoom();
-  const bg = h('div', { class: 'game-bg', html: roomSVG(room.id, placedFor(room)) });
+
+  const bg = h('div', { class: 'game-bg', html: townBackdropSVG(townState()) });
   const canvas = h('canvas', { class: 'board' });
   const shown = engine.goals.map((g) => g.need);
   const goalEls = engine.goals.map((g) => {

@@ -106,7 +106,7 @@ const STR = {
   tutorialIce: ['Ô bị đóng băng không di chuyển được. Hãy ghép nó hoặc dùng vật phẩm đặc biệt bắn trúng để phá băng!', "Frozen tiles can't move. Match them or blast them to crack the ice!"],
   tutorialToy: ['Đưa gấu bông xuống tận đáy bảng! Ghép các ô bên dưới, hoặc vuốt gấu xuống một ô.', 'Bring the teddies down to the bottom! Match below them, or swipe them down a tile.'],
   tutorialCarpet: ['Ghép trên thảm để trải thảm sang các ô vừa ghép. Hãy phủ thảm khắp sàn!', 'Match on the carpet to spread it to the matched tiles. Cover the floor!'],
-  storyIntro: ['Chào bạn! Mình là Mochi. Ngôi nhà của bà đã cũ lắm rồi… Cùng mình sửa sang lại nhé!', "Hi! I'm Mochi. Grandma's house has seen better days… Let's fix it up together!"],
+  storyIntro: ['Chào bạn! Mình là Mochi. Thị trấn biển Vịnh Mochi đã cũ kỹ lắm rồi… Cùng mình hồi sinh nó nhé!', "Hi! I'm Mochi. Our seaside town, Mochi Bay, has seen better days… Let's bring it back to life together!"],
   storyTask: ['Bạn có sao rồi! Chạm "Nhiệm vụ" để bắt đầu sửa nhà.', 'You got a star! Tap "Tasks" to start renovating.'],
   wow: ['Đẹp quá đi!', 'So pretty!'],
   coinsLabel: ['Xu', 'Coins'],
@@ -140,6 +140,11 @@ const STR = {
   dealInfo: ['Gói trợ giúp giảm giá, đổi mới mỗi ngày!', 'A discounted booster bundle, new every day!'],
   dealBought: ['Đã mua! Ưu đãi mới sau {0}', 'Bought! New deal in {0}'],
   newDealIn: ['Ưu đãi mới sau {0}', 'New deal in {0}'],
+  unlocksAfter: ['Mở sau khi xong {0}', 'Unlocks after {0}'],
+  areaLocked: ['Hãy hoàn thành {0} trước nhé!', 'Finish {0} first!'],
+  townIntro: ['Chào mừng tới Vịnh Mochi! Thị trấn ven biển này cần được hồi sinh. Cùng mình sửa từng khu nhé!', 'Welcome to Mochi Bay! This seaside town needs some love. Let’s restore it, area by area!'],
+  townAllDone: ['Cả Vịnh Mochi đã rực rỡ! Khu mới sắp ra mắt — cứ chơi tiếp để nhận quà nhé.', 'All of Mochi Bay is shining! New areas are coming soon — keep playing for rewards.'],
+  areaTap: ['{0} đẹp quá!', '{0} looks lovely!'],
 } satisfies Record<string, [string, string]>;
 
 export type StrKey = keyof typeof STR;

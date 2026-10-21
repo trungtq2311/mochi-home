@@ -1240,3 +1240,38 @@ canvas.board { position: absolute; inset: 0; touch-action: none; }
 .win-buttons .btn { flex: 1; }
 .win-buttons .btn.big { flex: 1.4; }
 @media (prefers-reduced-motion: reduce) { .hero-rays, .win-rays { animation: none; } }
+
+/* ---------- town map (home) ---------- */
+.town-view { position: absolute; inset: 0; overflow: hidden; touch-action: none; background: #4fb6dc; cursor: grab; user-select: none; -webkit-user-select: none; }
+.town-view:active { cursor: grabbing; }
+.town-world { position: absolute; left: 0; top: 0; width: 1600px; height: 2600px; transform-origin: 0 0; }
+.town-world.moving { will-change: transform; }
+.town-svg, .town-svg svg { position: absolute; inset: 0; display: block; pointer-events: none; overflow: visible; }
+.town-item.placing { animation: place .75s cubic-bezier(.2, 1.4, .4, 1) both; transform-box: fill-box; transform-origin: center bottom; }
+.town-item.restyle { animation: restyle .45s ease both; transform-box: fill-box; transform-origin: center bottom; }
+.town-fog { transition: opacity 1.1s ease; }
+.town-fog.clearing { opacity: 0; }
+.town-ring {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  border: 6px dashed rgba(255, 246, 200, .9);
+  box-shadow: 0 0 0 4px rgba(255, 214, 90, .35), inset 0 0 40px rgba(255, 240, 170, .35);
+  animation: townRing 2.4s ease-in-out infinite;
+}
+@keyframes townRing { 0%, 100% { opacity: .55; transform: scale(.98); } 50% { opacity: 1; transform: scale(1.02); } }
+.town-marks { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.town-tag {
+  position: absolute; left: 0; top: 0; white-space: nowrap;
+  padding: 3px 12px 4px; border-radius: 14px; font-weight: 800; font-size: 13.5px; line-height: 1.2; color: #fff;
+  display: flex; align-items: center; gap: 6px;
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .45), 0 0 0 2px var(--line), 0 3px 0 2px var(--line), 0 6px 10px rgba(0, 0, 0, .25);
+}
+.town-tag.active { --sc: #2b1a70; background: linear-gradient(#a58bff, #6a4be0); font-size: 15px; animation: bob 2s ease-in-out infinite; }
+.town-tag.active small { padding: 0 7px; border-radius: 9px; background: rgba(20, 10, 60, .3); font-size: 12.5px; }
+.town-tag.locked { --sc: #3a3550; background: linear-gradient(#a9a3bd, #77708f); font-size: 12.5px; }
+.town-tag.done { --sc: #1b5a10; background: linear-gradient(#8fe56a, #3fb526); font-size: 12.5px; }
+.town-tag .lock { font-size: 13px; }
+@keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
+.room-banner { cursor: pointer; }
+.task-ic svg, .style-ic svg { width: 100%; height: 100%; }
+.town-marks.far .town-tag.locked, .town-marks.far .town-tag.done { opacity: 0; }
+.town-tag { transition: opacity .25s; }

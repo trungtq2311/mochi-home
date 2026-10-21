@@ -42,6 +42,9 @@ export interface SaveData {
   hunt: { id: number; keys: number; opened: number[] };
   piggy: { coins: number; broken: number };
   deal: { day: number };
+  /** Mochi Bay town: index of the area being restored, and finished task id → chosen style. */
+  area: number;
+  town: Record<string, number>;
 }
 
 export const MAX_LIVES = 5;
@@ -75,6 +78,9 @@ function fresh(): SaveData {
     hunt: { id: -1, keys: 0, opened: [] },
     piggy: { coins: 0, broken: 0 },
     deal: { day: -1 },
+    // Old saves get these defaults (load() merges); their room progress stays in `room`/`done`.
+    area: 0,
+    town: {},
   };
 }
 

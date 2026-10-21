@@ -5,14 +5,17 @@ import {
   dailyAvailable, dailyDeal, dealBought, festival, festivalClaimable, festivalEndsIn, grant, HUNT_SIZE, huntActive, huntEndsIn, huntKeys,
   huntOpened, huntStartsIn, passClaimable, passEndsIn, PIGGY_CAP, piggyFull, questsClaimable, racePlace, raceEndsIn, type Reward,
 } from '../meta/events.ts';
-import { itemIconSVG, mascotSVG, roomSVG } from '../meta/roomArt.ts';
-import { ROOMS, roomTotalCost, type Room, type RoomTask } from '../meta/rooms.ts';
-import { prepareRoom, roomIsPainted } from '../art/paintedRoom.ts';
-import { btn, h, icon, mochiSay, modal, rewardChips } from './dom.ts';
+import { mascotSVG } from '../meta/roomArt.ts';
+import { ROOMS, type Room } from '../meta/rooms.ts';
+import { AREAS, areaTotalCost, type Area, type TownTask } from '../meta/town.ts';
+import { townIconSVG, type TownState } from '../meta/townArt.ts';
+import { artKeys, loadArt } from '../art/assets.ts';
+import { btn, h, icon, mochiSay, modal, rewardChips, toast } from './dom.ts';
 import { nav } from './nav.ts';
 import {
   showDaily, showDeal, showFestival, showHunt, showLevelStart, showLives, showPass, showPiggy, showQuests, showRace, showSettings, showShop,
 } from './popups.ts';
+import { createTownView } from './town.ts';
 
 let teardown: (() => void) | null = null;
 
@@ -21,6 +24,7 @@ export function leaveHome() {
   teardown = null;
 }
 
+/** Interior rooms are kept for the weekend design contest. */
 export function currentRoom(): Room {
   return ROOMS[Math.min(save.room, ROOMS.length - 1)];
 }
@@ -31,24 +35,22 @@ export function placedFor(room: Room): Record<string, number> {
   return placed;
 }
 
+export const townState = (): TownState => ({ styles: save.town, area: save.area });
+export const currentArea = (): Area | null => AREAS[save.area] ?? null;
+
 const ROOM_REWARD: Reward = { coins: 500, boosters: { rainbow: 1, bomb: 1, rocket: 1 } };
 
 export function showHome(opts: { fromWin?: boolean } = {}) {
   leaveHome();
   const app = document.getElementById('app')!;
   app.innerHTML = '';
-  let room = currentRoom();
+  let area = currentArea();
 
-  const roomEl = h('div', { class: 'room-art', html: roomSVG(room.id, placedFor(room)) });
-  const renderRoom = (animate?: string, kind: 'placing' | 'restyle' = 'placing') => {
-    roomEl.innerHTML = roomSVG(room.id, placedFor(room));
-    if (!animate) return;
-    const g = roomEl.querySelector<SVGGElement>(`[data-item="${animate}"]`);
-    if (!g) return;
-    g.classList.add(kind);
-    const r = g.getBoundingClientRect();
-    sparkles(r.left + r.width / 2, r.top + r.height / 2, Math.max(r.width, r.height) / 2);
-  };
+  const town = createTownView(townState, (i) => tapArea(i));
+  if (import.meta.env.DEV) (window as unknown as { __town: typeof town }).__town = town;
+  // Painted town art (if any) loads lazily; swap it in once decoded.
+  const painted = artKeys('town/');
+  if (painted.length) void loadArt(painted).then(() => { if (town.el.isConnected) for (const a of AREAS) for (const tk of a.tasks) town.swapItem(tk.id); });
 
   // ----- top bar -----
   const livesVal = h('b', {});
@@ -62,11 +64,12 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
     btn(icon('gear'), 'round', () => showSettings(false)),
   );
 
-  // ----- room banner -----
+  // ----- area banner -----
   const bannerName = h('div', { class: 'room-name' });
   const bannerFill = h('div', { class: 'fill' });
   const bannerPct = h('span', {});
   const banner = h('div', { class: 'room-banner' }, bannerName, h('div', { class: 'bar' }, bannerFill, bannerPct));
+  banner.addEventListener('click', () => { sfx('click'); void town.focusArea(save.area); });
 
   // ----- events column -----
   const evt = (iconNode: Node, onClick: () => void) => {
@@ -94,10 +97,8 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
   const playBtn = btn(h('span', { class: 'btn-col' }, h('span', {}, t('play')), playLabel), 'green huge play-btn', () => showLevelStart(save.level));
   const bottom = h('div', { class: 'bottom-bar' }, tasksBtn, playBtn);
 
-  const screen = h('div', { class: 'screen home' }, roomEl, h('div', { class: 'home-shade' }), topbar, banner, side, sideRight, bottom);
+  const screen = h('div', { class: 'screen home' }, town.el, h('div', { class: 'home-shade' }), topbar, banner, side, sideRight, bottom);
   app.append(screen);
-  // Painted rooms need their images (and perspective floors) ready; re-render once they are.
-  if (roomIsPainted(room.id)) void prepareRoom(room.id).then(() => { if (roomEl.isConnected) renderRoom(); });
 
   const setBadge = (b: HTMLElement, n: number | string) => {
     b.textContent = String(n);
@@ -110,10 +111,10 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
     livesSub.textContent = hasInfiniteLives() ? fmtTime(save.infiniteUntil - Date.now()) : save.lives >= MAX_LIVES ? t('full') : fmtTime(nextLifeIn());
     starsVal.textContent = String(save.stars);
     coinsVal.textContent = String(save.coins);
-    const allDone = save.room >= ROOMS.length;
-    const total = roomTotalCost(room);
-    const done = room.tasks.filter((tk) => save.done[tk.id] !== undefined).reduce((s, tk) => s + tk.cost, 0);
-    bannerName.textContent = tl(room.name);
+    const shown = area ?? AREAS[AREAS.length - 1];
+    const total = areaTotalCost(shown);
+    const done = shown.tasks.filter((tk) => save.town[tk.id] !== undefined).reduce((s, tk) => s + tk.cost, 0);
+    bannerName.textContent = `${tl(shown.name)} · ${Math.min(save.area + 1, AREAS.length)}/${AREAS.length}`;
     bannerFill.style.width = `${(done / total) * 100}%`;
     bannerPct.textContent = `${Math.round((done / total) * 100)}%`;
     playLabel.textContent = t('level', save.level);
@@ -135,7 +136,7 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
     setBadge(ePiggy.badge, piggyFull() ? '!' : 0);
     eDeal.label.textContent = fmtTime(msToMidnight());
     setBadge(eDeal.badge, !dealBought() && save.coins >= dailyDeal().price ? '!' : 0);
-    const next = allDone ? null : room.tasks.find((tk) => save.done[tk.id] === undefined);
+    const next = area?.tasks.find((tk) => save.town[tk.id] === undefined);
     const affordable = !!next && save.stars >= next.cost;
     setBadge(tasksBadge, affordable ? '!' : save.stars);
     tasksBadge.classList.toggle('count', !affordable);
@@ -144,18 +145,29 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
   refresh();
   const iv = setInterval(refresh, 1000);
   nav.refresh = refresh;
-  teardown = () => clearInterval(iv);
+  teardown = () => { clearInterval(iv); town.destroy(); };
+
+  // ----- map taps -----
+  function tapArea(i: number) {
+    if (i === save.area) { sfx('click'); openTasks(); return; }
+    const a = AREAS[i];
+    void town.flyTo(a.x, a.y - 20, undefined, 700);
+    if (i > save.area) { sfx('click'); toast(t('areaLocked', tl(AREAS[i - 1].name))); }
+    else { sfx('pop'); toast(t('areaTap', tl(a.name))); }
+  }
 
   // ----- tasks -----
   function openTasks() {
-    if (save.room >= ROOMS.length) {
-      modal({ title: t('tasks'), body: h('div', { class: 'center' }, h('div', { class: 'mochi-mini', html: mascotSVG('happy') }), h('p', {}, t('comingSoon'))) });
+    if (!area) {
+      modal({ title: t('tasks'), body: h('div', { class: 'center' }, h('div', { class: 'mochi-mini', html: mascotSVG('happy') }), h('p', {}, t('townAllDone'))) });
       return;
     }
-    const pending = room.tasks.filter((tk) => save.done[tk.id] === undefined).slice(0, 3);
+    const cur = area;
+    void town.focusArea(save.area, 600);
+    const pending = cur.tasks.filter((tk) => save.town[tk.id] === undefined).slice(0, 3);
     const list = h('div', { class: 'task-list' },
       ...pending.map((task) => h('div', { class: 'task' },
-        h('div', { class: 'task-ic', html: itemIconSVG(room.id, task.item, 0) }),
+        h('div', { class: 'task-ic', html: townIconSVG(task.id, 0, townState()) }),
         h('div', { class: 'task-title' }, tl(task.title)),
         btn(h('span', { class: 'btn-inner' }, String(task.cost), icon('star')), save.stars >= task.cost ? 'green small' : 'grey small', () => {
           if (save.stars < task.cost) {
@@ -164,25 +176,32 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
             return;
           }
           m.close();
-          doTask(task);
+          void doTask(cur, task);
         }),
       )),
     );
-    const m = modal({ title: `${tl(room.name)}`, cls: 'tasks-modal', body: list });
+    const m = modal({ title: tl(cur.name), cls: 'tasks-modal', body: list });
   }
 
-  function doTask(task: RoomTask) {
+  async function doTask(a: Area, task: TownTask) {
     save.stars -= task.cost;
-    save.done[task.id] = 0;
+    save.town[task.id] = 0;
     persist();
-    sfx('build');
     refresh();
-    renderRoom(task.item);
+    bottom.classList.add('hidden');
+    // Fly to the spot first, then the element pops in.
+    await town.flyTo(a.x + task.at[0], a.y + task.at[1] - 40, Math.max(0.85, Math.min(1.2, window.innerWidth / 420)), 700);
+    sfx('build');
+    town.swapItem(task.id, 'placing');
+    town.refresh();
+    const r = town.itemRect(task.id);
+    if (r) sparkles(r.left + r.width / 2, r.top + r.height / 2, Math.min(160, Math.max(r.width, r.height) / 2));
     setTimeout(() => sfx('star'), 350);
-    stylePicker(task);
+    if (task.styles.length > 1) stylePicker(task);
+    else { bottom.classList.remove('hidden'); void afterTask(); }
   }
 
-  function stylePicker(task: RoomTask) {
+  function stylePicker(task: TownTask) {
     bottom.classList.add('hidden');
     side.classList.add('hidden');
     sideRight.classList.add('hidden');
@@ -190,15 +209,15 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
     const renderOptions = () => {
       options.innerHTML = '';
       task.styles.forEach((st, i) => {
-        const b = h('button', { class: `style-opt ${save.done[task.id] === i ? 'on' : ''}`, style: `--sw:${st.swatch}` },
-          h('div', { class: 'style-ic', html: itemIconSVG(room.id, task.item, i) }),
+        const b = h('button', { class: `style-opt ${save.town[task.id] === i ? 'on' : ''}`, style: `--sw:${st.swatch}` },
+          h('div', { class: 'style-ic', html: townIconSVG(task.id, i, townState()) }),
           h('small', {}, tl(st.name)),
         );
         b.addEventListener('click', () => {
           sfx('pop');
-          save.done[task.id] = i;
+          save.town[task.id] = i;
           persist();
-          renderRoom(task.item, 'restyle');
+          town.swapItem(task.id, 'restyle');
           renderOptions();
         });
         options.append(b);
@@ -214,38 +233,42 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
         bottom.classList.remove('hidden');
         side.classList.remove('hidden');
         sideRight.classList.remove('hidden');
-        afterTask();
+        void afterTask();
       }),
     );
     screen.append(picker);
   }
 
   async function afterTask() {
-    const finished = room.tasks.every((tk) => save.done[tk.id] !== undefined);
+    if (!area) return;
+    const finished = area.tasks.every((tk) => save.town[tk.id] !== undefined);
     if (!finished) {
       if (Math.random() < 0.5) await mochiSay(t('wow'), 'wow');
       return;
     }
     sfx('win');
     confetti();
+    const doneArea = area;
+    await town.focusArea(save.area, 700);
     await new Promise<void>((resolve) => {
       const m = modal({
-        title: t('roomDone', tl(room.name)),
+        title: t('roomDone', tl(doneArea.name)),
         body: h('div', { class: 'center' }, h('div', { class: 'mochi-big', html: mascotSVG('wow') }), rewardChips(ROOM_REWARD)),
         buttons: [{ label: t('claim'), onClick: () => { grant(ROOM_REWARD); m.close(); resolve(); } }],
         closable: false,
       });
     });
-    save.room++;
+    save.area++;
     persist();
-    if (save.room < ROOMS.length) {
-      room = currentRoom();
-      roomEl.classList.add('switching');
-      const ready = prepareRoom(room.id);
-      setTimeout(() => { void ready.then(() => { renderRoom(); roomEl.classList.remove('switching'); refresh(); }); }, 400);
-      await mochiSay(t('newArea', tl(room.name)), 'wow');
+    area = currentArea();
+    refresh();
+    if (area) {
+      await town.focusArea(save.area, 1400);
+      town.refresh(); // fog lifts off the new area
+      await mochiSay(t('newArea', tl(area.name)), 'wow');
     } else {
-      await mochiSay(t('comingSoon'), 'happy');
+      town.refresh();
+      await mochiSay(t('townAllDone'), 'happy');
     }
     refresh();
   }
@@ -254,8 +277,14 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
   (async () => {
     if (!save.seen.intro) {
       save.seen.intro = true;
+      save.seen.town = true;
       persist();
       await mochiSay(t('storyIntro'));
+    } else if (!save.seen.town) {
+      // Existing players: home became a town. Stars, coins and level are untouched.
+      save.seen.town = true;
+      persist();
+      await mochiSay(t('townIntro'), 'wow');
     } else if (opts.fromWin && !save.seen.taskHint && save.stars >= 1) {
       save.seen.taskHint = true;
       persist();

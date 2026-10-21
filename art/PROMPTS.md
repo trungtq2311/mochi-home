@@ -1399,3 +1399,1931 @@ A cozy bathroom plant: snake plant style, main color close to #5f8f4a, brand new
 ```
 A cozy bathroom plant: peace lily style, main color close to #3f7a5a, brand new and charming. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
 ```
+
+## Town: Mochi's Cottage
+
+### `art/raw/town/cottage_path_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a muddy empty lot with puddles, stones and weeds (flat isometric diamond shape) (where a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it will be built in the mochi's cottage area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_path_0.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the mochi's cottage of a sunny seaside town (pave the front yard): cobblestone style, main color close to #c9c1b2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_path_1.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the mochi's cottage of a sunny seaside town (pave the front yard): red brick style, main color close to #cf7a5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_path_2.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the mochi's cottage of a sunny seaside town (pave the front yard): white gravel style, main color close to #efe6d2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_house_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an abandoned shabby building with grey faded walls, boarded-up windows, holes in the roof and weeds (where a small charming two-storey seaside town building with a gable roof will be built in the mochi's cottage area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_house_0.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the mochi's cottage of a sunny seaside town (fix up the cottage): cream & red tiles style, main color close to #f6e7c8 with accents close to #d4553e, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_house_1.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the mochi's cottage of a sunny seaside town (fix up the cottage): blue & white style, main color close to #bfe0f2 with accents close to #3f6fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_house_2.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the mochi's cottage of a sunny seaside town (fix up the cottage): peach & plum style, main color close to #f6c9b4 with accents close to #8d5a9e, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_garden_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a small vegetable garden bed with neat rows of crops will be built in the mochi's cottage area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_garden_0.png`
+
+```
+a small vegetable garden bed with neat rows of crops for the mochi's cottage of a sunny seaside town (plant a veggie patch): carrots style, main color close to #f08a2c, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_garden_1.png`
+
+```
+a small vegetable garden bed with neat rows of crops for the mochi's cottage of a sunny seaside town (plant a veggie patch): pumpkins style, main color close to #f2a33a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_garden_2.png`
+
+```
+a small vegetable garden bed with neat rows of crops for the mochi's cottage of a sunny seaside town (plant a veggie patch): strawberries style, main color close to #e0405a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_mailbox_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a cute mailbox on a wooden post will be built in the mochi's cottage area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_mailbox_0.png`
+
+```
+a cute mailbox on a wooden post for the mochi's cottage of a sunny seaside town (put up a mailbox): red style, main color close to #d9473b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_mailbox_1.png`
+
+```
+a cute mailbox on a wooden post for the mochi's cottage of a sunny seaside town (put up a mailbox): blue style, main color close to #4878c0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_mailbox_2.png`
+
+```
+a cute mailbox on a wooden post for the mochi's cottage of a sunny seaside town (put up a mailbox): yellow style, main color close to #efb93a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_fence_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a broken fence with fallen and missing planks (where a short straight garden fence section running diagonally will be built in the mochi's cottage area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_fence_0.png`
+
+```
+a short straight garden fence section running diagonally for the mochi's cottage of a sunny seaside town (build a fence): white picket style, main color close to #f6f3ea, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_fence_1.png`
+
+```
+a short straight garden fence section running diagonally for the mochi's cottage of a sunny seaside town (build a fence): rustic wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_fence_2.png`
+
+```
+a short straight garden fence section running diagonally for the mochi's cottage of a sunny seaside town (build a fence): sea blue style, main color close to #6f9fd8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_tree_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dead leafless tree (where a round leafy fruit tree will be built in the mochi's cottage area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_tree_0.png`
+
+```
+a round leafy fruit tree for the mochi's cottage of a sunny seaside town (plant a fruit tree): apple tree style, main color close to #e24b3f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_tree_1.png`
+
+```
+a round leafy fruit tree for the mochi's cottage of a sunny seaside town (plant a fruit tree): cherry blossom style, main color close to #f6a7c4, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_tree_2.png`
+
+```
+a round leafy fruit tree for the mochi's cottage of a sunny seaside town (plant a fruit tree): lemon tree style, main color close to #f2d33c, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_bench_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a park bench will be built in the mochi's cottage area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_bench_0.png`
+
+```
+a park bench for the mochi's cottage of a sunny seaside town (place a bench): wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_bench_1.png`
+
+```
+a park bench for the mochi's cottage of a sunny seaside town (place a bench): white iron style, main color close to #f2f0ea, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_bench_2.png`
+
+```
+a park bench for the mochi's cottage of a sunny seaside town (place a bench): green style, main color close to #5f9a5f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_lamp_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where an old-fashioned street lamp post will be built in the mochi's cottage area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_lamp_0.png`
+
+```
+an old-fashioned street lamp post for the mochi's cottage of a sunny seaside town (add a garden lamp): brass style, main color close to #d0a447, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_lamp_1.png`
+
+```
+an old-fashioned street lamp post for the mochi's cottage of a sunny seaside town (add a garden lamp): classic black style, main color close to #3d3a44, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cottage_lamp_2.png`
+
+```
+an old-fashioned street lamp post for the mochi's cottage of a sunny seaside town (add a garden lamp): mint style, main color close to #7fcfb5, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+## Town: Bakery
+
+### `art/raw/town/bakery_square_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a muddy empty lot with puddles, stones and weeds (flat isometric diamond shape) (where a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it will be built in the bakery area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_square_0.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the bakery of a sunny seaside town (pave the square): cobblestone style, main color close to #c9c1b2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_square_1.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the bakery of a sunny seaside town (pave the square): red brick style, main color close to #cf7a5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_square_2.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the bakery of a sunny seaside town (pave the square): white gravel style, main color close to #efe6d2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_shop_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an abandoned shabby building with grey faded walls, boarded-up windows, holes in the roof and weeds (where a small charming two-storey seaside town building with a gable roof will be built in the bakery area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_shop_0.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the bakery of a sunny seaside town (restore the bakery): butter cream style, main color close to #fbe6b0 with accents close to #c9573a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_shop_1.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the bakery of a sunny seaside town (restore the bakery): mint style, main color close to #c5ead7 with accents close to #5c7f5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_shop_2.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the bakery of a sunny seaside town (restore the bakery): strawberry style, main color close to #f7c6cf with accents close to #a8475b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_awning_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a torn grey rag of an old awning hanging from a bent rail (where a striped shop awning with a scalloped edge will be built in the bakery area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_awning_0.png`
+
+```
+a striped shop awning with a scalloped edge for the bakery of a sunny seaside town (hang the awning): red stripes style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_awning_1.png`
+
+```
+a striped shop awning with a scalloped edge for the bakery of a sunny seaside town (hang the awning): blue stripes style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_awning_2.png`
+
+```
+a striped shop awning with a scalloped edge for the bakery of a sunny seaside town (hang the awning): yellow stripes style, main color close to #f0b73a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_sign_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an old blank broken sign hanging crooked from a bracket (where a small round hanging shop sign on a wrought-iron bracket will be built in the bakery area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_sign_0.png`
+
+```
+a small round hanging shop sign on a wrought-iron bracket for the bakery of a sunny seaside town (hang a bread sign): gold style, main color close to #e8b740, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_sign_1.png`
+
+```
+a small round hanging shop sign on a wrought-iron bracket for the bakery of a sunny seaside town (hang a bread sign): wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_sign_2.png`
+
+```
+a small round hanging shop sign on a wrought-iron bracket for the bakery of a sunny seaside town (hang a bread sign): pink style, main color close to #ef8fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_tables_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where two small outdoor café tables with chairs and parasols will be built in the bakery area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_tables_0.png`
+
+```
+two small outdoor café tables with chairs and parasols for the bakery of a sunny seaside town (set out tables): red parasols style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_tables_1.png`
+
+```
+two small outdoor café tables with chairs and parasols for the bakery of a sunny seaside town (set out tables): blue parasols style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_tables_2.png`
+
+```
+two small outdoor café tables with chairs and parasols for the bakery of a sunny seaside town (set out tables): yellow parasols style, main color close to #f0b73a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_cart_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a little wooden bread cart with a canopy and wheels, full of loaves will be built in the bakery area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_cart_0.png`
+
+```
+a little wooden bread cart with a canopy and wheels, full of loaves for the bakery of a sunny seaside town (fix the bread cart): teal style, main color close to #3fa7a0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_cart_1.png`
+
+```
+a little wooden bread cart with a canopy and wheels, full of loaves for the bakery of a sunny seaside town (fix the bread cart): cherry style, main color close to #d9473b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_cart_2.png`
+
+```
+a little wooden bread cart with a canopy and wheels, full of loaves for the bakery of a sunny seaside town (fix the bread cart): cream style, main color close to #f3e3c0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_planters_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where two wooden flower boxes full of flowers will be built in the bakery area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_planters_0.png`
+
+```
+two wooden flower boxes full of flowers for the bakery of a sunny seaside town (add flower boxes): roses style, main color close to #e9506f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_planters_1.png`
+
+```
+two wooden flower boxes full of flowers for the bakery of a sunny seaside town (add flower boxes): tulips style, main color close to #f39a3a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_planters_2.png`
+
+```
+two wooden flower boxes full of flowers for the bakery of a sunny seaside town (add flower boxes): lavender style, main color close to #9b7fd6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_lamp_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where an old-fashioned street lamp post will be built in the bakery area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_lamp_0.png`
+
+```
+an old-fashioned street lamp post for the bakery of a sunny seaside town (add a street lamp): brass style, main color close to #d0a447, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_lamp_1.png`
+
+```
+an old-fashioned street lamp post for the bakery of a sunny seaside town (add a street lamp): classic black style, main color close to #3d3a44, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/bakery_lamp_2.png`
+
+```
+an old-fashioned street lamp post for the bakery of a sunny seaside town (add a street lamp): mint style, main color close to #7fcfb5, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+## Town: Beach
+
+### `art/raw/town/beach_clean_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dirty beach patch with seaweed piles, litter and broken crates (flat isometric diamond shape) (where a flat patch of clean golden beach sand with a few shells and a starfish (isometric diamond shape) will be built in the beach area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_clean_0.png`
+
+```
+a flat patch of clean golden beach sand with a few shells and a starfish (isometric diamond shape) for the beach of a sunny seaside town (clean up the sand): brand new style, main color close to #ffffff, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_huts_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+three shabby grey beach huts with broken doors (where a row of three small beach huts will be built in the beach area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_huts_0.png`
+
+```
+a row of three small beach huts for the beach of a sunny seaside town (paint the beach huts): candy colors style, main color close to #f6a7c4 with accents close to #7fc8e8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_huts_1.png`
+
+```
+a row of three small beach huts for the beach of a sunny seaside town (paint the beach huts): navy stripes style, main color close to #4b6ea8 with accents close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_huts_2.png`
+
+```
+a row of three small beach huts for the beach of a sunny seaside town (paint the beach huts): sunshine style, main color close to #f6cf4a with accents close to #f08a5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_umbrellas_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where three beach parasols stuck in the sand will be built in the beach area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_umbrellas_0.png`
+
+```
+three beach parasols stuck in the sand for the beach of a sunny seaside town (put up parasols): red stripes style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_umbrellas_1.png`
+
+```
+three beach parasols stuck in the sand for the beach of a sunny seaside town (put up parasols): blue stripes style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_umbrellas_2.png`
+
+```
+three beach parasols stuck in the sand for the beach of a sunny seaside town (put up parasols): yellow stripes style, main color close to #f0b73a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_loungers_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where two beach sun loungers will be built in the beach area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_loungers_0.png`
+
+```
+two beach sun loungers for the beach of a sunny seaside town (add sun loungers): turquoise style, main color close to #46b8c4, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_loungers_1.png`
+
+```
+two beach sun loungers for the beach of a sunny seaside town (add sun loungers): coral style, main color close to #f0806a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_loungers_2.png`
+
+```
+two beach sun loungers for the beach of a sunny seaside town (add sun loungers): white style, main color close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_lifeguard_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a wooden lifeguard tower on stilts with a little flag will be built in the beach area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_lifeguard_0.png`
+
+```
+a wooden lifeguard tower on stilts with a little flag for the beach of a sunny seaside town (build a lifeguard tower): red style, main color close to #d9473b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_lifeguard_1.png`
+
+```
+a wooden lifeguard tower on stilts with a little flag for the beach of a sunny seaside town (build a lifeguard tower): yellow style, main color close to #efb93a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_lifeguard_2.png`
+
+```
+a wooden lifeguard tower on stilts with a little flag for the beach of a sunny seaside town (build a lifeguard tower): blue style, main color close to #4878c0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_palms_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dead palm stump and junk (where two leaning palm trees will be built in the beach area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_palms_0.png`
+
+```
+two leaning palm trees for the beach of a sunny seaside town (plant palm trees): green palms style, main color close to #5aa84e, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_palms_1.png`
+
+```
+two leaning palm trees for the beach of a sunny seaside town (plant palm trees): with hammock style, main color close to #5aa84e with accents close to #f08a5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_palms_2.png`
+
+```
+two leaning palm trees for the beach of a sunny seaside town (plant palm trees): with lanterns style, main color close to #5aa84e with accents close to #ffd27a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_volley_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a beach volleyball net with a ball will be built in the beach area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_volley_0.png`
+
+```
+a beach volleyball net with a ball for the beach of a sunny seaside town (set up volleyball): white net style, main color close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_volley_1.png`
+
+```
+a beach volleyball net with a ball for the beach of a sunny seaside town (set up volleyball): blue net style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_volley_2.png`
+
+```
+a beach volleyball net with a ball for the beach of a sunny seaside town (set up volleyball): orange net style, main color close to #f08a3c, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_castle_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a sandcastle with a tiny flag will be built in the beach area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_castle_0.png`
+
+```
+a sandcastle with a tiny flag for the beach of a sunny seaside town (build a sandcastle): red flag style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_castle_1.png`
+
+```
+a sandcastle with a tiny flag for the beach of a sunny seaside town (build a sandcastle): blue flag style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/beach_castle_2.png`
+
+```
+a sandcastle with a tiny flag for the beach of a sunny seaside town (build a sandcastle): pink flag style, main color close to #ef8fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+## Town: Café
+
+### `art/raw/town/cafe_terrace_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a muddy empty lot with puddles, stones and weeds (flat isometric diamond shape) (where a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it will be built in the café area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_terrace_0.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the café of a sunny seaside town (lay a wooden terrace): honey wood style, main color close to #d9a76a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_terrace_1.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the café of a sunny seaside town (lay a wooden terrace): driftwood style, main color close to #b9b2a6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_terrace_2.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the café of a sunny seaside town (lay a wooden terrace): white wood style, main color close to #efe8da, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_building_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an abandoned shabby building with grey faded walls, boarded-up windows, holes in the roof and weeds (where a small charming two-storey seaside town building with a gable roof will be built in the café area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_building_0.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the café of a sunny seaside town (restore the café): turquoise style, main color close to #9fd6cf with accents close to #3c6e8f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_building_1.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the café of a sunny seaside town (restore the café): lemon style, main color close to #f9e48f with accents close to #d0663f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_building_2.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the café of a sunny seaside town (restore the café): white & black style, main color close to #f3efe6 with accents close to #4b4f5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_awning_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a torn grey rag of an old awning hanging from a bent rail (where a striped shop awning with a scalloped edge will be built in the café area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_awning_0.png`
+
+```
+a striped shop awning with a scalloped edge for the café of a sunny seaside town (hang the awning): red stripes style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_awning_1.png`
+
+```
+a striped shop awning with a scalloped edge for the café of a sunny seaside town (hang the awning): blue stripes style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_awning_2.png`
+
+```
+a striped shop awning with a scalloped edge for the café of a sunny seaside town (hang the awning): yellow stripes style, main color close to #f0b73a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_sign_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an old blank broken sign hanging crooked from a bracket (where a small round hanging shop sign on a wrought-iron bracket will be built in the café area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_sign_0.png`
+
+```
+a small round hanging shop sign on a wrought-iron bracket for the café of a sunny seaside town (hang a coffee sign): brown style, main color close to #8a5a35, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_sign_1.png`
+
+```
+a small round hanging shop sign on a wrought-iron bracket for the café of a sunny seaside town (hang a coffee sign): white style, main color close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_sign_2.png`
+
+```
+a small round hanging shop sign on a wrought-iron bracket for the café of a sunny seaside town (hang a coffee sign): red style, main color close to #d9473b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_tables_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where two small outdoor café tables with chairs and parasols will be built in the café area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_tables_0.png`
+
+```
+two small outdoor café tables with chairs and parasols for the café of a sunny seaside town (set out café tables): red & white style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_tables_1.png`
+
+```
+two small outdoor café tables with chairs and parasols for the café of a sunny seaside town (set out café tables): leaf green style, main color close to #5fb05a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_tables_2.png`
+
+```
+two small outdoor café tables with chairs and parasols for the café of a sunny seaside town (set out café tables): violet style, main color close to #9b6fd0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_lights_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where two poles with a string of round light bulbs between them will be built in the café area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_lights_0.png`
+
+```
+two poles with a string of round light bulbs between them for the café of a sunny seaside town (string up lights): warm style, main color close to #ffd27a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_lights_1.png`
+
+```
+two poles with a string of round light bulbs between them for the café of a sunny seaside town (string up lights): colorful style, main color close to #ff7fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_lights_2.png`
+
+```
+two poles with a string of round light bulbs between them for the café of a sunny seaside town (string up lights): white style, main color close to #fff6e0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_menu_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a café sandwich-board menu sign will be built in the café area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_menu_0.png`
+
+```
+a café sandwich-board menu sign for the café of a sunny seaside town (add a menu board): chalkboard style, main color close to #3d4a45, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_menu_1.png`
+
+```
+a café sandwich-board menu sign for the café of a sunny seaside town (add a menu board): green board style, main color close to #3e6b52, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_menu_2.png`
+
+```
+a café sandwich-board menu sign for the café of a sunny seaside town (add a menu board): wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_bikes_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a bike rack with two bicycles will be built in the café area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_bikes_0.png`
+
+```
+a bike rack with two bicycles for the café of a sunny seaside town (add a bike rack): red style, main color close to #d9473b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_bikes_1.png`
+
+```
+a bike rack with two bicycles for the café of a sunny seaside town (add a bike rack): mint style, main color close to #6fcab0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/cafe_bikes_2.png`
+
+```
+a bike rack with two bicycles for the café of a sunny seaside town (add a bike rack): yellow style, main color close to #efb93a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+## Town: Flower Park
+
+### `art/raw/town/park_lawn_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a muddy empty lot with puddles, stones and weeds (flat isometric diamond shape) (where a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it will be built in the flower park area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_lawn_0.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the flower park of a sunny seaside town (lay the lawn): green grass style, main color close to #8fd16a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_lawn_1.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the flower park of a sunny seaside town (lay the lawn): deep green style, main color close to #6cb85a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_lawn_2.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the flower park of a sunny seaside town (lay the lawn): wildflowers style, main color close to #a6d872, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_paths_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+worn muddy dirt tracks with puddles and weeds (where two crossing park walkways with a round plaza in the middle, flat on the ground (isometric diamond shape) will be built in the flower park area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_paths_0.png`
+
+```
+two crossing park walkways with a round plaza in the middle, flat on the ground (isometric diamond shape) for the flower park of a sunny seaside town (lay the walkways): cobblestone style, main color close to #c9c1b2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_paths_1.png`
+
+```
+two crossing park walkways with a round plaza in the middle, flat on the ground (isometric diamond shape) for the flower park of a sunny seaside town (lay the walkways): red brick style, main color close to #cf7a5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_paths_2.png`
+
+```
+two crossing park walkways with a round plaza in the middle, flat on the ground (isometric diamond shape) for the flower park of a sunny seaside town (lay the walkways): white gravel style, main color close to #efe6d2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_fountain_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dry cracked fountain full of dead leaves (where a round two-tier stone fountain with water will be built in the flower park area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_fountain_0.png`
+
+```
+a round two-tier stone fountain with water for the flower park of a sunny seaside town (build a fountain): white stone style, main color close to #eeeae0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_fountain_1.png`
+
+```
+a round two-tier stone fountain with water for the flower park of a sunny seaside town (build a fountain): blue stone style, main color close to #9cbfd6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_fountain_2.png`
+
+```
+a round two-tier stone fountain with water for the flower park of a sunny seaside town (build a fountain): bronze style, main color close to #b08850, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_flowers_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a round flower bed with a stone border will be built in the flower park area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_flowers_0.png`
+
+```
+a round flower bed with a stone border for the flower park of a sunny seaside town (plant flower beds): roses style, main color close to #e9506f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_flowers_1.png`
+
+```
+a round flower bed with a stone border for the flower park of a sunny seaside town (plant flower beds): tulips style, main color close to #f39a3a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_flowers_2.png`
+
+```
+a round flower bed with a stone border for the flower park of a sunny seaside town (plant flower beds): lavender style, main color close to #9b7fd6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_gazebo_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a run-down grey gazebo with a holey roof (where a round park gazebo with a conical roof will be built in the flower park area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_gazebo_0.png`
+
+```
+a round park gazebo with a conical roof for the flower park of a sunny seaside town (build a gazebo): white style, main color close to #f6f3ea with accents close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_gazebo_1.png`
+
+```
+a round park gazebo with a conical roof for the flower park of a sunny seaside town (build a gazebo): green style, main color close to #e9f2e0 with accents close to #4f8f5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_gazebo_2.png`
+
+```
+a round park gazebo with a conical roof for the flower park of a sunny seaside town (build a gazebo): red roof style, main color close to #f6e7c8 with accents close to #b8423a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_trees_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dead tree and a pile of junk (where a small group of trees will be built in the flower park area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_trees_0.png`
+
+```
+a small group of trees for the flower park of a sunny seaside town (plant trees): cherry blossom style, main color close to #f6a7c4, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_trees_1.png`
+
+```
+a small group of trees for the flower park of a sunny seaside town (plant trees): maple style, main color close to #e8823a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_trees_2.png`
+
+```
+a small group of trees for the flower park of a sunny seaside town (plant trees): oak style, main color close to #5aa84e, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_benches_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a park bench will be built in the flower park area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_benches_0.png`
+
+```
+a park bench for the flower park of a sunny seaside town (place park benches): wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_benches_1.png`
+
+```
+a park bench for the flower park of a sunny seaside town (place park benches): white iron style, main color close to #f2f0ea, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_benches_2.png`
+
+```
+a park bench for the flower park of a sunny seaside town (place park benches): green style, main color close to #5f9a5f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_lamps_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where an old-fashioned street lamp post will be built in the flower park area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_lamps_0.png`
+
+```
+an old-fashioned street lamp post for the flower park of a sunny seaside town (add park lamps): brass style, main color close to #d0a447, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_lamps_1.png`
+
+```
+an old-fashioned street lamp post for the flower park of a sunny seaside town (add park lamps): classic black style, main color close to #3d3a44, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/park_lamps_2.png`
+
+```
+an old-fashioned street lamp post for the flower park of a sunny seaside town (add park lamps): mint style, main color close to #7fcfb5, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+## Town: Market Street
+
+### `art/raw/town/market_street_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a muddy empty lot with puddles, stones and weeds (flat isometric diamond shape) (where a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it will be built in the market street area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_street_0.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the market street of a sunny seaside town (pave the street): cobblestone style, main color close to #c9c1b2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_street_1.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the market street of a sunny seaside town (pave the street): red brick style, main color close to #cf7a5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_street_2.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the market street of a sunny seaside town (pave the street): white gravel style, main color close to #efe6d2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_shops_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an abandoned shabby building with grey faded walls, boarded-up windows, holes in the roof and weeds (where a small charming two-storey seaside town building with a gable roof will be built in the market street area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_shops_0.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the market street of a sunny seaside town (restore the shop row): cream & orange style, main color close to #f6e7c8 with accents close to #e07a3a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_shops_1.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the market street of a sunny seaside town (restore the shop row): pink & teal style, main color close to #f6c9cf with accents close to #3f8f8a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_shops_2.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the market street of a sunny seaside town (restore the shop row): blue & red style, main color close to #c3dcef with accents close to #c8483a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_fruit_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a market stall with a striped canopy and goods on the counter will be built in the market street area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_fruit_0.png`
+
+```
+a market stall with a striped canopy and goods on the counter for the market street of a sunny seaside town (build a fruit stall): red & white style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_fruit_1.png`
+
+```
+a market stall with a striped canopy and goods on the counter for the market street of a sunny seaside town (build a fruit stall): leaf green style, main color close to #5fb05a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_fruit_2.png`
+
+```
+a market stall with a striped canopy and goods on the counter for the market street of a sunny seaside town (build a fruit stall): violet style, main color close to #9b6fd0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_fish_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a market stall with a striped canopy and goods on the counter will be built in the market street area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_fish_0.png`
+
+```
+a market stall with a striped canopy and goods on the counter for the market street of a sunny seaside town (build a fish stall): sea blue style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_fish_1.png`
+
+```
+a market stall with a striped canopy and goods on the counter for the market street of a sunny seaside town (build a fish stall): teal style, main color close to #3fa7a0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_fish_2.png`
+
+```
+a market stall with a striped canopy and goods on the counter for the market street of a sunny seaside town (build a fish stall): white style, main color close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_flowers_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a market stall with a striped canopy and goods on the counter will be built in the market street area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_flowers_0.png`
+
+```
+a market stall with a striped canopy and goods on the counter for the market street of a sunny seaside town (build a flower stall): pink style, main color close to #ef8fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_flowers_1.png`
+
+```
+a market stall with a striped canopy and goods on the counter for the market street of a sunny seaside town (build a flower stall): yellow style, main color close to #f0b73a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_flowers_2.png`
+
+```
+a market stall with a striped canopy and goods on the counter for the market street of a sunny seaside town (build a flower stall): violet style, main color close to #9b6fd0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_bunting_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where two poles with a string of triangle bunting flags between them will be built in the market street area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_bunting_0.png`
+
+```
+two poles with a string of triangle bunting flags between them for the market street of a sunny seaside town (hang bunting): rainbow style, main color close to #ff7fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_bunting_1.png`
+
+```
+two poles with a string of triangle bunting flags between them for the market street of a sunny seaside town (hang bunting): blue & white style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_bunting_2.png`
+
+```
+two poles with a string of triangle bunting flags between them for the market street of a sunny seaside town (hang bunting): red & gold style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_crates_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a stack of wooden produce crates will be built in the market street area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_crates_0.png`
+
+```
+a stack of wooden produce crates for the market street of a sunny seaside town (stack the crates): apples style, main color close to #e24b3f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_crates_1.png`
+
+```
+a stack of wooden produce crates for the market street of a sunny seaside town (stack the crates): oranges style, main color close to #f39a3a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_crates_2.png`
+
+```
+a stack of wooden produce crates for the market street of a sunny seaside town (stack the crates): cabbages style, main color close to #8fd16a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_clock_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a tall street clock on a post will be built in the market street area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_clock_0.png`
+
+```
+a tall street clock on a post for the market street of a sunny seaside town (raise the street clock): moss green style, main color close to #4f7f5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_clock_1.png`
+
+```
+a tall street clock on a post for the market street of a sunny seaside town (raise the street clock): black style, main color close to #3d3a44, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/market_clock_2.png`
+
+```
+a tall street clock on a post for the market street of a sunny seaside town (raise the street clock): brass style, main color close to #d0a447, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+## Town: Pier & Boats
+
+### `art/raw/town/pier_deck_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a broken old wooden pier with missing planks and crooked posts in the water (where a long wooden pier on posts standing in shallow water, running diagonally will be built in the pier & boats area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_deck_0.png`
+
+```
+a long wooden pier on posts standing in shallow water, running diagonally for the pier & boats of a sunny seaside town (repair the pier): honey wood style, main color close to #d9a76a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_deck_1.png`
+
+```
+a long wooden pier on posts standing in shallow water, running diagonally for the pier & boats of a sunny seaside town (repair the pier): driftwood style, main color close to #b9b2a6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_deck_2.png`
+
+```
+a long wooden pier on posts standing in shallow water, running diagonally for the pier & boats of a sunny seaside town (repair the pier): white wood style, main color close to #efe8da, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_shed_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an abandoned shabby building with grey faded walls, boarded-up windows, holes in the roof and weeds (where a small charming two-storey seaside town building with a gable roof will be built in the pier & boats area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_shed_0.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the pier & boats of a sunny seaside town (fix the boathouse): barn red style, main color close to #c8574a with accents close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_shed_1.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the pier & boats of a sunny seaside town (fix the boathouse): sea blue style, main color close to #5d8fc4 with accents close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_shed_2.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the pier & boats of a sunny seaside town (fix the boathouse): sand style, main color close to #ecd39a with accents close to #5d6b7a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_sailboat_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a wrecked grey boat half sunk and tilted in the water (where a small boat floating on water will be built in the pier & boats area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_sailboat_0.png`
+
+```
+a small boat floating on water for the pier & boats of a sunny seaside town (fix the sailboat): white sails style, main color close to #f3efe6 with accents close to #3f6fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_sailboat_1.png`
+
+```
+a small boat floating on water for the pier & boats of a sunny seaside town (fix the sailboat): red sails style, main color close to #e0533f with accents close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_sailboat_2.png`
+
+```
+a small boat floating on water for the pier & boats of a sunny seaside town (fix the sailboat): striped sails style, main color close to #f0b73a with accents close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_fishboat_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a wrecked grey boat half sunk and tilted in the water (where a small boat floating on water will be built in the pier & boats area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_fishboat_0.png`
+
+```
+a small boat floating on water for the pier & boats of a sunny seaside town (fix the fishing boat): green style, main color close to #4f9a5f with accents close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_fishboat_1.png`
+
+```
+a small boat floating on water for the pier & boats of a sunny seaside town (fix the fishing boat): orange style, main color close to #f08a3c with accents close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_fishboat_2.png`
+
+```
+a small boat floating on water for the pier & boats of a sunny seaside town (fix the fishing boat): navy style, main color close to #35507a with accents close to #f3d36b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_lamps_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a row of three old-fashioned lamp posts will be built in the pier & boats area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_lamps_0.png`
+
+```
+a row of three old-fashioned lamp posts for the pier & boats of a sunny seaside town (light the pier): brass style, main color close to #d0a447, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_lamps_1.png`
+
+```
+a row of three old-fashioned lamp posts for the pier & boats of a sunny seaside town (light the pier): classic black style, main color close to #3d3a44, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_lamps_2.png`
+
+```
+a row of three old-fashioned lamp posts for the pier & boats of a sunny seaside town (light the pier): mint style, main color close to #7fcfb5, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_nets_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a wooden rack with fishing nets hanging to dry will be built in the pier & boats area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_nets_0.png`
+
+```
+a wooden rack with fishing nets hanging to dry for the pier & boats of a sunny seaside town (hang the fishing nets): brown nets style, main color close to #9a7a52, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_nets_1.png`
+
+```
+a wooden rack with fishing nets hanging to dry for the pier & boats of a sunny seaside town (hang the fishing nets): green nets style, main color close to #5f9a7a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_nets_2.png`
+
+```
+a wooden rack with fishing nets hanging to dry for the pier & boats of a sunny seaside town (hang the fishing nets): orange nets style, main color close to #e08a4a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_buoys_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where three floating buoys will be built in the pier & boats area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_buoys_0.png`
+
+```
+three floating buoys for the pier & boats of a sunny seaside town (float the buoys): red & white style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_buoys_1.png`
+
+```
+three floating buoys for the pier & boats of a sunny seaside town (float the buoys): yellow style, main color close to #f0b73a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_buoys_2.png`
+
+```
+three floating buoys for the pier & boats of a sunny seaside town (float the buoys): orange style, main color close to #f08a3c, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_kiosk_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a tiny ice-cream kiosk with a giant cone on its roof will be built in the pier & boats area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_kiosk_0.png`
+
+```
+a tiny ice-cream kiosk with a giant cone on its roof for the pier & boats of a sunny seaside town (open an ice-cream kiosk): strawberry style, main color close to #f6a7c4, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_kiosk_1.png`
+
+```
+a tiny ice-cream kiosk with a giant cone on its roof for the pier & boats of a sunny seaside town (open an ice-cream kiosk): mint style, main color close to #9fe0c8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/pier_kiosk_2.png`
+
+```
+a tiny ice-cream kiosk with a giant cone on its roof for the pier & boats of a sunny seaside town (open an ice-cream kiosk): vanilla style, main color close to #f8e7b0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+## Town: Bookshop
+
+### `art/raw/town/books_yard_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a muddy empty lot with puddles, stones and weeds (flat isometric diamond shape) (where a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it will be built in the bookshop area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_yard_0.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the bookshop of a sunny seaside town (pave the yard): cobblestone style, main color close to #c9c1b2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_yard_1.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the bookshop of a sunny seaside town (pave the yard): red brick style, main color close to #cf7a5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_yard_2.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the bookshop of a sunny seaside town (pave the yard): white gravel style, main color close to #efe6d2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_shop_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an abandoned shabby building with grey faded walls, boarded-up windows, holes in the roof and weeds (where a small charming two-storey seaside town building with a gable roof will be built in the bookshop area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_shop_0.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the bookshop of a sunny seaside town (restore the bookshop): sage style, main color close to #bcd3b0 with accents close to #7a4a3a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_shop_1.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the bookshop of a sunny seaside town (restore the bookshop): brick red style, main color close to #d98c74 with accents close to #4b4f5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_shop_2.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the bookshop of a sunny seaside town (restore the bookshop): lavender style, main color close to #d6c8ea with accents close to #5c4a8a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_sign_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an old blank broken sign hanging crooked from a bracket (where a small round hanging shop sign on a wrought-iron bracket will be built in the bookshop area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_sign_0.png`
+
+```
+a small round hanging shop sign on a wrought-iron bracket for the bookshop of a sunny seaside town (hang a book sign): red style, main color close to #d9473b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_sign_1.png`
+
+```
+a small round hanging shop sign on a wrought-iron bracket for the bookshop of a sunny seaside town (hang a book sign): blue style, main color close to #4878c0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_sign_2.png`
+
+```
+a small round hanging shop sign on a wrought-iron bracket for the bookshop of a sunny seaside town (hang a book sign): green style, main color close to #4f9a5f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_cart_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a small wooden cart full of books will be built in the bookshop area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_cart_0.png`
+
+```
+a small wooden cart full of books for the bookshop of a sunny seaside town (add a book cart): wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_cart_1.png`
+
+```
+a small wooden cart full of books for the bookshop of a sunny seaside town (add a book cart): blue style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_cart_2.png`
+
+```
+a small wooden cart full of books for the bookshop of a sunny seaside town (add a book cart): red style, main color close to #d9473b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_tree_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dead leafless tree (where a round leafy fruit tree will be built in the bookshop area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_tree_0.png`
+
+```
+a round leafy fruit tree for the bookshop of a sunny seaside town (plant a shady oak): green oak style, main color close to #5aa84e, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_tree_1.png`
+
+```
+a round leafy fruit tree for the bookshop of a sunny seaside town (plant a shady oak): red maple style, main color close to #e8823a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_tree_2.png`
+
+```
+a round leafy fruit tree for the bookshop of a sunny seaside town (plant a shady oak): birch style, main color close to #a6d872, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_bench_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a park bench will be built in the bookshop area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_bench_0.png`
+
+```
+a park bench for the bookshop of a sunny seaside town (place a reading bench): wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_bench_1.png`
+
+```
+a park bench for the bookshop of a sunny seaside town (place a reading bench): white iron style, main color close to #f2f0ea, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_bench_2.png`
+
+```
+a park bench for the bookshop of a sunny seaside town (place a reading bench): green style, main color close to #5f9a5f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_statue_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a cute cat statue on a stone pedestal will be built in the bookshop area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_statue_0.png`
+
+```
+a cute cat statue on a stone pedestal for the bookshop of a sunny seaside town (raise a cat statue): marble style, main color close to #efebe2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_statue_1.png`
+
+```
+a cute cat statue on a stone pedestal for the bookshop of a sunny seaside town (raise a cat statue): bronze style, main color close to #b08850, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_statue_2.png`
+
+```
+a cute cat statue on a stone pedestal for the bookshop of a sunny seaside town (raise a cat statue): gold style, main color close to #e8c040, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_lamp_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where an old-fashioned street lamp post will be built in the bookshop area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_lamp_0.png`
+
+```
+an old-fashioned street lamp post for the bookshop of a sunny seaside town (add a lamp post): brass style, main color close to #d0a447, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_lamp_1.png`
+
+```
+an old-fashioned street lamp post for the bookshop of a sunny seaside town (add a lamp post): classic black style, main color close to #3d3a44, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/books_lamp_2.png`
+
+```
+an old-fashioned street lamp post for the bookshop of a sunny seaside town (add a lamp post): mint style, main color close to #7fcfb5, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+## Town: Windy Hill
+
+### `art/raw/town/hill_path_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a muddy empty lot with puddles, stones and weeds (flat isometric diamond shape) (where a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it will be built in the windy hill area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_path_0.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the windy hill of a sunny seaside town (make a hill path): cobblestone style, main color close to #c9c1b2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_path_1.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the windy hill of a sunny seaside town (make a hill path): red brick style, main color close to #cf7a5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_path_2.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the windy hill of a sunny seaside town (make a hill path): white gravel style, main color close to #efe6d2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_windmill_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a broken grey windmill with two snapped sails and weeds (where a tall classic windmill with four sails will be built in the windy hill area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_windmill_0.png`
+
+```
+a tall classic windmill with four sails for the windy hill of a sunny seaside town (fix the windmill): white & red style, main color close to #f6f3ea with accents close to #c8483a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_windmill_1.png`
+
+```
+a tall classic windmill with four sails for the windy hill of a sunny seaside town (fix the windmill): blue & white style, main color close to #c3dcef with accents close to #3f6fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_windmill_2.png`
+
+```
+a tall classic windmill with four sails for the windy hill of a sunny seaside town (fix the windmill): cream & green style, main color close to #f6e7c8 with accents close to #4f8f5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_picnic_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a picnic blanket with a basket and fruit will be built in the windy hill area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_picnic_0.png`
+
+```
+a picnic blanket with a basket and fruit for the windy hill of a sunny seaside town (lay a picnic blanket): red gingham style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_picnic_1.png`
+
+```
+a picnic blanket with a basket and fruit for the windy hill of a sunny seaside town (lay a picnic blanket): blue gingham style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_picnic_2.png`
+
+```
+a picnic blanket with a basket and fruit for the windy hill of a sunny seaside town (lay a picnic blanket): yellow gingham style, main color close to #f0b73a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_telescope_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a telescope on a tripod will be built in the windy hill area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_telescope_0.png`
+
+```
+a telescope on a tripod for the windy hill of a sunny seaside town (set up a telescope): brass style, main color close to #d0a447, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_telescope_1.png`
+
+```
+a telescope on a tripod for the windy hill of a sunny seaside town (set up a telescope): white style, main color close to #f3efe6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_telescope_2.png`
+
+```
+a telescope on a tripod for the windy hill of a sunny seaside town (set up a telescope): blue style, main color close to #4878c0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_kites_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where two kites flying high on strings will be built in the windy hill area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_kites_0.png`
+
+```
+two kites flying high on strings for the windy hill of a sunny seaside town (fly kites): fish kite style, main color close to #f08a3c, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_kites_1.png`
+
+```
+two kites flying high on strings for the windy hill of a sunny seaside town (fly kites): heart kite style, main color close to #e9506f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_kites_2.png`
+
+```
+two kites flying high on strings for the windy hill of a sunny seaside town (fly kites): star kite style, main color close to #f0c03a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_trees_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dead tree and a pile of junk (where a small group of trees will be built in the windy hill area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_trees_0.png`
+
+```
+a small group of trees for the windy hill of a sunny seaside town (plant pine trees): green pines style, main color close to #4f8f5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_trees_1.png`
+
+```
+a small group of trees for the windy hill of a sunny seaside town (plant pine trees): snowy pines style, main color close to #6f9f7a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_trees_2.png`
+
+```
+a small group of trees for the windy hill of a sunny seaside town (plant pine trees): birches style, main color close to #a6d872, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_flowers_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a round flower bed with a stone border will be built in the windy hill area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_flowers_0.png`
+
+```
+a round flower bed with a stone border for the windy hill of a sunny seaside town (sow wildflowers): roses style, main color close to #e9506f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_flowers_1.png`
+
+```
+a round flower bed with a stone border for the windy hill of a sunny seaside town (sow wildflowers): tulips style, main color close to #f39a3a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_flowers_2.png`
+
+```
+a round flower bed with a stone border for the windy hill of a sunny seaside town (sow wildflowers): lavender style, main color close to #9b7fd6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_swing_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where an A-frame wooden swing set will be built in the windy hill area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_swing_0.png`
+
+```
+an A-frame wooden swing set for the windy hill of a sunny seaside town (hang a swing): wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_swing_1.png`
+
+```
+an A-frame wooden swing set for the windy hill of a sunny seaside town (hang a swing): red style, main color close to #d9473b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/hill_swing_2.png`
+
+```
+an A-frame wooden swing set for the windy hill of a sunny seaside town (hang a swing): blue style, main color close to #4878c0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+## Town: Lighthouse
+
+### `art/raw/town/light_path_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a muddy empty lot with puddles, stones and weeds (flat isometric diamond shape) (where a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it will be built in the lighthouse area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_path_0.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the lighthouse of a sunny seaside town (pave a stone path): cobblestone style, main color close to #c9c1b2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_path_1.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the lighthouse of a sunny seaside town (pave a stone path): red brick style, main color close to #cf7a5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_path_2.png`
+
+```
+a flat paved ground tile (seen from above in isometric perspective, diamond shape), no objects on it for the lighthouse of a sunny seaside town (pave a stone path): white gravel style, main color close to #efe6d2, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_tower_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dirty cracked grey lighthouse tower with faded stripes and a boarded door (where a tall striped lighthouse tower without its top lantern will be built in the lighthouse area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_tower_0.png`
+
+```
+a tall striped lighthouse tower without its top lantern for the lighthouse of a sunny seaside town (paint the lighthouse): red stripes style, main color close to #f6f3ea with accents close to #d9473b, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_tower_1.png`
+
+```
+a tall striped lighthouse tower without its top lantern for the lighthouse of a sunny seaside town (paint the lighthouse): blue stripes style, main color close to #f6f3ea with accents close to #3f6fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_tower_2.png`
+
+```
+a tall striped lighthouse tower without its top lantern for the lighthouse of a sunny seaside town (paint the lighthouse): black stripes style, main color close to #f6f3ea with accents close to #3d3a44, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_beacon_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dark broken lighthouse lantern room with cracked glass (where the glowing glass lantern room on top of a lighthouse, with a red dome roof will be built in the lighthouse area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_beacon_0.png`
+
+```
+the glowing glass lantern room on top of a lighthouse, with a red dome roof for the lighthouse of a sunny seaside town (light the beacon): warm gold style, main color close to #ffd25a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_beacon_1.png`
+
+```
+the glowing glass lantern room on top of a lighthouse, with a red dome roof for the lighthouse of a sunny seaside town (light the beacon): white style, main color close to #fff6e0, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_beacon_2.png`
+
+```
+the glowing glass lantern room on top of a lighthouse, with a red dome roof for the lighthouse of a sunny seaside town (light the beacon): pink style, main color close to #ff9fb8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_cottage_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an abandoned shabby building with grey faded walls, boarded-up windows, holes in the roof and weeds (where a small charming two-storey seaside town building with a gable roof will be built in the lighthouse area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_cottage_0.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the lighthouse of a sunny seaside town (fix the keeper's house): white & blue style, main color close to #f6f3ea with accents close to #3f6fa8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_cottage_1.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the lighthouse of a sunny seaside town (fix the keeper's house): yellow & red style, main color close to #f9e48f with accents close to #c8483a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_cottage_2.png`
+
+```
+a small charming two-storey seaside town building with a gable roof for the lighthouse of a sunny seaside town (fix the keeper's house): grey & green style, main color close to #d6d3cc with accents close to #4f8f5a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_fence_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a broken fence with fallen and missing planks (where a short straight garden fence section running diagonally will be built in the lighthouse area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_fence_0.png`
+
+```
+a short straight garden fence section running diagonally for the lighthouse of a sunny seaside town (fence the cliff edge): white picket style, main color close to #f6f3ea, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_fence_1.png`
+
+```
+a short straight garden fence section running diagonally for the lighthouse of a sunny seaside town (fence the cliff edge): rustic wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_fence_2.png`
+
+```
+a short straight garden fence section running diagonally for the lighthouse of a sunny seaside town (fence the cliff edge): sea blue style, main color close to #6f9fd8, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_bench_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a park bench will be built in the lighthouse area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_bench_0.png`
+
+```
+a park bench for the lighthouse of a sunny seaside town (place a sea-view bench): wood style, main color close to #b07a48, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_bench_1.png`
+
+```
+a park bench for the lighthouse of a sunny seaside town (place a sea-view bench): white iron style, main color close to #f2f0ea, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_bench_2.png`
+
+```
+a park bench for the lighthouse of a sunny seaside town (place a sea-view bench): green style, main color close to #5f9a5f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_flag_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a flagpole with a waving flag will be built in the lighthouse area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_flag_0.png`
+
+```
+a flagpole with a waving flag for the lighthouse of a sunny seaside town (raise a flag): fish flag style, main color close to #4f86c6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_flag_1.png`
+
+```
+a flagpole with a waving flag for the lighthouse of a sunny seaside town (raise a flag): cat flag style, main color close to #f08a3c, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_flag_2.png`
+
+```
+a flagpole with a waving flag for the lighthouse of a sunny seaside town (raise a flag): star flag style, main color close to #e0533f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_garden_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a pile of old junk: broken planks, a dusty crate, stones and weeds (where a round flower bed with a stone border will be built in the lighthouse area of a seaside town). Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_garden_0.png`
+
+```
+a round flower bed with a stone border for the lighthouse of a sunny seaside town (plant a flower garden): roses style, main color close to #e9506f, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_garden_1.png`
+
+```
+a round flower bed with a stone border for the lighthouse of a sunny seaside town (plant a flower garden): tulips style, main color close to #f39a3a, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
+
+### `art/raw/town/light_garden_2.png`
+
+```
+a round flower bed with a stone border for the lighthouse of a sunny seaside town (plant a flower garden): lavender style, main color close to #9b7fd6, freshly restored and charming. Isometric 2.5D view from above at about 30 degrees (2:1 isometric), like a building or prop in a cozy town-builder mobile game map. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, no text, no watermark, no logo.
+```
