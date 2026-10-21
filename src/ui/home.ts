@@ -8,6 +8,7 @@ import {
 import { itemIconSVG, mascotSVG, roomSVG } from '../meta/roomArt.ts';
 import { ROOMS, roomTotalCost, type Room, type RoomTask } from '../meta/rooms.ts';
 import { prepareRoom, roomIsPainted } from '../art/paintedRoom.ts';
+import { contestButton } from './contest.ts';
 import { btn, h, icon, mochiSay, modal, rewardChips } from './dom.ts';
 import { nav } from './nav.ts';
 import {
@@ -85,7 +86,7 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
   const eHunt = evt(icon('chest'), showHunt);
   const ePiggy = evt(icon('piggy'), showPiggy);
   const eDeal = evt(icon('tag'), showDeal);
-  const sideRight = h('div', { class: 'side-right' }, ePass.el, eHunt.el, ePiggy.el, eDeal.el);
+  const sideRight = h('div', { class: 'side-right' }, ePass.el, eHunt.el, ePiggy.el, eDeal.el, contestButton());
 
   // ----- bottom -----
   const tasksBadge = h('span', { class: 'badge hidden' }, '!');

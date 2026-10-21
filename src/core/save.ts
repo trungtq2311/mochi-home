@@ -42,6 +42,8 @@ export interface SaveData {
   hunt: { id: number; keys: number; opened: number[] };
   piggy: { coins: number; broken: number };
   deal: { day: number };
+  /** Weekend design contest (id = day number of that Friday); placed = item key → style. */
+  contest: { id: number; tokens: number; placed: Record<string, number>; submitted: boolean };
 }
 
 export const MAX_LIVES = 5;
@@ -75,6 +77,7 @@ function fresh(): SaveData {
     hunt: { id: -1, keys: 0, opened: [] },
     piggy: { coins: 0, broken: 0 },
     deal: { day: -1 },
+    contest: { id: -1, tokens: 0, placed: {}, submitted: false },
   };
 }
 
