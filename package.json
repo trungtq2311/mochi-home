@@ -10,7 +10,8 @@
     "build:artifact": "node scripts/build-artifact.mjs",
     "art": "node scripts/art.ts",
     "art:status": "node scripts/art.ts status",
-    "art:prompts": "node scripts/art.ts prompts"
+    "art:prompts": "node scripts/art.ts prompts",
+    "deploy": "node scripts/deploy.mjs"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
