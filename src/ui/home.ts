@@ -10,6 +10,7 @@ import { ROOMS, type Room } from '../meta/rooms.ts';
 import { AREAS, areaTotalCost, type Area, type TownTask } from '../meta/town.ts';
 import { townIconSVG, type TownState } from '../meta/townArt.ts';
 import { artKeys, loadArt } from '../art/assets.ts';
+import { contestButton } from './contest.ts';
 import { btn, h, icon, mochiSay, modal, rewardChips, toast } from './dom.ts';
 import { nav } from './nav.ts';
 import {
@@ -88,7 +89,7 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
   const eHunt = evt(icon('chest'), showHunt);
   const ePiggy = evt(icon('piggy'), showPiggy);
   const eDeal = evt(icon('tag'), showDeal);
-  const sideRight = h('div', { class: 'side-right' }, ePass.el, eHunt.el, ePiggy.el, eDeal.el);
+  const sideRight = h('div', { class: 'side-right' }, ePass.el, eHunt.el, ePiggy.el, eDeal.el, contestButton());
 
   // ----- bottom -----
   const tasksBadge = h('span', { class: 'badge hidden' }, '!');

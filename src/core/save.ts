@@ -45,6 +45,8 @@ export interface SaveData {
   /** Mochi Bay town: index of the area being restored, and finished task id → chosen style. */
   area: number;
   town: Record<string, number>;
+  /** Weekend design contest (id = day number of that Friday); placed = item key → style. */
+  contest: { id: number; tokens: number; placed: Record<string, number>; submitted: boolean };
 }
 
 export const MAX_LIVES = 5;
@@ -81,6 +83,7 @@ function fresh(): SaveData {
     // Old saves get these defaults (load() merges); their room progress stays in `room`/`done`.
     area: 0,
     town: {},
+    contest: { id: -1, tokens: 0, placed: {}, submitted: false },
   };
 }
 

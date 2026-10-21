@@ -3,6 +3,7 @@ import { mulberry32 } from '../core/rng.ts';
 import { addInfiniteLives, msToMidnight, persist, save, today, type BoosterId, type QuestState } from '../core/save.ts';
 import { getLang } from '../core/i18n.ts';
 import type { Engine } from '../match3/engine.ts';
+import { contestWin } from './contest.ts';
 
 export interface Reward { coins?: number; boosters?: Partial<Record<BoosterId, number>>; infiniteMin?: number }
 
@@ -466,6 +467,7 @@ export function recordLevel(engine: Engine, won: boolean, streakBefore: number) 
     syncHunt();
     if (huntActive() && save.hunt.opened.length < HUNT_SIZE) save.hunt.keys += huntKeysFor(engine.level.hard);
     save.piggy.coins = Math.min(PIGGY_CAP, save.piggy.coins + piggyCoinsFor(engine.level.hard));
+    contestWin(engine.level.hard, streakBefore);
   }
   persist();
 }
