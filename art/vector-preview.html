@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vector Art Preview</title>
+<style>
+  body { margin: 0; font: 600 14px/1.4 system-ui, sans-serif; color: #4a2a14; background: #f6efe2; padding: 16px; }
+  h2 { font-size: 15px; margin: 18px 0 8px; letter-spacing: .4px; text-transform: uppercase; color: #8a5a30; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .row > * { width: 96px; height: 96px; }
+  .board { display: inline-grid; grid-template-columns: repeat(7, 50px); gap: 0; padding: 10px; border-radius: 18px;
+    background: linear-gradient(#e8f3ff, #cee2f8); box-shadow: 0 0 0 4px #9cc3e6, 0 0 0 10px #fffaf0, 0 8px 20px rgba(70,40,10,.35); }
+  .board > div { width: 50px; height: 50px; display: grid; place-items: center; }
+  .board > div:nth-child(odd) { background: rgba(255,255,255,.55); border-radius: 8px; }
+  .board img, .board canvas { width: 46px; height: 46px; }
+  .pair { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+</style>
+</head>
+<body>
+<h2>Hiện tại</h2><div class="row" id="old"></div>
+<h2>Mới (vector)</h2><div class="row" id="new"></div>
+<h2>Trên bàn chơi: cũ / mới</h2>
+<div class="pair"><div class="board" id="bold"></div><div class="board" id="bnew"></div></div>
+<script type="module">
+  import * as V from '/src/art/vector.ts';
+  import * as S from '/src/match3/sprites.ts';
+  const img = (svg) => { const i = new Image(); i.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); return i; };
+  // Sprites are cached canvases: copy them so each cell gets its own node.
+  const copy = (cv) => { const c = document.createElement('canvas'); c.width = cv.width; c.height = cv.height; c.getContext('2d').drawImage(cv, 0, 0); return c; };
+  const old = document.getElementById('old'), nw = document.getElementById('new');
+  for (let c = 0; c < 6; c++) { old.append(S.pieceSprite(c, 192)); nw.append(img(V.pieceVectorSVG(c))); }
+  for (const s of ['rocketH', 'bomb', 'plane', 'rainbow']) old.append(S.specialSprite(s, 192));
+  nw.append(img(V.rocketVectorSVG()), img(V.bombVectorSVG()), img(V.planeVectorSVG()), img(V.discoVectorSVG()));
+  [...old.children].forEach((c) => { c.style.width = c.style.height = '96px'; });
+  // Same pseudo-random board twice.
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const cells = Array.from({ length: 49 }, () => Math.floor(rnd() * 6));
+  cells[24] = 'rocket'; cells[10] = 'bomb'; cells[38] = 'disco';
+  for (const [el, isNew] of [[document.getElementById('bold'), false], [document.getElementById('bnew'), true]]) {
+    for (const c of cells) {
+      const d = document.createElement('div');
+      if (typeof c === 'number') d.append(isNew ? img(V.pieceVectorSVG(c)) : copy(S.pieceSprite(c, 96)));
+      else if (c === 'rocket') d.append(isNew ? img(V.rocketVectorSVG()) : copy(S.specialSprite('rocketH', 96)));
+      else if (c === 'bomb') d.append(isNew ? img(V.bombVectorSVG()) : copy(S.specialSprite('bomb', 96)));
+      else d.append(isNew ? img(V.discoVectorSVG()) : copy(S.specialSprite('rainbow', 96)));
+      el.append(d);
+    }
+  }
+</script>
+</body>
+</html>

@@ -627,7 +627,7 @@ export class Renderer {
   private updateShines() {
     for (const [id, t] of this.shines) if (this.clock - t > 700) this.shines.delete(id);
     if (this.clock < this.nextShine) return;
-    this.nextShine = this.clock + rnd(350, 900);
+    this.nextShine = this.clock + rnd(2200, 4500);
     const b = this.engine.board;
     for (let tries = 0; tries < 6; tries++) {
       const p = b.piece(Math.floor(Math.random() * b.rows), Math.floor(Math.random() * b.cols));

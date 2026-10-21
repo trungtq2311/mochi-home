@@ -11,6 +11,7 @@ import './styles.css';
 import { Capacitor } from '@capacitor/core';
 import { StatusBar } from '@capacitor/status-bar';
 import { initArt } from './art/assets.ts';
+import { initVectorArt } from './art/vector.ts';
 import { unlockAudio } from './core/audio.ts';
 import { t } from './core/i18n.ts';
 import { mascotSVG } from './meta/roomArt.ts';
@@ -51,7 +52,7 @@ function splash() {
   el.addEventListener('pointerup', () => { unlockAudio(); showHome(); }, { once: true });
 }
 
-void Promise.all([document.fonts.ready, initArt()]).then(splash);
+void Promise.all([document.fonts.ready, initArt(), initVectorArt()]).then(splash);
 
 if (Capacitor.isNativePlatform()) {
   // Store app: full screen; files ship inside the app, so no service worker.

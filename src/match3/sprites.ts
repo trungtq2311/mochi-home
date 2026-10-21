@@ -1,6 +1,10 @@
 // Procedurally drawn, pre-rendered sprites for pieces, specials and obstacles.
 import type { Special } from './board.ts';
-import { artImage } from '../art/assets.ts';
+import { artImage as paintedImage } from '../art/assets.ts';
+import { vectorImage } from '../art/vector.ts';
+
+/** Painted art if present, else the hand-drawn vector set (pieces and boosters). */
+const artImage = (key: string) => paintedImage(key) ?? vectorImage(key);
 
 const PIECE_ART = ['red', 'yellow', 'blue', 'green', 'purple', 'orange'];
 
