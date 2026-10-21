@@ -144,25 +144,32 @@ export class Renderer {
       }
       g.fill();
     };
+    // Light "frosted glass" board on a thick cream rim, so the room stays visible and bright behind it.
     g.save();
-    g.shadowColor = 'rgba(20,10,40,0.45)';
-    g.shadowBlur = 18;
+    g.shadowColor = 'rgba(70,40,10,0.35)';
+    g.shadowBlur = 16;
     g.shadowOffsetY = 6;
-    each(9, 16, 'rgba(255,248,235,0.95)');
+    each(10, 18, '#fffaf0');
     g.restore();
+    each(6, 14, '#9cc3e6');
     const grad = g.createLinearGradient(0, 0, 0, b.rows * cs);
-    grad.addColorStop(0, '#5a4aa8');
-    grad.addColorStop(1, '#3a2c78');
-    each(5, 12, grad);
+    grad.addColorStop(0, 'rgba(232,243,255,0.94)');
+    grad.addColorStop(1, 'rgba(206,226,248,0.94)');
+    each(4, 12, grad);
     for (let r = 0; r < b.rows; r++) {
       for (let c = 0; c < b.cols; c++) {
-        if (!b.cells[r][c].playable) continue;
-        g.fillStyle = (r + c) % 2 ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0.15)';
+        if (!b.cells[r][c].playable || (r + c) % 2) continue;
+        g.fillStyle = 'rgba(255,255,255,0.55)';
         g.beginPath();
-        g.roundRect(c * cs + 2, r * cs + 2, cs - 4, cs - 4, Math.max(4, cs * 0.16));
+        g.roundRect(c * cs + 1.5, r * cs + 1.5, cs - 3, cs - 3, Math.max(4, cs * 0.14));
         g.fill();
       }
     }
+    // Soft top sheen across the glass
+    const sheen = g.createLinearGradient(0, 0, 0, b.rows * cs * 0.4);
+    sheen.addColorStop(0, 'rgba(255,255,255,0.35)');
+    sheen.addColorStop(1, 'rgba(255,255,255,0)');
+    each(4, 12, sheen);
     this.bg = canvas;
     this.clip = new Path2D();
     for (let r = 0; r < b.rows; r++) {

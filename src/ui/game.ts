@@ -67,8 +67,27 @@ export function startGame(n: number, picked: BoosterId[]) {
   });
   const movesNum = h('b', {}, String(engine.movesLeft));
   const movesBox = h('div', { class: 'moves' }, h('small', {}, t('moves')), movesNum);
+  // Mochi sits in the HUD like a co-player: reacts to big plays and low moves; tap = pause menu.
+  const avatar = h('button', { class: 'hud-mochi', 'aria-label': t('paused') },
+    h('span', { class: 'hud-mochi-face', html: mascotSVG('happy') }),
+    h('span', { class: 'hud-mochi-pause' }, icon('pause')),
+  );
+  avatar.addEventListener('click', () => { sfx('click'); pause(); });
+  let mood: 'happy' | 'sad' | 'wow' = 'happy';
+  let moodTimer = 0;
+  const setMood = (m: typeof mood, ms = 0) => {
+    clearTimeout(moodTimer);
+    if (m !== mood) {
+      mood = m;
+      avatar.firstElementChild!.innerHTML = mascotSVG(m);
+      avatar.classList.remove('react');
+      void avatar.offsetWidth;
+      avatar.classList.add('react');
+    }
+    if (ms) moodTimer = window.setTimeout(() => setMood(engine.movesLeft <= 3 && engine.state === 'play' ? 'sad' : 'happy'), ms);
+  };
   const hud = h('div', { class: 'hud' },
-    btn(icon('pause'), 'round pause', () => pause()),
+    avatar,
     h('div', { class: 'goals' }, ...goalEls.map((g) => g.el)),
     movesBox,
   );
@@ -243,6 +262,25 @@ export function startGame(n: number, picked: BoosterId[]) {
     setTimeout(() => b.remove(), 1700);
   };
 
+  /** "Level complete" moment: Mochi in a glowing badge with rays, text underneath. */
+  const heroBanner = (text: string) => {
+    const b = h('div', { class: 'hero-banner' },
+      h('div', { class: 'hero-rays' }),
+      h('div', { class: 'hero-badge', html: mascotSVG('wow') }),
+      h('div', { class: 'hero-text' }, text),
+    );
+    screen.append(b);
+    setTimeout(() => b.classList.add('out'), 1500);
+    setTimeout(() => b.remove(), 1900);
+  };
+
+  engine.on((e) => {
+    if (e.type === 'cascade' && e.n >= 3) setMood('wow', 1600);
+    else if (e.type === 'activate' && e.combo) setMood('wow', 1600);
+    else if (e.type === 'turn-end') setMood(engine.movesLeft <= 3 ? 'sad' : mood === 'sad' ? 'happy' : mood);
+    else if (e.type === 'won') setMood('wow');
+  });
+
   engine.on((e) => {
     if (engine.state === 'bonus') return; // the end-of-level fireworks would just rattle
     if (e.type === 'special') buzz('light');
@@ -254,7 +292,7 @@ export function startGame(n: number, picked: BoosterId[]) {
       await waitFlyers();
       sfx('win');
       buzz('success');
-      bannerText(t('levelDone'));
+      heroBanner(t('levelDone'));
       setTimeout(() => {
         bannerText(t('bonusTime'));
         bonusHint.classList.remove('hidden');
@@ -284,28 +322,28 @@ export function startGame(n: number, picked: BoosterId[]) {
     recordLevel(engine, true, streakBefore);
     persist();
     confetti();
+    // Full-screen celebration over the room (instead of a small popup).
     const coinsEl = h('b', {}, '0');
-    const m = modal({
-      title: t('levelDone'),
-      closable: false,
-      cls: 'win',
-      body: h('div', { class: 'center' },
-        h('div', { class: 'win-stars' }, ...Array.from({ length: stars }, (_, i) => h('span', { class: 'win-star', style: `animation-delay:${200 + i * 250}ms` }, icon('star')))),
-        h('div', { class: 'win-rewards' },
-          h('div', { class: 'chip big' }, icon('star'), `+${stars}`),
-          h('div', { class: 'chip big' }, icon('coin'), '+', coinsEl),
-          h('div', { class: 'chip big' }, h('span', { class: 'ic emoji' }, fest.icon), `+${pts}`),
-        ),
-        h('div', { class: 'muted' }, `${t('streak')}: ${save.streak} 🔥`),
+    const perfect = engine.stats.bonusMoves >= Math.max(5, level.moves * 0.25);
+    const win = h('div', { class: 'win-screen' },
+      h('div', { class: 'win-rays' }),
+      h('div', { class: 'win-title' }, perfect ? t('perfect') : t('levelDone')),
+      h('div', { class: 'win-stars big' }, ...Array.from({ length: stars }, (_, i) => h('span', { class: 'win-star', style: `animation-delay:${250 + i * 250}ms` }, icon('star')))),
+      h('div', { class: 'win-rewards' },
+        h('div', { class: 'chip big' }, icon('star'), `+${stars}`),
+        h('div', { class: 'chip big' }, icon('coin'), '+', coinsEl),
+        h('div', { class: 'chip big' }, h('span', { class: 'ic emoji' }, fest.icon), `+${pts}`),
       ),
-      buttons: [
-        { label: t('home'), cls: 'blue', onClick: () => exit(() => nav.home({ fromWin: true })) },
-        { label: t('next'), cls: 'green', onClick: () => exit(() => { nav.home({ fromWin: true }); showLevelStart(save.level); }) },
-      ],
-    });
-    void m;
-    setTimeout(() => { countUp(coinsEl, 0, coins, 700); sfx('coin'); }, 500);
-    setTimeout(() => sfx('star'), 300);
+      h('div', { class: 'win-streak' }, `${t('streak')}: ${save.streak} 🔥`),
+      h('div', { class: 'win-mochi', html: mascotSVG('wow') }),
+      h('div', { class: 'win-buttons' },
+        btn(t('home'), 'blue', () => exit(() => nav.home({ fromWin: true }))),
+        btn(t('next'), 'green big', () => exit(() => { nav.home({ fromWin: true }); showLevelStart(save.level); })),
+      ),
+    );
+    document.getElementById('overlay')!.append(win);
+    setTimeout(() => { countUp(coinsEl, 0, coins, 700); sfx('coin'); }, 600);
+    setTimeout(() => sfx('star'), 350);
   }
 
   let continues = 0;

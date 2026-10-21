@@ -209,10 +209,11 @@ function drawDetails(ctx: CanvasRenderingContext2D, color: number) {
 
 export function pieceSprite(color: number, px: number): HTMLCanvasElement {
   const art = artImage(`pieces/${PIECE_ART[color]}`);
-  if (art) return sprite(`pp${color}`, px, (ctx) => drawFit(ctx, art, 0.9));
+  if (art) return sprite(`pp${color}`, px, (ctx) => drawFit(ctx, art, 0.97));
   return sprite(`p${color}`, px, (ctx) => {
-    ctx.translate(0.06, 0.06);
-    ctx.scale(0.88, 0.88);
+    // Big, cell-filling pieces read much better than small gems floating in their tiles.
+    ctx.translate(0.02, 0.02);
+    ctx.scale(0.96, 0.96);
     glossyShape(ctx, SHAPES[color], PIECE_COLORS[color]);
     drawDetails(ctx, color);
   });
@@ -496,8 +497,9 @@ export function iceSprite(layer: number, px: number): HTMLCanvasElement {
     const thick = layer >= 2;
     const body = () => { ctx.beginPath(); ctx.roundRect(0.05, 0.05, 0.9, 0.9, 0.16); };
     const g = ctx.createLinearGradient(0, 0.05, 0, 0.95);
-    g.addColorStop(0, thick ? 'rgba(236,250,255,0.8)' : 'rgba(225,247,255,0.62)');
-    g.addColorStop(1, thick ? 'rgba(150,208,245,0.78)' : 'rgba(130,200,245,0.55)');
+    // Saturated enough to read on the light board.
+    g.addColorStop(0, thick ? 'rgba(190,232,255,0.88)' : 'rgba(178,226,255,0.7)');
+    g.addColorStop(1, thick ? 'rgba(60,140,222,0.86)' : 'rgba(72,160,232,0.66)');
     ctx.fillStyle = g;
     body(); ctx.fill();
     ctx.save();

@@ -16,6 +16,7 @@ const STR = {
   combo: ['Combo!', 'Combo!'],
   shuffle: ['Xáo trộn!', 'Shuffle!'],
   levelDone: ['Hoàn thành!', 'Level complete!'],
+  perfect: ['Hoàn hảo!', 'Perfect!'],
   bonusTime: ['Thưởng thêm!', 'Bonus time!'],
   tapToSkip: ['Chạm để tua nhanh', 'Tap to speed up'],
   outOfMoves: ['Hết lượt rồi!', 'Out of moves!'],
