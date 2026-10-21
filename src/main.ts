@@ -8,6 +8,8 @@ import '@fontsource/baloo-2/vietnamese-500.css';
 import '@fontsource/baloo-2/vietnamese-700.css';
 import '@fontsource/baloo-2/vietnamese-800.css';
 import './styles.css';
+import { Capacitor } from '@capacitor/core';
+import { StatusBar } from '@capacitor/status-bar';
 import { initArt } from './art/assets.ts';
 import { unlockAudio } from './core/audio.ts';
 import { t } from './core/i18n.ts';
@@ -51,6 +53,9 @@ function splash() {
 
 void Promise.all([document.fonts.ready, initArt()]).then(splash);
 
-if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+if (Capacitor.isNativePlatform()) {
+  // Store app: full screen; files ship inside the app, so no service worker.
+  StatusBar.hide().catch(() => { /* not supported */ });
+} else if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => { /* not allowed here (e.g. sandboxed embed) */ }); });
 }

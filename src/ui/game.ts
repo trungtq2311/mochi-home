@@ -1,4 +1,5 @@
 import { sfx, unlockAudio } from '../core/audio.ts';
+import { buzz } from '../core/haptics.ts';
 import { t, type StrKey } from '../core/i18n.ts';
 import { canPlay, loseLife, persist, save, type BoosterId } from '../core/save.ts';
 import type { Pos, Special } from '../match3/board.ts';
@@ -242,10 +243,17 @@ export function startGame(n: number, picked: BoosterId[]) {
     setTimeout(() => b.remove(), 1700);
   };
 
+  engine.on((e) => {
+    if (engine.state === 'bonus') return; // the end-of-level fireworks would just rattle
+    if (e.type === 'special') buzz('light');
+    else if (e.type === 'activate' && (e.combo || e.special === 'bomb')) buzz('medium');
+  });
+
   engine.on(async (e) => {
     if (e.type === 'won') {
       await waitFlyers();
       sfx('win');
+      buzz('success');
       bannerText(t('levelDone'));
       setTimeout(() => {
         bannerText(t('bonusTime'));
