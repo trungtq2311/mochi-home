@@ -108,6 +108,30 @@ A square tile of light dusty dirt with crumbs and small smudges, seen from strai
 A square tile of thick dark sticky mud with puddles and splatters, seen from straight above, rounded corners, square, match-3 game obstacle tile filling the whole square frame. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
 ```
 
+### `art/raw/pieces/ice1.png`
+
+```
+A thin clear ice shell shaped like a rounded square, mostly see-through in the middle with pale-blue frosty edges, a few white light streaks and a crisp blue outline, seen straight from the front, square, meant to be laid over a game piece, match-3 game obstacle filling the whole square frame. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/pieces/ice2.png`
+
+```
+A thick frosted ice block shaped like a rounded square, translucent pale blue with white frost cracks, a little snow on the top corners and a crisp darker blue outline, seen straight from the front, square, meant to be laid over a game piece, match-3 game obstacle filling the whole square frame. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/pieces/toy.png`
+
+```
+A cute small teddy bear head toy, warm caramel-brown plush with round ears, a cream snout, shiny black button eyes, rosy cheeks and a red bow tie, friendly and simple, match-3 game collectible piece, fills about 90% of the square frame. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/pieces/carpet.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A cozy woven rug pattern seen from straight above: warm raspberry-red wool with a darker red diamond lattice and small golden diamonds at the crossings, soft fabric texture. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
 ## UI icons
 
 ### `art/raw/ui/coin.png`

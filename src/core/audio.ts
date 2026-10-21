@@ -111,6 +111,9 @@ export function sfx(name: string, arg = 0) {
     case 'plane': noise(0.6, { freq: 1200, sweep: 3000, vol: 0.1, q: 3 }); break;
     case 'box': noise(0.08, { freq: 700, vol: 0.25, q: 4 }); tone(180, 0.08, { type: 'square', vol: 0.04 }); break;
     case 'dirt': noise(0.15, { freq: 3000, vol: 0.06 }); break;
+    case 'ice': noise(0.1, { freq: 4200, vol: 0.12, q: 6 }); tone(2093, 0.12, { type: 'sine', vol: 0.05, slide: 1.3 }); break;
+    case 'carpet': noise(0.18, { freq: 1500, sweep: 600, vol: 0.06 }); break;
+    case 'toy': [0, 7, 12].forEach((s, i) => tone(hz(s + 12), 0.16, { type: 'sine', vol: 0.1, when: i * 0.06 })); break;
     case 'coin': tone(1318, 0.12, { type: 'square', vol: 0.04 }); tone(1760, 0.2, { type: 'square', vol: 0.04, when: 0.06 }); break;
     case 'praise': [0, 4, 7].forEach((s) => tone(hz(s), 0.5, { type: 'triangle', vol: 0.08 })); break;
     case 'shuffle': noise(0.4, { freq: 800, sweep: 2400, vol: 0.12 }); break;

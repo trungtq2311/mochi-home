@@ -23,7 +23,7 @@ const BOOSTER_NAME: Record<BoosterId, () => string> = {
 
 const BOOSTER_PRICE: Record<BoosterId, number> = { hammer: 300, broom: 400, shuffle: 200, rocket: 250, bomb: 300, rainbow: 450 };
 
-export function goalIcon(kind: 'color' | 'box' | 'dirt', color: number): HTMLElement {
+export function goalIcon(kind: Parameters<typeof iconURL>[0], color: number): HTMLElement {
   return h('img', { class: 'goal-ic', src: iconURL(kind, color, 96), alt: '' });
 }
 

@@ -3,7 +3,7 @@ import { t, type StrKey } from '../core/i18n.ts';
 import { canPlay, loseLife, persist, save, type BoosterId } from '../core/save.ts';
 import type { Pos, Special } from '../match3/board.ts';
 import { Engine } from '../match3/engine.ts';
-import { getLevel } from '../match3/levels.ts';
+import { CARPET_LEVEL, getLevel, ICE_LEVEL, TOY_LEVEL } from '../match3/levels.ts';
 import { Renderer } from '../match3/renderer.ts';
 import { festivalPointsFor, festival, recordLevel } from '../meta/events.ts';
 import { mascotSVG, roomSVG } from '../meta/roomArt.ts';
@@ -12,7 +12,10 @@ import { confetti, currentRoom, leaveHome, placedFor } from './home.ts';
 import { nav } from './nav.ts';
 import { goalIcon, showBuyBooster, showLevelStart, showSettings } from './popups.ts';
 
-const TUTORIALS: Record<number, StrKey> = { 1: 'tutorial1', 2: 'tutorial2', 3: 'tutorialTap', 4: 'tutorialBox', 6: 'tutorialDirt' };
+const TUTORIALS: Record<number, StrKey> = {
+  1: 'tutorial1', 2: 'tutorial2', 3: 'tutorialTap', 4: 'tutorialBox', 6: 'tutorialDirt',
+  [ICE_LEVEL]: 'tutorialIce', [TOY_LEVEL]: 'tutorialToy', [CARPET_LEVEL]: 'tutorialCarpet',
+};
 
 let teardown: (() => void) | null = null;
 
