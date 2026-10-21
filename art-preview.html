@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Room Art Preview</title>
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; padding: 16px; background: #f4efe6; color: #3a2a1e; font: 14px/1.4 system-ui, sans-serif; }
+    h1 { margin: 0 0 8px; font-size: 22px; }
+    h2 { margin: 28px 0 10px; font-size: 18px; }
+    .bar { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 8px; }
+    .errors { background: #ffe1e1; color: #8a1c1c; padding: 8px 12px; border-radius: 8px; white-space: pre-wrap; }
+    .ok { background: #e1f5e1; color: #1c6a2a; padding: 6px 12px; border-radius: 8px; }
+    .rooms { display: flex; flex-wrap: wrap; gap: 14px; }
+    figure { margin: 0; }
+    figcaption { text-align: center; font-weight: 600; margin-top: 4px; }
+    .room { position: relative; width: var(--fw, 300px); aspect-ratio: 5 / 8; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,.18); background: #222; }
+    body.phone .room { aspect-ratio: 9 / 19.5; }
+    .room > svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .room > svg.guide { pointer-events: none; display: none; }
+    body.guides .room > svg.guide { display: block; }
+    .room .room-item { cursor: pointer; }
+    .room .room-item:hover { filter: brightness(1.12) drop-shadow(0 0 3px #fff); }
+    table.icons { border-collapse: collapse; background: #fffaf2; border-radius: 10px; }
+    table.icons td, table.icons th { padding: 4px 10px; border-bottom: 1px solid #eadfcc; text-align: center; }
+    table.icons td:first-child { text-align: left; font-weight: 600; }
+    .icon { width: 64px; height: 64px; display: inline-block; background: repeating-conic-gradient(#efe6d6 0 25%, #fffaf2 0 50%) 0 0 / 12px 12px; border-radius: 8px; }
+    .icon svg { width: 64px; height: 64px; display: block; }
+    .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: middle; margin-right: 4px; border: 1px solid rgba(0,0,0,.2); }
+    .mascots { display: flex; gap: 18px; }
+    .mascots figure { background: #fffaf2; border-radius: 14px; padding: 8px; }
+    .mascots svg { width: 120px; height: 120px; display: block; }
+    pre.bbox { background: #fffaf2; padding: 10px; border-radius: 8px; font-size: 12px; }
+  </style>
+</head>
+<body class="guides">
+  <h1>Room art preview (dev only)</h1>
+  <div class="bar">
+    <label><input type="checkbox" id="guides" checked /> Show UI bars + safe area (x 30–370, y 110–540)</label>
+    <label><input type="checkbox" id="phone" /> Narrow phone crop (19.5:9)</label>
+    <span>Hover an item to highlight its <code>.room-item</code> group.</span>
+  </div>
+  <div id="status"></div>
+  <main id="app"></main>
+  <script type="module" src="/src/artPreview.ts"></script>
+</body>
+</html>
