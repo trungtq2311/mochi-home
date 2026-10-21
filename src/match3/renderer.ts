@@ -1,6 +1,6 @@
 import { fallDist, pathLength, type Piece, type Pos, type Special } from './board.ts';
 import type { Dying, Effect, Engine, EngineEvent } from './engine.ts';
-import { boxSprite, dirtSprite, pieceSprite, PIECE_COLORS, rocketHeadSprite, specialSprite } from './sprites.ts';
+import { boxSprite, carpetSprite, dirtSprite, goalSprite, iceSprite, pieceSprite, PIECE_COLORS, rocketHeadSprite, specialSprite, toySprite } from './sprites.ts';
 import { Particles } from './fx/particles.ts';
 import { glowTex, hotTex, hueColor, puffTex, shardTex, sparkleTex, whiteOf } from './fx/textures.ts';
 
@@ -63,10 +63,13 @@ export class Renderer {
   private shakeT0 = 0;
   private zoomT0 = -1e9;
   private comboAt = -1;
+  private lastCarpetSound = -1;
   private matchSize = 0;
   private matchAt = -1;
   /** Piece id → engine time when its "no!" headshake starts (invalid swap). */
   private wobble = new Map<number, number>();
+  /** Cell index → engine time when carpet was laid there (unroll animation). */
+  private carpetT0 = new Map<number, number>();
   /** Piece id → clock time when its idle shine started. */
   private shines = new Map<number, number>();
   private nextShine = 1500;
@@ -299,6 +302,36 @@ export class Renderer {
         h.sound('dirt');
         break;
       }
+      case 'ice': {
+        const { x, y } = this.cellCenter(e.r, e.c);
+        const cs = this.cs, P = this.parts;
+        const n = P.budget(e.left === 0 ? 12 : 8);
+        for (let i = 0; i < n; i++) {
+          const a = Math.random() * TAU, v = cs * rnd(2, 5.5);
+          const p = P.add('chip', x + Math.cos(a) * cs * 0.3, y + Math.sin(a) * cs * 0.3, Math.cos(a) * v, Math.sin(a) * v - cs * 2.5, rnd(0.45, 0.7), cs * rnd(0.12, 0.22), null, i % 3 ? '#d8f3ff' : '#8fcff5');
+          if (p) { p.g = cs * 22; p.drag = 1; p.vr = rnd(-14, 14); }
+        }
+        this.glowPuff(x, y, '#c8efff', cs * 1.5, 0.3, 0.7);
+        if (e.left === 0) { this.stars(x, y, 6, '#ffffff', 3.5); this.ring(x, y, cs * 0.9, '#e6f8ff', 0.3); }
+        h.sound('ice');
+        break;
+      }
+      case 'carpet': {
+        const b = eng.board;
+        this.carpetT0.set(e.r * b.cols + e.c, eng.now);
+        const { x, y } = this.cellCenter(e.r, e.c);
+        this.stars(x, y, 2, '#ffd98a', 2.2, 0.35);
+        if (this.lastCarpetSound !== eng.now) { this.lastCarpetSound = eng.now; h.sound('carpet'); }
+        break;
+      }
+      case 'toy': {
+        const { x, y } = this.cellCenter(e.r, e.c);
+        this.glowPuff(x, y, '#fff1b8', this.cs * 1.8, 0.4, 0.8, true);
+        this.stars(x, y, 8, '#fff3b0', 4, 0.45);
+        this.ring(x, y, this.cs * 1.1, '#ffffff', 0.35);
+        h.sound('toy');
+        break;
+      }
       case 'collect': this.flyToGoal(e.goal, e.r, e.c); break;
       case 'cascade': {
         const words = ['', '', 'nice', 'great', 'super', 'amazing'];
@@ -452,7 +485,7 @@ export class Renderer {
     const g = this.engine.goals[goal];
     if (!target) { this.hooks.goalArrived(goal); return; }
     const px = this.cs * this.dpr;
-    const img = g.kind === 'color' ? pieceSprite(g.color, px) : g.kind === 'box' ? boxSprite(1, px) : dirtSprite(2, px);
+    const img = goalSprite(g.kind, g.color, px);
     const { x, y } = this.cellCenter(r, c);
     this.flyers.push({ img, x0: x, y0: y, x1: target.x, y1: target.y, t0: this.clock + Math.random() * 140, dur: 560 + Math.random() * 120, done: () => this.hooks.goalArrived(goal) });
   }
@@ -498,6 +531,7 @@ export class Renderer {
     if (this.bg) ctx.drawImage(this.bg, this.bx - this.bgMargin, this.by - this.bgMargin, this.bg.width / dpr, this.bg.height / dpr);
 
     const spx = cs * dpr;
+    this.drawCarpet(now);
     // Dirt under pieces
     for (let r = 0; r < b.rows; r++) {
       for (let c = 0; c < b.cols; c++) {
@@ -527,6 +561,7 @@ export class Renderer {
       for (let c = 0; c < b.cols; c++) {
         const cell = b.cells[r][c];
         if (cell.playable && cell.box > 0) ctx.drawImage(boxSprite(cell.box, spx), this.bx + c * cs, this.by + r * cs, cs, cs);
+        else if (cell.playable && cell.ice > 0) ctx.drawImage(iceSprite(cell.ice, spx), this.bx + c * cs, this.by + r * cs, cs, cs);
       }
     }
 
@@ -539,6 +574,47 @@ export class Renderer {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     this.drawFlyers();
     this.drawTexts();
+  }
+
+  /** Carpet floor: seamless tiles with a gold trim on the outer edge; new cells unroll from their centre. */
+  private drawCarpet(now: number) {
+    const ctx = this.ctx, cs = this.cs, b = this.engine.board;
+    const tile = carpetSprite(cs * this.dpr);
+    const has = (r: number, c: number) => !!b.cells[r]?.[c]?.carpet;
+    for (let r = 0; r < b.rows; r++) {
+      for (let c = 0; c < b.cols; c++) {
+        if (!has(r, c)) continue;
+        const t0 = this.carpetT0.get(r * b.cols + c);
+        let k = 1;
+        if (t0 !== undefined) {
+          k = clamp01((now - t0) / 320);
+          if (k >= 1) this.carpetT0.delete(r * b.cols + c);
+        }
+        const x = this.bx + c * cs, y = this.by + r * cs;
+        ctx.save();
+        if (k < 1) {
+          const s = easeOutBack(k);
+          ctx.translate(x + cs / 2, y + cs / 2);
+          ctx.scale(s, s);
+          ctx.translate(-x - cs / 2, -y - cs / 2);
+        }
+        ctx.drawImage(tile, x, y, cs + 0.5, cs + 0.5);
+        // Trim + fringe on sides that face bare floor.
+        const w = Math.max(2, cs * 0.09);
+        ctx.fillStyle = '#f6c56b';
+        if (!has(r - 1, c)) ctx.fillRect(x, y, cs, w);
+        if (!has(r + 1, c)) ctx.fillRect(x, y + cs - w, cs, w);
+        if (!has(r, c - 1)) ctx.fillRect(x, y, w, cs);
+        if (!has(r, c + 1)) ctx.fillRect(x + cs - w, y, w, cs);
+        ctx.fillStyle = '#9b2440';
+        const l = Math.max(1, cs * 0.025);
+        if (!has(r - 1, c)) ctx.fillRect(x, y, cs, l);
+        if (!has(r + 1, c)) ctx.fillRect(x, y + cs - l, cs, l);
+        if (!has(r, c - 1)) ctx.fillRect(x, y, l, cs);
+        if (!has(r, c + 1)) ctx.fillRect(x + cs - l, y, l, cs);
+        ctx.restore();
+      }
+    }
   }
 
   private updateShines() {
@@ -674,7 +750,8 @@ export class Renderer {
     const size = cs;
     const px = cs * this.dpr;
     let img: HTMLCanvasElement;
-    if (p.special === 'none') img = pieceSprite(p.color, px);
+    if (p.toy) img = toySprite(px);
+    else if (p.special === 'none') img = pieceSprite(p.color, px);
     else {
       // Soft pulsing glow behind specials (cached texture, no per-frame gradients).
       const pulse = 0.5 + 0.5 * Math.sin(this.clock / 260 + p.id);
@@ -765,10 +842,16 @@ export class Renderer {
     const ctx = this.ctx, cs = this.cs, p = d.p, t = now - d.t0;
     if (t < 0) return;
     const px = cs * this.dpr;
-    const img = p.special === 'none' ? pieceSprite(p.color, px) : specialSprite(p.special, px, this.clock / 1600);
+    const img = p.toy ? toySprite(px) : p.special === 'none' ? pieceSprite(p.color, px) : specialSprite(p.special, px, this.clock / 1600);
     const cx = this.bx + (p.c + 0.5) * cs, cy = this.by + (p.r + 0.5) * cs;
     const col = PIECE_COLORS[p.color] ?? PIECE_COLORS[1];
-    if (d.kind === 'pop') {
+    if (d.kind === 'exit') {
+      // Toy hops up happily, then the goal flyer takes over.
+      const k = clamp01(t / 260);
+      if (k >= 1) return;
+      const hop = Math.sin(k * Math.PI) * 0.35;
+      this.blit(img, cx, cy - hop * cs, 1 + 0.25 * k, 1 - k * k, 0.5 * k);
+    } else if (d.kind === 'pop') {
       // Quick swell + white flash, then shrink away.
       if (t >= 220) return;
       let s: number, a: number, wa: number;
@@ -1138,7 +1221,7 @@ export class Renderer {
         ctx.globalAlpha = (0.45 + 0.35 * pulse) * alpha;
         ctx.drawImage(glowTex(col), p.x - g / 2, p.y - g / 2, g, g);
         const pc = b.piece(tg.r, tg.c);
-        if (pc && t < hitT && pc.special === 'none') {
+        if (pc && t < hitT && pc.special === 'none' && !pc.toy) {
           ctx.globalAlpha = 0.25 + 0.3 * pulse;
           ctx.drawImage(whiteOf(pieceSprite(pc.color, cs * this.dpr)), p.x - cs / 2, p.y - cs / 2, cs, cs);
         }

@@ -19,9 +19,12 @@ export interface Piece {
   bornAt: number;
   /** Set by the renderer when a fall ends (landing squash). */
   landAt: number;
+  /** Drop toy: colorless, never matches, can't be destroyed; collected at the bottom of its column. */
+  toy: boolean;
 }
 
-export interface Cell { playable: boolean; piece: Piece | null; dirt: number; box: number }
+/** `ice` locks the cell's piece in place (layers); `carpet` is floor that matches can spread. */
+export interface Cell { playable: boolean; piece: Piece | null; dirt: number; box: number; ice: number; carpet: boolean }
 
 export interface MatchGroup { cells: Pos[]; color: number; special: Special; at: Pos }
 
@@ -58,6 +61,8 @@ export class Board {
   colors: number;
   /** Relative spawn weight per color (goal colors get a small boost to keep levels friendly). */
   weights: number[];
+  /** How many more drop toys may spawn from the top (set by the engine before each refill). */
+  toyQuota = 0;
   private rng: RNG;
   private nextId = 1;
 
@@ -77,6 +82,8 @@ export class Board {
           piece: null,
           box: ch === 'b' ? 1 : ch === 'B' ? 2 : ch === 'C' ? 3 : 0,
           dirt: ch === 'd' ? 1 : ch === 'D' ? 2 : 0,
+          ice: ch === 'i' ? 1 : ch === 'I' ? 2 : 0,
+          carpet: ch === 'k',
         });
       }
       this.cells.push(row);
@@ -97,13 +104,36 @@ export class Board {
     return this.get(r, c)?.piece ?? null;
   }
 
+  /** Piece can be swapped / moved by gravity (not frozen under ice). */
+  canMove(r: number, c: number): boolean {
+    const cell = this.get(r, c);
+    return !!cell && cell.playable && cell.box === 0 && cell.ice === 0;
+  }
+
   colorAt(r: number, c: number): number {
     const p = this.piece(r, c);
-    return p && p.special === 'none' ? p.color : -1;
+    return p && p.special === 'none' && !p.toy ? p.color : -1;
+  }
+
+  /** A plain colored piece (not a special, not a toy). */
+  static isNormal(p: Piece | null): p is Piece {
+    return !!p && p.special === 'none' && !p.toy;
   }
 
   makePiece(r: number, c: number, color: number, special: Special = 'none', bornAt = -1e9): Piece {
-    return { id: this.nextId++, color: special === 'none' ? color : -1, special, r, c, mv: null, bornAt, landAt: -1e9 };
+    return { id: this.nextId++, color: special === 'none' ? color : -1, special, r, c, mv: null, bornAt, landAt: -1e9, toy: false };
+  }
+
+  makeToy(r: number, c: number, bornAt = -1e9): Piece {
+    const p = this.makePiece(r, c, -1, 'none', bornAt);
+    p.toy = true;
+    return p;
+  }
+
+  /** Lowest playable cell of a column: where drop toys leave the board. */
+  exitRow(c: number): number {
+    for (let r = this.rows - 1; r >= 0; r--) if (this.cells[r][c].playable) return r;
+    return -1;
   }
 
   place(p: Piece | null, r: number, c: number) {
@@ -129,7 +159,7 @@ export class Board {
         for (let c = 0; c < this.cols; c++) {
           if (!this.canHold(r, c)) continue;
           const cell = this.cells[r][c];
-          if (cell.piece && cell.piece.special !== 'none') continue;
+          if (cell.piece && !Board.isNormal(cell.piece)) continue;
           let color = this.randomColor();
           for (let k = 0; k < 20 && this.wouldMatchWith(r, c, color); k++) color = this.randomColor();
           cell.piece = this.makePiece(r, c, color);
@@ -137,7 +167,7 @@ export class Board {
       }
       if (this.findMatches([]).length === 0 && this.findMoves().length > 0) return;
       // Retry: clear normal pieces.
-      for (const row of this.cells) for (const cell of row) if (cell.piece?.special === 'none') cell.piece = null;
+      for (const row of this.cells) for (const cell of row) if (Board.isNormal(cell.piece)) cell.piece = null;
     }
   }
 
@@ -269,18 +299,20 @@ export class Board {
     return 0;
   }
 
-  /** Every valid swap. Specials can always be swapped with any neighbour. */
+  /** Every valid swap. Specials can always be swapped with any neighbour; toys can always move down. */
   findMoves(): Move[] {
     const moves: Move[] = [];
     for (let r = 0; r < this.rows; r++) {
       for (let c = 0; c < this.cols; c++) {
         const p = this.piece(r, c);
-        if (!p || !this.canHold(r, c)) continue;
+        if (!p || !this.canMove(r, c)) continue;
         for (const [dr, dc] of [[0, 1], [1, 0]]) {
           const r2 = r + dr, c2 = c + dc;
           const q = this.piece(r2, c2);
-          if (!q || !this.canHold(r2, c2)) continue;
+          if (!q || !this.canMove(r2, c2) || (p.toy && q.toy)) continue;
           const a = { r, c }, b = { r: r2, c: c2 };
+          // A toy can always be pushed one cell down (swapping with the plain piece under it).
+          if (dr === 1 && p.toy && Board.isNormal(q)) { moves.push({ a, b, score: 20 }); continue; }
           if (p.special !== 'none' || q.special !== 'none') {
             moves.push({ a, b, score: p.special !== 'none' && q.special !== 'none' ? 100 : 35 });
             continue;
@@ -329,7 +361,11 @@ export class Board {
           let rr = r - 1;
           while (rr >= 0 && !this.cells[rr][c].playable) rr--;
           if (rr < 0) {
-            const p = this.makePiece(r, c, this.randomColor());
+            // Only touch the RNG for toys when the level has some to give (keeps other levels' sequences intact).
+            // Never in the edge columns: matches there are rare, so a toy would crawl down.
+            const toy = this.toyQuota > 0 && c > 0 && c < C - 1 && this.rng() < 0.2;
+            if (toy) this.toyQuota--;
+            const p = toy ? this.makeToy(r, c) : this.makePiece(r, c, this.randomColor());
             this.place(p, r, c);
             waypoints.set(p, [{ x: c, y: r - 1 - spawned[c] }, { x: c, y: r }]);
             spawned[c]++;
@@ -338,7 +374,7 @@ export class Board {
             continue;
           }
           const src = this.cells[rr][c];
-          if (src.box === 0 && src.piece) { movePiece(src.piece, r, c); changed = true; }
+          if (src.box === 0 && src.ice === 0 && src.piece) { movePiece(src.piece, r, c); changed = true; }
         }
       }
       if (changed) continue;
@@ -349,7 +385,7 @@ export class Board {
           const dirs = (r + c + guard) % 2 ? [-1, 1] : [1, -1];
           for (const dc of dirs) {
             const sr = r - 1, sc = c + dc;
-            if (!this.canHold(sr, sc)) continue;
+            if (!this.canMove(sr, sc)) continue;
             const src = this.cells[sr][sc].piece;
             if (!src) continue;
             // Only slide if that piece can't fall straight itself.
@@ -380,7 +416,7 @@ export class Board {
     for (let r = 0; r < this.rows; r++) {
       for (let c = 0; c < this.cols; c++) {
         const p = this.piece(r, c);
-        if (p && p.special === 'none' && this.canHold(r, c)) { slots.push({ r, c }); pieces.push(p); }
+        if (Board.isNormal(p) && this.canMove(r, c)) { slots.push({ r, c }); pieces.push(p); }
       }
     }
     if (pieces.length < 3) return false;

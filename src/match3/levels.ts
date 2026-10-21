@@ -4,7 +4,8 @@ import { TUNING } from './tuning.ts';
 export type Goal =
   | { kind: 'color'; color: number; count: number }
   | { kind: 'box'; count: number }
-  | { kind: 'dirt'; count: number };
+  | { kind: 'dirt'; count: number }
+  | { kind: 'ice' | 'toy' | 'carpet'; count: number };
 
 export interface LevelDef {
   n: number;
@@ -15,7 +16,7 @@ export interface LevelDef {
   hard: boolean;
 }
 
-// '.' cell, ' ' hole, b/B/C box with 1/2/3 layers, d/D dirt with 1/2 layers.
+// '.' cell, ' ' hole, b/B/C box with 1/2/3 layers, d/D dirt with 1/2 layers, i/I ice with 1/2 layers, k carpet.
 const SHAPES: string[][] = [
   ['........', '........', '........', '........', '........', '........', '........', '........'],
   ['........', '........', '........', '........', '........', '........', '........', '........', '........'],
@@ -72,7 +73,8 @@ function addBoxes(g: Grid, rng: RNG, strength: number): void {
 function ensureFillable(g: Grid): void {
   const H = g.length, W = g[0].length;
   const playable = (r: number, c: number) => r >= 0 && r < H && c >= 0 && c < W && g[r][c] !== ' ';
-  const isBox = (r: number, c: number) => 'bBC'.includes(g[r][c]);
+  // Ice holds its own piece but, like a box, nothing falls through it.
+  const isBox = (r: number, c: number) => 'bBCiI'.includes(g[r][c]);
   for (let guard = 0; guard < 64; guard++) {
     const fill: boolean[][] = [];
     let bad: [number, number] | null = null;
@@ -118,6 +120,41 @@ function addDirt(g: Grid, rng: RNG, strength: number): void {
   }
 }
 
+function addIce(g: Grid, rng: RNG, strength: number): void {
+  const H = g.length, W = g[0].length;
+  const layer = () => (strength > 0.45 && rng() < 0.4 ? 'I' : 'i');
+  const pattern = randInt(rng, 4);
+  if (pattern === 0) {
+    // Checkered band across the middle
+    const top = Math.floor(H / 2) - 1;
+    for (let r = top; r < top + 2; r++) for (let c = 0; c < W / 2; c++) if ((r + c) % 2 === 0) setSym(g, r, c, layer());
+  } else if (pattern === 1) {
+    // Diagonal "V"
+    for (let r = 2; r < H - 1; r++) setSym(g, r, Math.min(Math.floor(W / 2) - 1, r - 2), layer());
+  } else if (pattern === 2) {
+    // Blocks low on both sides (+ high ones when stronger)
+    for (const r of [H - 3, H - 2]) for (const c of [1, 2]) setSym(g, r, c, layer());
+    if (strength > 0.4) for (const r of [2, 3]) setSym(g, r, 0, layer());
+  } else {
+    // Scattered
+    const n = 3 + Math.floor(strength * 4);
+    for (let i = 0; i < n; i++) setSym(g, 1 + randInt(rng, H - 1), randInt(rng, Math.ceil(W / 2)), layer());
+  }
+}
+
+/** A small starting patch of carpet that matches spread from. */
+function addCarpet(g: Grid, rng: RNG): void {
+  const H = g.length, W = g[0].length;
+  const mid = Math.floor(W / 2) - 1;
+  const pattern = randInt(rng, 4);
+  if (pattern === 0) { setSym(g, H - 1, mid, 'k'); setSym(g, H - 2, mid, 'k'); }
+  else if (pattern === 1) for (const r of [Math.floor(H / 2) - 1, Math.floor(H / 2)]) setSym(g, r, mid, 'k');
+  else if (pattern === 2) { setSym(g, H - 1, 0, 'k'); setSym(g, H - 1, 1, 'k'); }
+  else { setSym(g, 0, mid, 'k'); setSym(g, 1, mid, 'k'); }
+  // Odd shapes may have holes there: fall back to the bottom-most free cells in the middle.
+  for (let r = H - 1; r >= 0 && count(g, 'k').objects === 0; r--) setSym(g, r, mid, 'k');
+}
+
 function count(g: Grid, chars: string): { objects: number; layers: number } {
   let objects = 0, layers = 0;
   for (const row of g) {
@@ -152,6 +189,22 @@ function tutorial(n: number): LevelDef | null {
   }
 }
 
+/** Where each newer mechanic first shows up (each gets a one-time Mochi tip). */
+export const ICE_LEVEL = 21, TOY_LEVEL = 35, CARPET_LEVEL = 51;
+
+/** From level 20 on, newer mechanics join the rotation once they've been introduced. */
+function laterKind(n: number, rng: RNG, base: string[]): string {
+  if (n === ICE_LEVEL) return 'ice';
+  if (n === TOY_LEVEL) return 'toy';
+  if (n === CARPET_LEVEL) return 'carpet';
+  const pool = [...base];
+  if (n > ICE_LEVEL) pool.push('ice', 'ice+color');
+  if (n > TOY_LEVEL) pool.push('toy', 'toy+color', 'ice+box');
+  if (n > CARPET_LEVEL) pool.push('carpet', 'carpet+color', 'toy+ice', 'carpet+ice');
+  // Stride 7 (coprime with every pool size) spreads the kinds out instead of running through them in order.
+  return pool[(n * 7 + randInt(rng, 3)) % pool.length];
+}
+
 /** Level n as played: generated layout + move count calibrated by the bot (see src/sim/calibrate.ts). */
 export function getLevel(n: number): LevelDef {
   const tuned = TUNING[n];
@@ -175,10 +228,16 @@ export function generateLevel(n: number, variant: number): LevelDef {
   const g = toGrid(pick(rng, SHAPES));
 
   const kinds = ['color', 'box', 'dirt', 'box+color', 'dirt+color', 'box+dirt'];
-  const kind = kinds[(n + randInt(rng, 2)) % kinds.length];
+  const kind = n < 20 ? kinds[(n + randInt(rng, 2)) % kinds.length] : laterKind(n, rng, kinds);
+  // The level that introduces a mechanic goes easy on it.
+  const intro = n === ICE_LEVEL || n === TOY_LEVEL || n === CARPET_LEVEL;
+  const s2 = intro ? Math.min(strength, 0.3) : strength;
 
-  if (kind.includes('box')) { addBoxes(g, rng, strength); ensureFillable(g); }
+  if (kind.includes('box')) addBoxes(g, rng, strength);
+  if (kind.includes('ice')) addIce(g, rng, s2);
+  if (kind.includes('box') || kind.includes('ice')) ensureFillable(g);
   if (kind.includes('dirt')) addDirt(g, rng, strength);
+  if (kind.includes('carpet')) addCarpet(g, rng);
 
   const goals: Goal[] = [];
   let need = 0, sumNeed = 0;
@@ -186,8 +245,21 @@ export function generateLevel(n: number, variant: number): LevelDef {
 
   const boxes = count(g, 'bBC');
   const dirt = count(g, 'dD');
+  const ice = count(g, 'iI');
   if (boxes.objects > 0) { goals.push({ kind: 'box', count: boxes.objects }); addNeed(boxes.layers / 1.6); }
   if (dirt.objects > 0) { goals.push({ kind: 'dirt', count: dirt.objects }); addNeed(dirt.layers / 2.2); }
+  if (ice.objects > 0) { goals.push({ kind: 'ice', count: ice.objects }); addNeed(ice.layers / 1.5); }
+  if (kind.includes('toy')) {
+    const toys = Math.floor(2.5 + s2 * 2);
+    goals.push({ kind: 'toy', count: toys });
+    addNeed(toys * 3);
+  }
+  if (kind.includes('carpet')) {
+    const coverable = count(g, '.dDiI').objects;
+    const cover = Math.round(coverable * (0.5 + 0.35 * s2));
+    goals.push({ kind: 'carpet', count: cover });
+    addNeed(cover / 1.8);
+  }
 
   if (kind.includes('color') || goals.length === 0) {
     const nColors = kind === 'color' && rng() < 0.5 + ramp * 0.3 ? 2 : 1;

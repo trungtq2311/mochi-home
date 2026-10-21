@@ -488,12 +488,180 @@ export function dirtSprite(layer: number, px: number): HTMLCanvasElement {
   });
 }
 
+/** Ice lock drawn over a frozen piece: 1 = thin clear shell, 2 = thick frosted block. */
+export function iceSprite(layer: number, px: number): HTMLCanvasElement {
+  const art = artImage(`pieces/ice${Math.min(2, layer)}`);
+  if (art) return sprite(`pice${layer}`, px, (ctx) => drawFit(ctx, art, 1));
+  return sprite(`ice${layer}`, px, (ctx) => {
+    const thick = layer >= 2;
+    const body = () => { ctx.beginPath(); ctx.roundRect(0.05, 0.05, 0.9, 0.9, 0.16); };
+    const g = ctx.createLinearGradient(0, 0.05, 0, 0.95);
+    g.addColorStop(0, thick ? 'rgba(236,250,255,0.8)' : 'rgba(225,247,255,0.62)');
+    g.addColorStop(1, thick ? 'rgba(150,208,245,0.78)' : 'rgba(130,200,245,0.55)');
+    ctx.fillStyle = g;
+    body(); ctx.fill();
+    ctx.save();
+    body(); ctx.clip();
+    // Diagonal light streaks
+    ctx.fillStyle = 'rgba(255,255,255,0.55)';
+    ctx.beginPath(); ctx.moveTo(0.05, 0.42); ctx.lineTo(0.42, 0.05); ctx.lineTo(0.56, 0.05); ctx.lineTo(0.05, 0.56); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,0.3)';
+    ctx.beginPath(); ctx.moveTo(0.05, 0.7); ctx.lineTo(0.7, 0.05); ctx.lineTo(0.76, 0.05); ctx.lineTo(0.05, 0.76); ctx.closePath(); ctx.fill();
+    if (thick) {
+      // Frost cracks and a snowy rim
+      ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+      ctx.lineWidth = 0.022;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(0.62, 0.95); ctx.lineTo(0.68, 0.72); ctx.lineTo(0.84, 0.62); ctx.moveTo(0.68, 0.72); ctx.lineTo(0.6, 0.6);
+      ctx.moveTo(0.05, 0.86); ctx.lineTo(0.2, 0.8); ctx.lineTo(0.26, 0.9);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(255,255,255,0.9)';
+      for (const [x, y, r] of [[0.16, 0.12, 0.07], [0.3, 0.1, 0.06], [0.82, 0.12, 0.06], [0.9, 0.24, 0.05]]) {
+        ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+    ctx.restore();
+    // Uniform outline + inner bevel line
+    ctx.strokeStyle = thick ? '#2f7fc4' : '#4a9edb';
+    ctx.lineWidth = 0.055;
+    body(); ctx.stroke();
+    ctx.strokeStyle = 'rgba(255,255,255,0.8)';
+    ctx.lineWidth = 0.02;
+    ctx.beginPath(); ctx.roundRect(0.1, 0.1, 0.8, 0.8, 0.12); ctx.stroke();
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath(); ctx.arc(0.8, 0.78, 0.03, 0, Math.PI * 2); ctx.fill();
+  });
+}
+
+/** Drop toy: a small teddy bear head with a bow. */
+export function toySprite(px: number): HTMLCanvasElement {
+  const art = artImage('pieces/toy');
+  if (art) return sprite('ptoy', px, (ctx) => drawFit(ctx, art, 0.9));
+  return sprite('toy', px, (ctx) => {
+    const fur = '#c98a4b', furLight = '#e6b27a', line = '#6b3a17';
+    const head = (c: CanvasRenderingContext2D) => { c.arc(0.5, 0.52, 0.32, 0, Math.PI * 2); };
+    ctx.lineWidth = 0.035;
+    ctx.strokeStyle = line;
+    ctx.lineJoin = 'round';
+    // Ears
+    for (const s of [-1, 1]) {
+      ctx.fillStyle = fur;
+      ctx.beginPath(); ctx.arc(0.5 + s * 0.25, 0.25, 0.12, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = '#f2a6a0';
+      ctx.beginPath(); ctx.arc(0.5 + s * 0.25, 0.26, 0.06, 0, Math.PI * 2); ctx.fill();
+    }
+    // Head with a soft two-tone cel shade
+    ctx.save();
+    shadow(ctx, 0.04, 0.03, 'rgba(0,0,0,0.3)');
+    ctx.fillStyle = fur;
+    ctx.beginPath(); head(ctx); ctx.fill();
+    ctx.restore();
+    ctx.save();
+    ctx.beginPath(); head(ctx); ctx.clip();
+    ctx.fillStyle = furLight;
+    ctx.beginPath(); ctx.ellipse(0.42, 0.38, 0.26, 0.2, -0.4, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+    ctx.beginPath(); head(ctx); ctx.stroke();
+    // Snout, nose, mouth
+    ctx.fillStyle = '#fbe3c4';
+    ctx.beginPath(); ctx.ellipse(0.5, 0.63, 0.13, 0.1, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.lineWidth = 0.025;
+    ctx.stroke();
+    ctx.fillStyle = '#3a1d0c';
+    ctx.beginPath(); ctx.ellipse(0.5, 0.59, 0.045, 0.032, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = '#3a1d0c';
+    ctx.lineWidth = 0.02;
+    ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(0.5, 0.62); ctx.lineTo(0.5, 0.66); ctx.moveTo(0.45, 0.68); ctx.quadraticCurveTo(0.5, 0.71, 0.55, 0.68); ctx.stroke();
+    // Eyes + cheeks
+    for (const s of [-1, 1]) {
+      ctx.fillStyle = '#2a140a';
+      ctx.beginPath(); ctx.ellipse(0.5 + s * 0.13, 0.48, 0.035, 0.045, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath(); ctx.arc(0.5 + s * 0.13 - 0.012, 0.465, 0.013, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = 'rgba(255,120,130,0.45)';
+      ctx.beginPath(); ctx.ellipse(0.5 + s * 0.21, 0.6, 0.05, 0.03, 0, 0, Math.PI * 2); ctx.fill();
+    }
+    // Bow tie
+    ctx.fillStyle = '#ff4d6d';
+    ctx.strokeStyle = '#9e1736';
+    ctx.lineWidth = 0.025;
+    ctx.beginPath();
+    ctx.moveTo(0.5, 0.86); ctx.lineTo(0.36, 0.79); ctx.lineTo(0.36, 0.95); ctx.closePath();
+    ctx.moveTo(0.5, 0.86); ctx.lineTo(0.64, 0.79); ctx.lineTo(0.64, 0.95); ctx.closePath();
+    ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.arc(0.5, 0.86, 0.035, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  });
+}
+
+/** Seamless carpet tile (the renderer adds the trim along the carpet's outer edges). */
+export function carpetSprite(px: number): HTMLCanvasElement {
+  const art = artImage('pieces/carpet');
+  if (art) return sprite('pcarpet', px, (ctx) => ctx.drawImage(art, 0, 0, 1, 1));
+  return sprite('carpet', px, (ctx) => {
+    ctx.fillStyle = '#d9465f';
+    ctx.fillRect(0, 0, 1, 1);
+    // Diamond lattice that lines up across tiles
+    ctx.fillStyle = '#c23552';
+    ctx.beginPath(); ctx.moveTo(0.5, 0.08); ctx.lineTo(0.92, 0.5); ctx.lineTo(0.5, 0.92); ctx.lineTo(0.08, 0.5); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = '#f6c56b';
+    ctx.lineWidth = 0.05;
+    ctx.beginPath(); ctx.moveTo(0.5, 0.2); ctx.lineTo(0.8, 0.5); ctx.lineTo(0.5, 0.8); ctx.lineTo(0.2, 0.5); ctx.closePath(); ctx.stroke();
+    ctx.fillStyle = '#f6c56b';
+    ctx.beginPath(); ctx.arc(0.5, 0.5, 0.07, 0, Math.PI * 2); ctx.fill();
+    for (const [x, y] of [[0, 0], [1, 0], [0, 1], [1, 1]]) { ctx.beginPath(); ctx.arc(x, y, 0.1, 0, Math.PI * 2); ctx.fill(); }
+    ctx.fillStyle = 'rgba(255,255,255,0.08)';
+    ctx.fillRect(0, 0, 1, 0.5);
+  });
+}
+
+/** Carpet goal icon: a little rug with fringe. */
+function rugIcon(px: number): HTMLCanvasElement {
+  const tile = carpetSprite(px);
+  return sprite('rugIcon', px, (ctx) => {
+    ctx.strokeStyle = '#f3e3c3';
+    ctx.lineWidth = 0.025;
+    for (let i = 0; i < 9; i++) {
+      const x = 0.2 + i * 0.075;
+      ctx.beginPath(); ctx.moveTo(x, 0.06); ctx.lineTo(x, 0.16); ctx.moveTo(x, 0.84); ctx.lineTo(x, 0.94); ctx.stroke();
+    }
+    ctx.save();
+    ctx.beginPath(); ctx.roundRect(0.12, 0.14, 0.76, 0.72, 0.06); ctx.clip();
+    ctx.drawImage(tile, 0.12, 0.14, 0.38, 0.36); ctx.drawImage(tile, 0.5, 0.14, 0.38, 0.36);
+    ctx.drawImage(tile, 0.12, 0.5, 0.38, 0.36); ctx.drawImage(tile, 0.5, 0.5, 0.38, 0.36);
+    ctx.restore();
+    ctx.strokeStyle = '#f6c56b';
+    ctx.lineWidth = 0.05;
+    ctx.beginPath(); ctx.roundRect(0.16, 0.18, 0.68, 0.64, 0.04); ctx.stroke();
+    ctx.strokeStyle = '#7d1c33';
+    ctx.lineWidth = 0.035;
+    ctx.beginPath(); ctx.roundRect(0.12, 0.14, 0.76, 0.72, 0.06); ctx.stroke();
+  });
+}
+
+/** Ice goal icon: a frozen gem. */
+function iceIcon(px: number): HTMLCanvasElement {
+  const gemImg = pieceSprite(2, px), ice = iceSprite(1, px);
+  return sprite('iceIcon', px, (ctx) => { ctx.drawImage(gemImg, 0.1, 0.1, 0.8, 0.8); ctx.drawImage(ice, 0, 0, 1, 1); });
+}
+
+export type IconKind = 'color' | 'box' | 'dirt' | 'ice' | 'toy' | 'carpet' | Special;
+
+/** Sprite for a goal / icon kind (also used for the goal flyers). */
+export function goalSprite(kind: IconKind, color: number, px: number): HTMLCanvasElement {
+  switch (kind) {
+    case 'color': return pieceSprite(color, px);
+    case 'box': return boxSprite(1, px);
+    case 'dirt': return dirtSprite(2, px);
+    case 'ice': return iceIcon(px);
+    case 'toy': return toySprite(px);
+    case 'carpet': return rugIcon(px);
+    default: return specialSprite(kind, px);
+  }
+}
+
 /** Data URL icon for DOM use (goals, boosters). */
-export function iconURL(kind: 'color' | 'box' | 'dirt' | Special, color = 0, px = 96): string {
-  let c: HTMLCanvasElement;
-  if (kind === 'color') c = pieceSprite(color, px);
-  else if (kind === 'box') c = boxSprite(1, px);
-  else if (kind === 'dirt') c = dirtSprite(2, px);
-  else c = specialSprite(kind, px);
-  return c.toDataURL();
+export function iconURL(kind: IconKind, color = 0, px = 96): string {
+  return goalSprite(kind, color, px).toDataURL();
 }

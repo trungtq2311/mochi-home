@@ -2,7 +2,9 @@ import { mulberry32, type RNG } from '../core/rng.ts';
 import { Board, isRocket, type MatchGroup, type Move, type Piece, type Pos, type Special } from './board.ts';
 import type { LevelDef } from './levels.ts';
 
-export interface GoalState { kind: 'color' | 'box' | 'dirt'; color: number; need: number; left: number }
+export type GoalKind = 'color' | 'box' | 'dirt' | 'ice' | 'toy' | 'carpet';
+
+export interface GoalState { kind: GoalKind; color: number; need: number; left: number }
 
 export type Effect =
   | { type: 'rocket'; t0: number; dur: number; r: number; c: number; dir: 'h' | 'v' }
@@ -13,7 +15,7 @@ export type Effect =
   | { type: 'hammer'; t0: number; dur: number; r: number; c: number }
   | { type: 'flash'; t0: number; dur: number; r: number; c: number };
 
-export interface Dying { p: Piece; t0: number; kind: 'pop' | 'merge' | 'fire'; to?: Pos }
+export interface Dying { p: Piece; t0: number; kind: 'pop' | 'merge' | 'fire' | 'exit'; to?: Pos }
 
 export type EngineEvent =
   | { type: 'swap' }
@@ -24,6 +26,9 @@ export type EngineEvent =
   | { type: 'activate'; special: Special; r: number; c: number; combo?: boolean }
   | { type: 'box'; r: number; c: number; left: number }
   | { type: 'dirt'; r: number; c: number; left: number }
+  | { type: 'ice'; r: number; c: number; left: number }
+  | { type: 'carpet'; r: number; c: number }
+  | { type: 'toy'; r: number; c: number }
   | { type: 'collect'; goal: number; r: number; c: number }
   | { type: 'cascade'; n: number }
   | { type: 'land' }
@@ -50,7 +55,7 @@ export class Engine {
   busy = false;
   effects: Effect[] = [];
   dying: Dying[] = [];
-  stats = { cleared: [0, 0, 0, 0, 0, 0], made: 0, rockets: 0, bombs: 0, planes: 0, rainbows: 0, boxes: 0, dirt: 0, boosters: 0, maxCascade: 0, bonusMoves: 0 };
+  stats = { cleared: [0, 0, 0, 0, 0, 0], made: 0, rockets: 0, bombs: 0, planes: 0, rainbows: 0, boxes: 0, dirt: 0, ice: 0, toys: 0, carpet: 0, boosters: 0, maxCascade: 0, bonusMoves: 0 };
 
   private timers: { t: number; fn: () => void }[] = [];
   private idle: (() => void)[] = [];
@@ -74,7 +79,39 @@ export class Engine {
     // Goal colors spawn a little more often: a gentle, invisible helping hand.
     for (const g of this.goals) if (g.kind === 'color') this.board.weights[g.color] = 1.18;
     this.board.fillInitial();
+    this.placeToys();
     this.placeSpecials(startSpecials);
+  }
+
+  /** Drop-toy levels start with a couple of toys in the upper half; the rest arrive from above. */
+  private placeToys() {
+    const goal = this.goals.find((g) => g.kind === 'toy');
+    if (!goal) return;
+    const bd = this.board;
+    const spots: Piece[] = [];
+    for (let r = 1; r < Math.floor(bd.rows / 2); r++) {
+      for (let c = 1; c < bd.cols - 1; c++) {
+        const p = bd.piece(r, c);
+        if (Board.isNormal(p) && bd.canMove(r, c) && bd.exitRow(c) > r + 2) spots.push(p);
+      }
+    }
+    const cols = new Set<number>();
+    const want = Math.min(goal.need, 3);
+    while (cols.size < want && spots.length) {
+      const p = spots.splice(Math.floor(this.rng() * spots.length), 1)[0];
+      if (cols.has(p.c)) continue;
+      cols.add(p.c);
+      bd.place(bd.makeToy(p.r, p.c), p.r, p.c);
+    }
+  }
+
+  /** Toys still allowed to appear: never more than the goal needs, and at most 3 on the board at once. */
+  private updateToyQuota() {
+    const goal = this.goals.find((g) => g.kind === 'toy');
+    if (!goal) return;
+    let onBoard = 0;
+    this.board.forEachPiece((p) => { if (p.toy) onBoard++; });
+    this.board.toyQuota = Math.max(0, Math.min(goal.left - onBoard, 3 - onBoard));
   }
 
   on(fn: (e: EngineEvent) => void) { this.listeners.push(fn); }
@@ -109,7 +146,7 @@ export class Engine {
     if (!this.canAct()) return false;
     if (Math.abs(a.r - b.r) + Math.abs(a.c - b.c) !== 1) return false;
     const bd = this.board;
-    if (!bd.canHold(a.r, a.c) || !bd.canHold(b.r, b.c)) return false;
+    if (!bd.canMove(a.r, a.c) || !bd.canMove(b.r, b.c)) return false;
     const p = bd.piece(a.r, a.c), q = bd.piece(b.r, b.c);
     if (!p || !q) return false;
 
@@ -119,7 +156,8 @@ export class Engine {
     bd.place(p, b.r, b.c);
     bd.place(q, a.r, a.c);
     const special = p.special !== 'none' || q.special !== 'none';
-    if (!special && bd.findMatches([]).length === 0) {
+    const toyDown = (p.toy && b.r > a.r && Board.isNormal(q)) || (q.toy && a.r > b.r && Board.isNormal(p));
+    if (!special && !toyDown && bd.findMatches([]).length === 0) {
       bd.place(p, a.r, a.c);
       bd.place(q, b.r, b.c);
       this.after(SWAP_MS, () => { this.tween(p, b, a, SWAP_MS); this.tween(q, a, b, SWAP_MS); });
@@ -141,7 +179,7 @@ export class Engine {
   tapSpecial(pos: Pos): boolean {
     if (!this.canAct()) return false;
     const p = this.board.piece(pos.r, pos.c);
-    if (!p || p.special === 'none' || !this.board.canHold(pos.r, pos.c)) return false;
+    if (!p || p.special === 'none' || !this.board.canMove(pos.r, pos.c)) return false;
     this.busy = true;
     this.movesLeft--;
     this.activate(p);
@@ -153,6 +191,8 @@ export class Engine {
     if (!this.canAct()) return false;
     const cell = this.board.get(pos.r, pos.c);
     if (!cell?.playable || (!cell.piece && cell.box === 0)) return false;
+    // Toys can't be smashed: only worth a hammer if something else is in that cell.
+    if (cell.piece?.toy && cell.box === 0 && cell.ice === 0 && cell.dirt === 0) return false;
     this.busy = true;
     this.stats.boosters++;
     this.effects.push({ type: 'hammer', t0: this.now, dur: 450, r: pos.r, c: pos.c });
@@ -186,12 +226,14 @@ export class Engine {
     this.movesLeft += n;
     this.state = 'play';
     this.busy = false;
+    // The turn that ran out of moves never checked for a dead board: shuffle now if needed.
+    if (!this.board.findMoves().length) { this.busy = true; this.endTurn(); }
   }
 
   /** Drop specials onto the board mid-level (e.g. bought with a continue). */
   placeSpecials(list: Special[]) {
     const spots: Piece[] = [];
-    this.board.forEachPiece((p) => { if (p.special === 'none') spots.push(p); });
+    this.board.forEachPiece((p, cell) => { if (Board.isNormal(p) && cell.ice === 0) spots.push(p); });
     for (const s of list) {
       if (!spots.length) break;
       const p = spots.splice(Math.floor(this.rng() * spots.length), 1)[0];
@@ -222,7 +264,7 @@ export class Engine {
         return;
       }
       const normals: Piece[] = [];
-      this.board.forEachPiece((p) => { if (p.special === 'none') normals.push(p); });
+      this.board.forEachPiece((p, cell) => { if (Board.isNormal(p) && cell.ice === 0) normals.push(p); });
       if (normals.length) {
         const p = normals[Math.floor(this.rng() * normals.length)];
         p.special = this.rng() < 0.5 ? 'rocketH' : 'rocketV';
@@ -240,9 +282,15 @@ export class Engine {
   // ---------- resolution loop ----------
 
   private step() {
+    this.updateToyQuota();
     const dur = this.board.applyGravity(this.now);
     if (dur > 0) {
       this.after(dur, () => { this.emit({ type: 'land' }); this.whenIdle(() => this.step()); });
+      return;
+    }
+    if (this.collectToys()) {
+      this.after(200, () => {});
+      this.whenIdle(() => this.step());
       return;
     }
     const groups = this.board.findMatches(this.prefer);
@@ -302,17 +350,24 @@ export class Engine {
     const boxHits = new Map<number, Pos>();
     for (const g of groups) {
       this.emit({ type: 'match', size: g.cells.length, cascade: this.cascade });
+      // A new special can't appear in a frozen cell (its piece stays put).
+      if (bd.get(g.at.r, g.at.c)!.ice > 0) g.at = g.cells.find((q) => bd.get(q.r, q.c)!.ice === 0) ?? g.at;
+      const frozenAt = bd.get(g.at.r, g.at.c)!.ice > 0;
+      const paint = g.cells.some((q) => bd.get(q.r, q.c)!.carpet);
       for (const pos of g.cells) {
+        const cell = bd.get(pos.r, pos.c)!;
+        if (paint) this.paintCarpet(pos.r, pos.c);
+        if (cell.ice > 0) { this.damageIce(pos.r, pos.c); continue; }
         const p = bd.piece(pos.r, pos.c);
-        if (p) this.destroyPiece(p, g.special !== 'none' ? 'merge' : 'pop', g.at);
-        if (bd.get(pos.r, pos.c)!.dirt > 0) this.damageDirt(pos.r, pos.c);
+        if (p) this.destroyPiece(p, g.special !== 'none' && !frozenAt ? 'merge' : 'pop', g.at);
+        if (cell.dirt > 0) this.damageDirt(pos.r, pos.c);
         for (const [dr, dc] of DIRS) {
           const r = pos.r + dr, c = pos.c + dc;
           const nb = bd.get(r, c);
           if (nb?.playable && nb.box > 0) boxHits.set(r * bd.cols + c, { r, c });
         }
       }
-      if (g.special !== 'none') {
+      if (g.special !== 'none' && !frozenAt) {
         const sp = bd.makePiece(g.at.r, g.at.c, -1, g.special, this.now + 130);
         bd.place(sp, g.at.r, g.at.c);
         this.countMade(g.special);
@@ -321,6 +376,23 @@ export class Engine {
     }
     for (const pos of boxHits.values()) this.damageBox(pos.r, pos.c);
     this.after(170, () => {});
+  }
+
+  /** Toys resting on the lowest cell of their column leave the board. */
+  private collectToys(): boolean {
+    const bd = this.board;
+    let any = false;
+    for (let c = 0; c < bd.cols; c++) {
+      const r = bd.exitRow(c);
+      const p = r >= 0 ? bd.piece(r, c) : null;
+      if (!p?.toy) continue;
+      this.removeFromGrid(p, 'exit');
+      this.stats.toys++;
+      this.emit({ type: 'toy', r, c });
+      this.collectGoal('toy', r, c);
+      any = true;
+    }
+    return any;
   }
 
   private countMade(s: Special) {
@@ -333,16 +405,23 @@ export class Engine {
 
   // ---------- damage ----------
 
-  private hit(r: number, c: number) {
+  /** Damage one cell. `paint`: the blast started on carpet, so it carpets every cell it reaches. */
+  private hit(r: number, c: number, paint = false) {
     const cell = this.board.get(r, c);
     if (!cell?.playable) return;
     if (cell.box > 0) { this.damageBox(r, c); return; }
+    if (paint) this.paintCarpet(r, c);
+    if (cell.ice > 0) { this.damageIce(r, c); return; }
     const p = cell.piece;
-    if (p) {
+    if (p && !p.toy) {
       if (p.special !== 'none') this.activate(p);
       else this.destroyPiece(p, 'pop');
     }
     if (cell.dirt > 0) this.damageDirt(r, c);
+  }
+
+  private carpetAt(r: number, c: number): boolean {
+    return !!this.board.get(r, c)?.carpet;
   }
 
   private removeFromGrid(p: Piece, kind: Dying['kind'], to?: Pos) {
@@ -384,7 +463,27 @@ export class Engine {
     }
   }
 
-  private collectGoal(kind: 'box' | 'dirt', r: number, c: number) {
+  private damageIce(r: number, c: number) {
+    const cell = this.board.get(r, c)!;
+    if (cell.ice <= 0) return;
+    cell.ice--;
+    this.emit({ type: 'ice', r, c, left: cell.ice });
+    if (cell.ice === 0) {
+      this.stats.ice++;
+      this.collectGoal('ice', r, c);
+    }
+  }
+
+  private paintCarpet(r: number, c: number) {
+    const cell = this.board.get(r, c);
+    if (!cell?.playable || cell.carpet || cell.box > 0) return;
+    cell.carpet = true;
+    this.stats.carpet++;
+    this.emit({ type: 'carpet', r, c });
+    this.collectGoal('carpet', r, c);
+  }
+
+  private collectGoal(kind: GoalKind, r: number, c: number) {
     const gi = this.goals.findIndex((g) => g.kind === kind && g.left > 0);
     if (gi >= 0) {
       this.goals[gi].left--;
@@ -405,7 +504,7 @@ export class Engine {
     if (s.special === 'rainbow') {
       this.removeFromGrid(s, 'fire');
       this.countUse('rainbow', s.r, s.c);
-      this.fireRainbow(s.r, s.c, n.color, null);
+      this.fireRainbow(s.r, s.c, n.color >= 0 ? n.color : this.bestColor(), null, this.carpetAt(s.r, s.c));
     } else {
       this.activate(s);
     }
@@ -415,29 +514,30 @@ export class Engine {
     const r = p.r, c = p.c;
     const a = p.special, b = q.special;
     const has = (k: Special) => a === k || b === k;
+    const paint = this.carpetAt(r, c);
     this.removeFromGrid(p, 'fire');
     this.removeFromGrid(q, 'merge', { r, c });
     this.emit({ type: 'activate', special: a, r, c, combo: true });
 
     if (has('rainbow')) {
-      if (a === 'rainbow' && b === 'rainbow') { this.fireAll(r, c); return; }
+      if (a === 'rainbow' && b === 'rainbow') { this.fireAll(r, c, paint); return; }
       const other = a === 'rainbow' ? b : a;
-      this.fireRainbow(r, c, this.bestColor(), other);
+      this.fireRainbow(r, c, this.bestColor(), other, paint);
       return;
     }
-    if (a === 'bomb' && b === 'bomb') { this.fireBomb(r, c, 4); return; }
+    if (a === 'bomb' && b === 'bomb') { this.fireBomb(r, c, 4, paint); return; }
     if (has('plane')) {
       const other = a === 'plane' ? b : a;
-      if (other === 'plane') for (let i = 0; i < 3; i++) this.firePlane(r, c, 'none', i === 0);
-      else this.firePlane(r, c, other, true);
+      if (other === 'plane') for (let i = 0; i < 3; i++) this.firePlane(r, c, 'none', i === 0, paint);
+      else this.firePlane(r, c, other, true, paint);
       return;
     }
     if (has('bomb')) {
-      for (const d of [-1, 0, 1]) { this.fireRocket(r + d, c, 'h'); this.fireRocket(r, c + d, 'v'); }
+      for (const d of [-1, 0, 1]) { this.fireRocket(r + d, c, 'h', paint); this.fireRocket(r, c + d, 'v', paint); }
       return;
     }
-    this.fireRocket(r, c, 'h');
-    this.fireRocket(r, c, 'v');
+    this.fireRocket(r, c, 'h', paint);
+    this.fireRocket(r, c, 'v', paint);
   }
 
   private countUse(s: Special, r: number, c: number) {
@@ -446,18 +546,19 @@ export class Engine {
 
   private activate(p: Piece) {
     const { r, c, special } = p;
+    const paint = this.carpetAt(r, c);
     this.removeFromGrid(p, 'fire');
     switch (special) {
-      case 'rocketH': this.fireRocket(r, c, 'h'); break;
-      case 'rocketV': this.fireRocket(r, c, 'v'); break;
-      case 'bomb': this.fireBomb(r, c, 2); break;
-      case 'plane': this.firePlane(r, c, 'none', true); break;
-      case 'rainbow': this.countUse('rainbow', r, c); this.fireRainbow(r, c, this.bestColor(), null); break;
+      case 'rocketH': this.fireRocket(r, c, 'h', paint); break;
+      case 'rocketV': this.fireRocket(r, c, 'v', paint); break;
+      case 'bomb': this.fireBomb(r, c, 2, paint); break;
+      case 'plane': this.firePlane(r, c, 'none', true, paint); break;
+      case 'rainbow': this.countUse('rainbow', r, c); this.fireRainbow(r, c, this.bestColor(), null, paint); break;
       default: break;
     }
   }
 
-  private fireRocket(r: number, c: number, dir: 'h' | 'v') {
+  private fireRocket(r: number, c: number, dir: 'h' | 'v', paint = false) {
     const bd = this.board;
     if (dir === 'h' && (r < 0 || r >= bd.rows)) return;
     if (dir === 'v' && (c < 0 || c >= bd.cols)) return;
@@ -469,39 +570,39 @@ export class Engine {
     for (let k = 0; k < len; k++) {
       const d = Math.abs(k - origin);
       const rr = dir === 'h' ? r : k, cc = dir === 'h' ? k : c;
-      if (d === 0) this.hit(rr, cc);
-      else this.after(d * ROCKET_MS_PER_CELL, () => this.hit(rr, cc));
+      if (d === 0) this.hit(rr, cc, paint);
+      else this.after(d * ROCKET_MS_PER_CELL, () => this.hit(rr, cc, paint));
     }
   }
 
-  private fireBomb(r: number, c: number, radius: number) {
+  private fireBomb(r: number, c: number, radius: number, paint = false) {
     this.effects.push({ type: 'bomb', t0: this.now, dur: 520, r, c, radius });
     this.emit({ type: 'activate', special: 'bomb', r, c });
     for (let dr = -radius; dr <= radius; dr++) {
       for (let dc = -radius; dc <= radius; dc++) {
         const d = Math.abs(dr) + Math.abs(dc);
         if (d > radius * 1.5) continue;
-        this.after(50 + Math.max(Math.abs(dr), Math.abs(dc)) * 45, () => this.hit(r + dr, c + dc));
+        this.after(50 + Math.max(Math.abs(dr), Math.abs(dc)) * 45, () => this.hit(r + dr, c + dc, paint));
       }
     }
   }
 
-  private fireAll(r: number, c: number) {
+  private fireAll(r: number, c: number, paint: boolean) {
     this.effects.push({ type: 'flash', t0: this.now, dur: 900, r, c });
     this.emit({ type: 'activate', special: 'rainbow', r, c, combo: true });
     const bd = this.board;
     for (let rr = 0; rr < bd.rows; rr++) {
       for (let cc = 0; cc < bd.cols; cc++) {
         const d = Math.max(Math.abs(rr - r), Math.abs(cc - c));
-        this.after(120 + d * 70, () => this.hit(rr, cc));
+        this.after(120 + d * 70, () => this.hit(rr, cc, paint));
       }
     }
   }
 
-  private firePlane(r: number, c: number, carry: Special, hitCross: boolean) {
-    if (hitCross) for (const [dr, dc] of [[0, 0], ...DIRS]) this.hit(r + dr, c + dc);
+  private firePlane(r: number, c: number, carry: Special, hitCross: boolean, paint: boolean) {
+    if (hitCross) for (const [dr, dc] of [[0, 0], ...DIRS]) this.hit(r + dr, c + dc, paint);
     this.emit({ type: 'activate', special: 'plane', r, c });
-    const target = this.pickTarget();
+    const target = this.pickTarget(paint);
     if (!target) return;
     const key = target.r * this.board.cols + target.c;
     this.planeTargets.add(key);
@@ -509,14 +610,14 @@ export class Engine {
     this.effects.push({ type: 'plane', t0: this.now, dur, from: { r, c }, to: target, carry });
     this.after(dur, () => {
       this.planeTargets.delete(key);
-      this.hit(target.r, target.c);
-      if (isRocket(carry)) this.fireRocket(target.r, target.c, carry === 'rocketH' ? 'h' : 'v');
-      else if (carry === 'bomb') this.fireBomb(target.r, target.c, 2);
+      this.hit(target.r, target.c, paint);
+      if (isRocket(carry)) this.fireRocket(target.r, target.c, carry === 'rocketH' ? 'h' : 'v', paint);
+      else if (carry === 'bomb') this.fireBomb(target.r, target.c, 2, paint);
     });
   }
 
   /** Plane targets: goal obstacles first, then goal colors, then anything. */
-  private pickTarget(): Pos | null {
+  private pickTarget(paint: boolean): Pos | null {
     const bd = this.board;
     const goalLeft = (k: GoalState['kind'], color = -1) => this.goals.some((g) => g.kind === k && g.left > 0 && (color < 0 || g.color === color));
     let best = 0;
@@ -527,7 +628,10 @@ export class Engine {
         if (!cell.playable || this.planeTargets.has(r * bd.cols + c)) continue;
         let s = 0;
         if (cell.box > 0) s = goalLeft('box') ? 40 + cell.box : 2;
+        else if (cell.ice > 0 && goalLeft('ice')) s = 35 + cell.ice;
         else if (cell.dirt > 0 && goalLeft('dirt')) s = 30 + cell.dirt;
+        else if (!cell.carpet && paint && goalLeft('carpet')) s = 20;
+        else if (cell.piece?.toy) s = 0;
         else if (cell.piece && cell.piece.special === 'none' && goalLeft('color', cell.piece.color)) s = 10;
         else if (cell.piece) s = 1;
         if (s > best) { best = s; options = []; }
@@ -540,7 +644,7 @@ export class Engine {
   /** Color a rainbow should take: a needed goal color if present, else the most common one. */
   private bestColor(): number {
     const counts = new Array(this.board.colors).fill(0);
-    this.board.forEachPiece((p) => { if (p.special === 'none') counts[p.color]++; });
+    this.board.forEachPiece((p) => { if (Board.isNormal(p)) counts[p.color]++; });
     let best = -1;
     for (const g of this.goals) {
       if (g.kind === 'color' && g.left > 0 && counts[g.color] > 0 && (best < 0 || counts[g.color] > counts[best])) best = g.color;
@@ -549,20 +653,22 @@ export class Engine {
     return counts.indexOf(Math.max(...counts));
   }
 
-  private fireRainbow(r: number, c: number, color: number, convert: Special | null) {
+  private fireRainbow(r: number, c: number, color: number, convert: Special | null, paint: boolean) {
     const targets: Pos[] = [];
-    this.board.forEachPiece((p) => { if (p.special === 'none' && p.color === color) targets.push({ r: p.r, c: p.c }); });
+    this.board.forEachPiece((p) => { if (Board.isNormal(p) && p.color === color) targets.push({ r: p.r, c: p.c }); });
     targets.sort((a, b) => Math.hypot(a.r - r, a.c - c) - Math.hypot(b.r - r, b.c - c));
     const step = convert ? 50 : 30;
     this.effects.push({ type: 'beams', t0: this.now, dur: 300 + targets.length * step + 300, r, c, targets });
-    this.hit(r, c);
+    this.hit(r, c, paint);
     if (!convert) {
-      targets.forEach((t, i) => this.after(260 + i * step, () => this.hit(t.r, t.c)));
+      targets.forEach((t, i) => this.after(260 + i * step, () => this.hit(t.r, t.c, paint)));
       return;
     }
     targets.forEach((t, i) => this.after(260 + i * step, () => {
       const p = this.board.piece(t.r, t.c);
-      if (!p || p.special !== 'none' || p.color !== color) return;
+      // Frozen pieces just lose a layer of ice instead of turning into a special.
+      if (this.board.get(t.r, t.c)!.ice > 0) { this.hit(t.r, t.c, paint); return; }
+      if (!Board.isNormal(p) || p.color !== color) return;
       p.special = isRocket(convert) ? (this.rng() < 0.5 ? 'rocketH' : 'rocketV') : convert;
       p.color = -1;
       p.bornAt = this.now;

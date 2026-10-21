@@ -14,12 +14,24 @@ function evalMove(e: Engine, m: Move): number {
   bd.place(p, m.a.r, m.a.c); bd.place(q, m.b.r, m.b.c);
   const goal = (k: string, color = -1) => e.goals.some((g) => g.kind === k && g.left > 0 && (color < 0 || g.color === color));
   let s = 0;
+  // Swapping a toy downward is the quickest way to bring it home (and upward the slowest).
+  if (goal('toy') && m.b.r > m.a.r) s += p.toy ? 8 + (m.b.r >= bd.exitRow(m.b.c) ? 12 : 0) : q.toy ? -6 : 0;
   for (const g of groups) {
     s += g.cells.length + (g.special !== 'none' ? 10 : 0);
     if (goal('color', g.color)) s += g.cells.length * 2;
+    const carpeted = goal('carpet') && g.cells.some((q) => bd.get(q.r, q.c)!.carpet);
     for (const cell of g.cells) {
-      if (bd.get(cell.r, cell.c)!.dirt > 0 && goal('dirt')) s += 3;
+      const here = bd.get(cell.r, cell.c)!;
+      if (here.dirt > 0 && goal('dirt')) s += 3;
+      if (here.ice > 0 && goal('ice')) s += 4;
+      if (carpeted && !here.carpet) s += 3;
       for (const [dr, dc] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if ((bd.get(cell.r + dr, cell.c + dc)?.box ?? 0) > 0 && goal('box')) s += 3;
+    }
+    // Clearing under a toy lets it drop toward the exit.
+    if (goal('toy')) {
+      for (const cell of g.cells) {
+        for (let r = cell.r - 1; r >= 0; r--) if (bd.piece(r, cell.c)?.toy) { s += r >= bd.rows - 4 ? 12 : 7; break; }
+      }
     }
   }
   return s;
