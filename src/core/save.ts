@@ -36,6 +36,12 @@ export interface SaveData {
   collect: { id: number; points: number; claimed: number };
   race: { id: number; start: number; wins: number; claimed: boolean };
   seen: Record<string, boolean>;
+  /** Mochi Pass season: points earned and number of tiers claimed. */
+  pass: { id: number; points: number; claimed: number };
+  /** Weekend treasure hunt (id = day number of that Friday); opened = chest indices. */
+  hunt: { id: number; keys: number; opened: number[] };
+  piggy: { coins: number; broken: number };
+  deal: { day: number };
 }
 
 export const MAX_LIVES = 5;
@@ -65,6 +71,10 @@ function fresh(): SaveData {
     collect: { id: -1, points: 0, claimed: 0 },
     race: { id: -1, start: 0, wins: 0, claimed: false },
     seen: {},
+    pass: { id: -1, points: 0, claimed: 0 },
+    hunt: { id: -1, keys: 0, opened: [] },
+    piggy: { coins: 0, broken: 0 },
+    deal: { day: -1 },
   };
 }
 
