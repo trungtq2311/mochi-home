@@ -13,7 +13,8 @@
     "art:prompts": "node scripts/art.ts prompts",
     "deploy": "node scripts/deploy.mjs",
     "icons": "node scripts/icons.ts",
-    "sync": "npm run build && cap sync"
+    "sync": "npm run build && cap sync",
+    "art:generate": "node scripts/art-generate.ts"
   },
   "devDependencies": {
     "@capacitor/cli": "8.5.3",

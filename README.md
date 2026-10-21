@@ -33,6 +33,7 @@ Game tự dùng ảnh trong `public/art/` nếu có, thiếu ảnh nào thì dù
 
 1. Mở [art/PROMPTS.md](art/PROMPTS.md): có style chung + prompt cho từng ảnh (144 ảnh, trong đó ~30 ảnh "trước khi sửa" là tuỳ chọn).
 2. Tạo ảnh bằng ChatGPT (khuyên dùng, xuất nền trong suốt) / Gemini / Midjourney, lưu đúng tên vào `art/raw/...` (ví dụ `art/raw/pieces/red.png`, `art/raw/rooms/living/sofa_0.png`).
+   **Hoặc tự động hết:** đặt `OPENAI_API_KEY` rồi chạy `npm run art:generate` (thêm `-- --dry-run` để xem số ảnh và chi phí, `-- --only pieces/` để chỉ tạo một nhóm).
 3. Chạy `npm run art` (tự xoá nền trắng, cắt viền, nén WebP, tạo manifest) và `npm run art:status` để xem còn thiếu gì.
 4. Một phòng chuyển sang dùng ảnh khi đã có texture sàn (`floor_0`, `tiles_0`, `lawn_0`). Vị trí từng món đồ chỉnh trong `LAYOUT` ở `src/art/catalog.ts`.
 
