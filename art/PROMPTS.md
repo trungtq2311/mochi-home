@@ -891,3 +891,487 @@ A cozy garden lanterns: colorful style, main color close to #ff7fa8, brand new a
 ```
 A cozy garden lanterns: white style, main color close to #fff6e0, brand new and charming. a long horizontal string of hanging lanterns spanning the full width of the image, very wide and short. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
 ```
+
+## Room: Bedroom
+
+### `art/raw/rooms/bedroom/floor_before.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. An old neglected bedroom floor surface: dirty, stained, cracked and worn. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/floor_0.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bedroom floor surface: honey wood (redo the floor), main color close to #d9a066. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/floor_1.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bedroom floor surface: lilac carpet (redo the floor), main color close to #c7b3df. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/floor_2.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bedroom floor surface: parquet (redo the floor), main color close to #a56f40. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/wallpaper_before.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. An old neglected bedroom wall surface: dirty, stained, cracked and worn. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/wallpaper_0.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bedroom wall surface: lavender dots (hang wallpaper), main color close to #c9b6e4. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/wallpaper_1.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bedroom wall surface: sky clouds (hang wallpaper), main color close to #bfe0f5. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/wallpaper_2.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bedroom wall surface: peach stripes (hang wallpaper), main color close to #f6c9a8. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/window_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an old window with a cracked dirty glass pane, peeling paint frame, a cobweb, no curtains. a wall window with curtains, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/window_0.png`
+
+```
+A cozy bedroom window: lilac drapes style, main color close to #b59ad6, brand new and charming. a wall window with curtains, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/window_1.png`
+
+```
+A cozy bedroom window: mint blind style, main color close to #9fd8c4, brand new and charming. a wall window with curtains, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/window_2.png`
+
+```
+A cozy bedroom window: pom-pom coral style, main color close to #f0956b, brand new and charming. a wall window with curtains, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/bed_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a bare stained old mattress on a cracked bed frame with no headboard, a crumpled grey sheet and a spring poking out. a single bed seen from its foot end, the headboard against the back wall, the mattress top seen in perspective, pillows and a quilt. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/bed_0.png`
+
+```
+A cozy bedroom bed: rose patchwork style, main color close to #e88fa3, brand new and charming. a single bed seen from its foot end, the headboard against the back wall, the mattress top seen in perspective, pillows and a quilt. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/bed_1.png`
+
+```
+A cozy bedroom bed: navy tufted style, main color close to #2f4868, brand new and charming. a single bed seen from its foot end, the headboard against the back wall, the mattress top seen in perspective, pillows and a quilt. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/bed_2.png`
+
+```
+A cozy bedroom bed: sage & iron style, main color close to #8fb08a, brand new and charming. a single bed seen from its foot end, the headboard against the back wall, the mattress top seen in perspective, pillows and a quilt. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/nightstand_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a wobbly old grey bedside table with a missing drawer and a tipped-over broken lamp, cobwebs. a small bedside table with a little table lamp on top, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/nightstand_0.png`
+
+```
+A cozy bedroom nightstand: warm wood style, main color close to #a5713f, brand new and charming. a small bedside table with a little table lamp on top, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/nightstand_1.png`
+
+```
+A cozy bedroom nightstand: white style, main color close to #f2efe8, brand new and charming. a small bedside table with a little table lamp on top, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/nightstand_2.png`
+
+```
+A cozy bedroom nightstand: pastel blue style, main color close to #9cc3e0, brand new and charming. a small bedside table with a little table lamp on top, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/wardrobe_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an old grey wardrobe with one door hanging off its hinge, empty hangers inside, a pile of clothes and dusty boxes on top. a tall narrow two-door wardrobe standing on the floor, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/wardrobe_0.png`
+
+```
+A cozy bedroom wardrobe: oak style, main color close to #c8955c, brand new and charming. a tall narrow two-door wardrobe standing on the floor, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/wardrobe_1.png`
+
+```
+A cozy bedroom wardrobe: white mirror style, main color close to #f0ede6, brand new and charming. a tall narrow two-door wardrobe standing on the floor, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/wardrobe_2.png`
+
+```
+A cozy bedroom wardrobe: mint style, main color close to #a9d3c4, brand new and charming. a tall narrow two-door wardrobe standing on the floor, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/rug_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a worn dusty threadbare rug with holes, lying flat on the floor seen in perspective. lying flat on the floor, seen in perspective from the front and above, wide oval/rectangular shape. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/rug_0.png`
+
+```
+A cozy bedroom rug: fluffy pink style, main color close to #f2b8c6, brand new and charming. lying flat on the floor, seen in perspective from the front and above, wide oval/rectangular shape. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/rug_1.png`
+
+```
+A cozy bedroom rug: blue stripes style, main color close to #6f9bd3, brand new and charming. lying flat on the floor, seen in perspective from the front and above, wide oval/rectangular shape. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/rug_2.png`
+
+```
+A cozy bedroom rug: moroccan style, main color close to #e8dcc0, brand new and charming. lying flat on the floor, seen in perspective from the front and above, wide oval/rectangular shape. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/garland_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a broken string of fairy-light bulbs hanging from one nail, the other end fallen down, dusty dead bulbs. a decorative garland hanging on a wall in a gentle curve between two nails, wide and short, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/garland_0.png`
+
+```
+A cozy bedroom garland: fairy lights style, main color close to #ffd27a, brand new and charming. a decorative garland hanging on a wall in a gentle curve between two nails, wide and short, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/garland_1.png`
+
+```
+A cozy bedroom garland: bunting style, main color close to #ff8fa8, brand new and charming. a decorative garland hanging on a wall in a gentle curve between two nails, wide and short, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/garland_2.png`
+
+```
+A cozy bedroom garland: paper stars style, main color close to #9ec9ef, brand new and charming. a decorative garland hanging on a wall in a gentle curve between two nails, wide and short, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/armchair_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a tilted old armchair with torn fabric, stuffing coming out and a missing leg propped on books. a small cozy armchair, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/armchair_0.png`
+
+```
+A cozy bedroom armchair: pink velvet style, main color close to #e58fa0, brand new and charming. a small cozy armchair, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/armchair_1.png`
+
+```
+A cozy bedroom armchair: rattan style, main color close to #d8b47a, brand new and charming. a small cozy armchair, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/armchair_2.png`
+
+```
+A cozy bedroom armchair: forest green style, main color close to #3f7a5a, brand new and charming. a small cozy armchair, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/catbed_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a soggy torn cardboard box with crumpled newspaper inside. a cozy pet bed for a cat, small, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/catbed_0.png`
+
+```
+A cozy bedroom catbed: donut style, main color close to #f4a6c0, brand new and charming. a cozy pet bed for a cat, small, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/catbed_1.png`
+
+```
+A cozy bedroom catbed: basket style, main color close to #c9a26b, brand new and charming. a cozy pet bed for a cat, small, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bedroom/catbed_2.png`
+
+```
+A cozy bedroom catbed: teepee style, main color close to #8fb3c9, brand new and charming. a cozy pet bed for a cat, small, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+## Room: Bathroom
+
+### `art/raw/rooms/bathroom/tiles_before.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. An old neglected bathroom floor surface: dirty, stained, cracked and worn. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/tiles_0.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bathroom floor surface: white hexagon (tile the floor), main color close to #f2f2ee. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/tiles_1.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bathroom floor surface: blue mosaic (tile the floor), main color close to #5f9fc9. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/tiles_2.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bathroom floor surface: terrazzo (tile the floor), main color close to #e6d8c8. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/walltiles_before.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. An old neglected bathroom wall surface: dirty, stained, cracked and worn. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/walltiles_0.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bathroom wall surface: mint subway (tile the walls), main color close to #a8dcc8. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/walltiles_1.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bathroom wall surface: pink squares (tile the walls), main color close to #f2b8c0. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/walltiles_2.png`
+
+```
+Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette. A beautiful new bathroom wall surface: navy scales (tile the walls), main color close to #2f4868. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/window_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an old window with a cracked dirty glass pane, peeling paint frame, a cobweb, no curtains. a wall window with curtains, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/window_0.png`
+
+```
+A cozy bathroom window: café curtain style, main color close to #f2d16b, brand new and charming. a wall window with curtains, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/window_1.png`
+
+```
+A cozy bathroom window: stained glass style, main color close to #7fb2d9, brand new and charming. a wall window with curtains, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/window_2.png`
+
+```
+A cozy bathroom window: shutters style, main color close to #a5713f, brand new and charming. a wall window with curtains, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/bathtub_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+an old rusty stained bathtub with a grime ring, dead leaves inside and a dripping tap, one foot replaced by bricks. a bathtub against the back wall seen from the front and slightly above, wide, with a wall tap. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/bathtub_0.png`
+
+```
+A cozy bathroom bathtub: clawfoot style, main color close to #f5f5f2, brand new and charming. a bathtub against the back wall seen from the front and slightly above, wide, with a wall tap. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/bathtub_1.png`
+
+```
+A cozy bathroom bathtub: retro pink style, main color close to #f2a7b5, brand new and charming. a bathtub against the back wall seen from the front and slightly above, wide, with a wall tap. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/bathtub_2.png`
+
+```
+A cozy bathroom bathtub: wood panel style, main color close to #b07a4a, brand new and charming. a bathtub against the back wall seen from the front and slightly above, wide, with a wall tap. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/sink_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a cracked old wall-hung washbasin with a rusty leaking pipe dripping into a bucket. a bathroom washbasin with a tap, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/sink_0.png`
+
+```
+A cozy bathroom sink: wood vanity style, main color close to #a87447, brand new and charming. a bathroom washbasin with a tap, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/sink_1.png`
+
+```
+A cozy bathroom sink: pedestal style, main color close to #f5f5f2, brand new and charming. a bathroom washbasin with a tap, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/sink_2.png`
+
+```
+A cozy bathroom sink: navy vanity style, main color close to #2f4868, brand new and charming. a bathroom washbasin with a tap, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/mirror_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a tilted dusty wall mirror with cracked spotted glass and a chipped corner. a bathroom mirror hanging on a wall, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/mirror_0.png`
+
+```
+A cozy bathroom mirror: round gold style, main color close to #c9a24b, brand new and charming. a bathroom mirror hanging on a wall, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/mirror_1.png`
+
+```
+A cozy bathroom mirror: wooden arch style, main color close to #a5713f, brand new and charming. a bathroom mirror hanging on a wall, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/mirror_2.png`
+
+```
+A cozy bathroom mirror: vanity bulbs style, main color close to #f2efe8, brand new and charming. a bathroom mirror hanging on a wall, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/shelf_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a broken crooked wall shelf with a few dusty jars. a small wall shelf, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/shelf_0.png`
+
+```
+A cozy bathroom shelf: wood style, main color close to #a5713f, brand new and charming. a small wall shelf, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/shelf_1.png`
+
+```
+A cozy bathroom shelf: white two-tier style, main color close to #f2f2ee, brand new and charming. a small wall shelf, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/shelf_2.png`
+
+```
+A cozy bathroom shelf: glass & brass style, main color close to #c9a24b, brand new and charming. a small wall shelf, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/towels_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a bent towel bar with one dirty grey ragged towel with holes. bath towels hanging from a wall-mounted towel bar or hooks, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/towels_0.png`
+
+```
+A cozy bathroom towels: peach style, main color close to #f4b183, brand new and charming. bath towels hanging from a wall-mounted towel bar or hooks, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/towels_1.png`
+
+```
+A cozy bathroom towels: aqua style, main color close to #7fc8d6, brand new and charming. bath towels hanging from a wall-mounted towel bar or hooks, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/towels_2.png`
+
+```
+A cozy bathroom towels: lemon style, main color close to #f2d16b, brand new and charming. bath towels hanging from a wall-mounted towel bar or hooks, front view. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/bathmat_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a soggy moldy grey-green bath mat with holes, lying flat on the floor seen in perspective. a bath mat lying flat on the floor, seen in perspective from the front and above, wide. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/bathmat_0.png`
+
+```
+A cozy bathroom bathmat: cloud style, main color close to #eef4fa, brand new and charming. a bath mat lying flat on the floor, seen in perspective from the front and above, wide. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/bathmat_1.png`
+
+```
+A cozy bathroom bathmat: coral stripes style, main color close to #e88a6a, brand new and charming. a bath mat lying flat on the floor, seen in perspective from the front and above, wide. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/bathmat_2.png`
+
+```
+A cozy bathroom bathmat: teak slats style, main color close to #c08a56, brand new and charming. a bath mat lying flat on the floor, seen in perspective from the front and above, wide. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/plant_before.png` _(tuỳ chọn — trạng thái "trước khi sửa")_
+
+```
+a dried dead houseplant in a cracked pot. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/plant_0.png`
+
+```
+A cozy bathroom plant: fern style, main color close to #4f9a5a, brand new and charming. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/plant_1.png`
+
+```
+A cozy bathroom plant: snake plant style, main color close to #5f8f4a, brand new and charming. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
+
+### `art/raw/rooms/bathroom/plant_2.png`
+
+```
+A cozy bathroom plant: peace lily style, main color close to #3f7a5a, brand new and charming. Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game. Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background (if transparency is impossible: a flat pure white #FFFFFF background), no ground shadow, no floor, no scenery. Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, clean crisp edges, high detail, no text, no watermark, no logo.
+```
