@@ -14,11 +14,17 @@ export interface ArtSpec {
   group: string;
 }
 
-/** Shared style so every image looks like it belongs to the same game. */
+/**
+ * Shared style so every image looks like it belongs to the same game.
+ * Deliberately flat and hand-inked: glossy "3D render" looks are the most obvious AI tell,
+ * and scripts/art.ts further flattens colors and adds one uniform outline to every cut-out.
+ */
 export const STYLE =
-  'Premium casual mobile game art, cozy and warm, soft stylized 3D render with hand-painted texture detail, ' +
-  'rounded friendly shapes, rich saturated but gentle colors, soft warm key light from the upper left, subtle rim light, ' +
-  'clean crisp edges, high detail, no text, no watermark, no logo.';
+  'Hand-drawn 2D illustration for a cozy casual mobile game, like a modern picture book for kids. ' +
+  'Flat cel shading with only 2-3 tones per color, one bold dark-brown outline of even thickness around every shape, ' +
+  'simple confident shapes with few details, limited warm palette, matte colors, slightly imperfect hand-inked lines. ' +
+  'No 3D render, no photorealism, no glossy plastic shine, no gradients, no bokeh, no glow effects, no tiny noisy details, ' +
+  'no text, no watermark, no logo.';
 
 const ISOLATED =
   'Single object, centered, fully visible with a little empty margin, isolated on a fully transparent background ' +
@@ -26,12 +32,12 @@ const ISOLATED =
 
 const VIEW = 'Viewed from the front and slightly above (about 15 degrees down), like furniture in a cozy home decoration game.';
 
-const SEAMLESS = 'Seamless tileable square texture, flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette.';
+const SEAMLESS = 'Seamless tileable square texture in a flat hand-painted style with simple shapes and clean lines (no outline needed), flat front-facing, evenly lit, no perspective, no objects, no shadows, no vignette.';
 
 // ---------- match-3 pieces ----------
 
-const PIECE = 'A glossy candy-like game piece for a match-3 puzzle, chunky and juicy, strong readable silhouette, bright specular highlight, ' +
-  'subtle inner glow, thin darker outline, fills about 90% of the square frame.';
+const PIECE = 'A chunky game piece for a match-3 puzzle, bold readable silhouette, flat cel shading with one simple white highlight shape, ' +
+  'thick even dark outline, fills about 90% of the square frame.';
 
 const pieces: ArtSpec[] = [
   ['red', 'shaped like a plump heart, vivid ruby red'],
@@ -44,10 +50,10 @@ const pieces: ArtSpec[] = [
 
 const specials: ArtSpec[] = [
   ['rocket', 'A horizontal double-headed firework rocket booster (pointed golden tips on both the left and the right end, red and white striped body, small blue fins in the middle), lying horizontally'],
-  ['bomb', 'A round cartoon bomb booster, dark navy glossy sphere with a metal cap and a short fuse with a bright spark'],
+  ['bomb', 'A round cartoon bomb booster, dark navy round sphere with a metal cap and a short fuse with a bright spark'],
   ['plane', 'A cute folded paper airplane booster, white and light-blue paper, pointing up-right'],
   ['disco', 'A sparkling disco ball booster covered in rainbow mirror tiles, glowing'],
-].map(([k, d]) => ({ key: `pieces/${k}`, kind: 'sprite', size: 256, group: 'Pieces', prompt: `${d}, match-3 game special piece, glossy and juicy, fills about 90% of the square frame. ${ISOLATED} ${STYLE}` }));
+].map(([k, d]) => ({ key: `pieces/${k}`, kind: 'sprite', size: 256, group: 'Pieces', prompt: `${d}, match-3 game special piece, bold and readable, fills about 90% of the square frame. ${ISOLATED} ${STYLE}` }));
 
 const obstacles: ArtSpec[] = [
   { key: 'pieces/box1', d: 'A small square wooden crate, light honey-colored planks with a diagonal brace, seen straight from the front, square' },
@@ -60,9 +66,9 @@ const obstacles: ArtSpec[] = [
 // ---------- UI icons & mascot ----------
 
 const ui: ArtSpec[] = [
-  ['coin', 'a shiny gold coin with a paw print embossed on it'],
-  ['star', 'a chunky glossy golden star'],
-  ['heart', 'a glossy red heart (lives icon)'],
+  ['coin', 'a gold coin with a paw print embossed on it'],
+  ['star', 'a chunky golden star'],
+  ['heart', 'a plump red heart (lives icon)'],
   ['hammer', 'a cartoon hammer with a wooden handle and a steel head'],
   ['broom', 'a cartoon straw broom with a red band'],
   ['shuffle', 'two curved crossing arrows, one blue and one orange (shuffle icon)'],
@@ -72,7 +78,7 @@ const ui: ArtSpec[] = [
   ['chest', 'a wooden treasure chest with gold trim, slightly open with golden light'],
   ['gear', 'a lavender settings gear with a purple center'],
   ['lock', 'a grey padlock'],
-].map(([k, d]) => ({ key: `ui/${k}`, kind: 'sprite', size: 192, group: 'UI icons', prompt: `Mobile game UI icon: ${d}, bold outline, glossy, readable at small size, fills about 90% of the frame. ${ISOLATED} ${STYLE}` }));
+].map(([k, d]) => ({ key: `ui/${k}`, kind: 'sprite', size: 192, group: 'UI icons', prompt: `Mobile game UI icon: ${d}, bold outline, flat colors, readable at small size, fills about 90% of the frame. ${ISOLATED} ${STYLE}` }));
 
 const MOCHI = 'Mochi, a chubby cute cream-and-orange tabby kitten with big round sparkling eyes, pink blush cheeks, a small red collar with a golden bell, ' +
   'head and upper body only, friendly mascot of a cozy home decoration game';

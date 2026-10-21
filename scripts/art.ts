@@ -63,24 +63,79 @@ function alphaBox(data: Buffer, w: number, h: number) {
   return x1 < 0 ? null : { left: x0, top: y0, width: x1 - x0 + 1, height: y1 - y0 + 1 };
 }
 
+// "House style" post-processing (set ART_RAW=1 to skip): fewer colors and one uniform outline
+// make AI images look flat, hand-made and consistent with each other.
+const FLATTEN = process.env.ART_RAW !== '1';
+const OUTLINE = [59, 36, 24]; // dark brown ink
+
+/** Quantize colors with libimagequant (no dither): removes noisy AI micro-texture, keeps flat shapes. */
+async function flatten(img: sharp.Sharp, colours: number) {
+  const png = await img.png({ palette: true, colours, dither: 0 }).toBuffer();
+  return sharp(png).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+}
+
+/** Stamp an anti-aliased disk of radius r around every edge pixel and put the image on top of it. */
+function addOutline(src: Buffer, w: number, h: number, r: number) {
+  const W = w + r * 2, H = h + r * 2;
+  const ring = new Float32Array(W * H);
+  const disk: [number, number, number][] = [];
+  for (let dy = -r - 1; dy <= r + 1; dy++) for (let dx = -r - 1; dx <= r + 1; dx++) {
+    const k = Math.min(1, Math.max(0, r + 0.5 - Math.hypot(dx, dy)));
+    if (k > 0) disk.push([dx, dy, k]);
+  }
+  const a = (x: number, y: number) => (x < 0 || y < 0 || x >= w || y >= h ? 0 : src[(y * w + x) * 4 + 3]);
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const v = a(x, y);
+    if (v < 100) continue;
+    if (a(x - 1, y) >= 100 && a(x + 1, y) >= 100 && a(x, y - 1) >= 100 && a(x, y + 1) >= 100) continue; // interior
+    for (const [dx, dy, k] of disk) {
+      const i = (y + r + dy) * W + (x + r + dx);
+      if (k > ring[i]) ring[i] = k;
+    }
+  }
+  const out = Buffer.alloc(W * H * 4);
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    const o = (y * W + x) * 4;
+    const sx = x - r, sy = y - r;
+    const sa = sx >= 0 && sy >= 0 && sx < w && sy < h ? src[(sy * w + sx) * 4 + 3] / 255 : 0;
+    const ra = Math.max(ring[y * W + x], sa > 0.4 ? 1 : 0);
+    const fa = sa + ra * (1 - sa);
+    if (fa <= 0) continue;
+    for (let c = 0; c < 3; c++) {
+      const sc = sa > 0 ? src[(sy * w + sx) * 4 + c] : 0;
+      out[o + c] = Math.round((sc * sa + OUTLINE[c] * ra * (1 - sa)) / fa);
+    }
+    out[o + 3] = Math.round(fa * 255);
+  }
+  return { buf: out, width: W, height: H };
+}
+
 async function processOne(file: string, spec: ArtSpec) {
   const out = join(OUT, `${spec.key}.webp`);
   mkdirSync(dirname(out), { recursive: true });
-  if (spec.kind === 'texture') {
-    await sharp(file).resize(spec.size, spec.size, { fit: 'cover' }).webp({ quality: 85 }).toFile(out);
-    return 'texture';
-  }
-  if (spec.kind === 'backdrop') {
-    await sharp(file).resize({ width: spec.size, withoutEnlargement: true }).webp({ quality: 85 }).toFile(out);
-    return 'backdrop';
+  if (spec.kind === 'texture' || spec.kind === 'backdrop') {
+    let img = sharp(file).resize(spec.kind === 'texture' ? { width: spec.size, height: spec.size, fit: 'cover' } : { width: spec.size, withoutEnlargement: true });
+    if (FLATTEN) {
+      const f = await flatten(img.median(3), spec.kind === 'texture' ? 32 : 64);
+      img = sharp(f.data, { raw: { width: f.info.width, height: f.info.height, channels: 4 } });
+    }
+    await img.webp({ quality: 85 }).toFile(out);
+    return spec.kind;
   }
   const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const removed = removeBackground(data, info.width, info.height);
   const box = alphaBox(data, info.width, info.height);
   let img = sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } });
   if (box) img = img.extract(box);
-  await img.resize(spec.size, spec.size, { fit: 'inside', withoutEnlargement: true }).webp({ quality: 88, alphaQuality: 95 }).toFile(out);
-  return removed ? 'background removed' : 'ok';
+  const pad = FLATTEN ? Math.max(2, Math.round(spec.size * (spec.kind === 'sprite' ? 0.02 : 0.012))) : 0;
+  img = img.resize(spec.size - pad * 2, spec.size - pad * 2, { fit: 'inside', withoutEnlargement: true });
+  if (FLATTEN) {
+    const f = await flatten(img, spec.kind === 'sprite' ? 24 : 32);
+    const o = addOutline(f.data, f.info.width, f.info.height, pad);
+    img = sharp(o.buf, { raw: { width: o.width, height: o.height, channels: 4 } });
+  }
+  await img.webp({ quality: 88, alphaQuality: 95 }).toFile(out);
+  return (removed ? 'background removed' : 'ok') + (FLATTEN ? ', flattened + outline' : '');
 }
 
 async function writeManifest() {
