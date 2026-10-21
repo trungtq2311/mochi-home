@@ -1,13 +1,16 @@
 import { applySettings, sfx } from '../core/audio.ts';
 import { getLang, setLang, t, tl } from '../core/i18n.ts';
 import {
-  canPlay, fmtTime, hasInfiniteLives, MAX_LIVES, nextLifeIn, persist, resetSave, save, syncLives, type BoosterId,
+  canPlay, fmtTime, hasInfiniteLives, MAX_LIVES, msToMidnight, nextLifeIn, persist, resetSave, save, syncLives, type BoosterId,
 } from '../core/save.ts';
 import { getLevel } from '../match3/levels.ts';
 import { iconURL } from '../match3/sprites.ts';
 import {
-  claimChest, claimDaily, claimFestival, claimQuest, claimRace, DAILY, dailyAvailable, dailyIndex, ensureQuests, festival,
-  festivalEndsIn, festivalPoints, MILESTONES, QUEST_CHEST, RACE_GOAL, RACE_PRIZES, raceEndsIn, racePlace, racers, questsResetIn,
+  breakPiggy, buyDeal, claimChest, claimDaily, claimFestival, claimPass, claimQuest, claimRace, DAILY, dailyAvailable, dailyDeal,
+  dailyIndex, dealBought, ensureQuests, festival, festivalEndsIn, festivalPoints, HUNT_GRAND, HUNT_SIZE, HUNT_START_KEYS, huntActive,
+  huntEndsIn, huntKeys, huntLayout, huntOpened, huntStartsIn, MILESTONES, openHuntChest, PASS_TIERS, passClaimable, passEndsIn,
+  passPoints, passSeason, passTier, PIGGY_CAP, piggyCoinsFor, piggyFull, QUEST_CHEST, RACE_GOAL, RACE_PRIZES, raceEndsIn, racePlace,
+  racers, questsResetIn,
 } from '../meta/events.ts';
 import { boosterIcon, btn, h, icon, modal, rewardChips, toast } from './dom.ts';
 import { nav } from './nav.ts';
@@ -316,5 +319,176 @@ export function showRace() {
       label: h('span', {}, t('claim'), ' · ', t('place', place)),
       onClick: () => { claimRace(); sfx('win'); m.close(); nav.refresh(); },
     }] : [],
+  });
+}
+
+// ---------- Mochi Pass ----------
+
+export function showPass() {
+  const s = passSeason();
+  const pts = passPoints();
+  const tier = passTier();
+  const prev = tier > 0 ? PASS_TIERS[tier - 1].at : 0;
+  const next = PASS_TIERS[tier];
+  const track = h('div', { class: 'milestones pass-track' },
+    ...PASS_TIERS.map((tr, i) => h('div', { class: `milestone ${tr.big ? 'big' : ''} ${i < save.pass.claimed ? 'got' : i < tier ? 'ready' : ''} ${i === tier ? 'current' : ''}` },
+      h('div', { class: 'pass-num' }, String(i + 1)),
+      rewardChips(tr.reward),
+      i < save.pass.claimed ? icon('check') : i < tier ? null : h('small', { class: 'pass-at' }, String(tr.at)),
+    )),
+  );
+  const m = modal({
+    title: t('pass'),
+    cls: 'pass',
+    body: h('div', {},
+      h('div', { class: 'fest-head', style: `--fest:${s.color}` },
+        h('div', { class: 'fest-icon' }, s.icon),
+        h('div', {},
+          h('div', { class: 'pass-season' }, tl(s.name)),
+          h('div', { class: 'fest-points' }, t('passTier', tier, PASS_TIERS.length)),
+          h('div', { class: 'timer' }, icon('clock'), t('endsIn', fmtTime(passEndsIn()))),
+        ),
+      ),
+      next
+        ? h('div', { class: 'pass-progress' },
+          h('div', { class: 'bar big' }, h('div', { class: 'fill', style: `width:${((pts - prev) / (next.at - prev)) * 100}%` }), h('span', {}, `${pts - prev}/${next.at - prev}`)),
+          h('div', { class: 'muted center' }, t('passNext', next.at - pts)))
+        : h('p', { class: 'center' }, t('passDone')),
+      h('p', { class: 'muted center' }, t('passInfo')),
+      track,
+    ),
+    buttons: passClaimable() > 0 ? [{
+      label: t('claimAll'),
+      cls: 'yellow',
+      onClick: () => { claimPass(); sfx('win'); m.close(); nav.refresh(); showPass(); },
+    }] : [],
+  });
+  // Scroll just far enough to show the first unclaimed tier (keeps the header visible early in the season).
+  const focus = track.querySelector<HTMLElement>('.milestone.ready, .milestone.current');
+  if (focus) requestAnimationFrame(() => { m.body.scrollTop = focus.offsetTop - m.body.offsetTop + focus.offsetHeight * 2.5 - m.body.clientHeight; });
+}
+
+// ---------- weekend treasure hunt ----------
+
+export function showHunt() {
+  if (!huntActive()) {
+    const m = modal({
+      title: t('hunt'),
+      cls: 'hunt',
+      body: h('div', { class: 'center' },
+        h('div', { class: 'hunt-hero' }, icon('chest')),
+        h('div', { class: 'timer center' }, icon('clock'), t('huntStartsIn', fmtTime(huntStartsIn()))),
+        h('p', {}, t('huntSoon')),
+        h('div', { class: 'section-title' }, t('huntGrand')),
+        rewardChips(HUNT_GRAND),
+        h('p', { class: 'muted' }, t('huntFreeKeys', HUNT_START_KEYS)),
+      ),
+      buttons: [{ label: t('ok'), onClick: () => m.close() }],
+    });
+    return;
+  }
+  const layout = huntLayout();
+  const render = (just = -1): HTMLElement => {
+    const opened = huntOpened();
+    const keys = huntKeys();
+    const grandFound = opened.some((i) => layout[i] === HUNT_GRAND);
+    return h('div', {},
+      h('div', { class: 'hunt-head' },
+        h('div', { class: 'hunt-keys' }, icon('key'), h('b', {}, `×${keys}`)),
+        h('div', {},
+          h('div', { class: 'muted' }, t('huntInfo')),
+          h('div', { class: 'timer' }, icon('clock'), t('endsIn', fmtTime(huntEndsIn()))),
+        ),
+      ),
+      h('div', { class: `hunt-grand ${grandFound ? 'got' : ''}` }, icon('gift'), h('div', {}, h('b', {}, t('huntGrand')), rewardChips(HUNT_GRAND)), grandFound ? icon('check') : null),
+      h('div', { class: 'hunt-grid' },
+        ...layout.map((r, i) => {
+          const open = opened.includes(i);
+          if (open) {
+            return h('div', { class: `hunt-cell open ${r === HUNT_GRAND ? 'grand' : ''} ${i === just ? 'just' : ''}` },
+              r === HUNT_GRAND ? icon('gift') : rewardChips(r));
+          }
+          return h('button', {
+            class: `hunt-cell ${keys > 0 ? 'can' : ''}`,
+            onclick: () => {
+              if (huntKeys() <= 0) { sfx('bad'); toast(t('huntNoKeys')); return; }
+              const got = openHuntChest(i);
+              if (!got) return;
+              sfx(got === HUNT_GRAND ? 'win' : 'coin');
+              if (got === HUNT_GRAND) toast(`${t('huntGrand')}!`);
+              m.body.replaceChildren(render(i));
+              nav.refresh();
+            },
+          }, icon('chest'));
+        }),
+      ),
+      opened.length >= HUNT_SIZE ? h('p', { class: 'center' }, t('huntDone')) : null,
+    );
+  };
+  const m = modal({ title: t('hunt'), cls: 'hunt', body: render() });
+}
+
+// ---------- piggy bank ----------
+
+export function showPiggy() {
+  const full = piggyFull();
+  const m = modal({
+    title: t('piggy'),
+    cls: 'piggy',
+    body: h('div', { class: 'center' },
+      h('div', { class: `piggy-hero ${full ? 'full' : ''}` }, icon('piggy')),
+      h('div', { class: 'bar big' },
+        h('div', { class: 'fill', style: `width:${(save.piggy.coins / PIGGY_CAP) * 100}%` }),
+        h('span', {}, `${save.piggy.coins}/${PIGGY_CAP}`)),
+      h('p', {}, full ? t('piggyReady') : t('piggyInfo', piggyCoinsFor(false))),
+    ),
+    buttons: [{
+      label: h('span', {}, t('breakPiggy'), ' · ', icon('coin'), ` ${save.piggy.coins}`),
+      cls: full ? 'green' : 'grey',
+      onClick: () => {
+        if (!piggyFull()) { toast(t('piggyNotFull')); return; }
+        const coins = breakPiggy();
+        sfx('win');
+        toast(`+${coins}`);
+        m.close();
+        nav.refresh();
+      },
+    }],
+  });
+}
+
+// ---------- daily deal ----------
+
+export function showDeal() {
+  const deal = dailyDeal();
+  const bought = dealBought();
+  const m = modal({
+    title: t('deal'),
+    cls: 'deal',
+    body: h('div', { class: 'center' },
+      h('p', { class: 'muted' }, t('dealInfo')),
+      h('div', { class: `deal-card ${bought ? 'got' : ''}` },
+        h('div', { class: 'deal-off' }, `-${deal.off}%`),
+        h('div', { class: 'deal-items' },
+          ...Object.entries(deal.reward.boosters ?? {}).map(([k, v]) => h('div', { class: 'deal-item' }, boosterIcon(k as BoosterId), h('b', {}, `×${v}`))),
+          deal.reward.infiniteMin ? h('div', { class: 'deal-item' }, icon('heart'), h('b', {}, `∞${deal.reward.infiniteMin}m`)) : null,
+        ),
+        h('div', { class: 'deal-was' }, icon('coin'), h('s', {}, String(deal.was))),
+        bought ? h('div', { class: 'stamp' }, icon('check')) : null,
+      ),
+      h('div', { class: 'timer center' }, icon('clock'), bought ? t('dealBought', fmtTime(msToMidnight())) : t('newDealIn', fmtTime(msToMidnight()))),
+    ),
+    buttons: bought ? [] : [{
+      label: h('span', {}, t('buy'), ' · ', icon('coin'), ` ${deal.price}`),
+      cls: 'yellow',
+      onClick: () => {
+        if (save.coins < deal.price) { toast(t('notEnoughCoins')); return; }
+        buyDeal();
+        sfx('coin');
+        m.close();
+        nav.refresh();
+        showDeal();
+      },
+    }],
   });
 }

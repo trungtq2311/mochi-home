@@ -1,15 +1,18 @@
 import { sfx } from '../core/audio.ts';
 import { t, tl } from '../core/i18n.ts';
-import { fmtTime, hasInfiniteLives, MAX_LIVES, nextLifeIn, persist, save, syncLives } from '../core/save.ts';
+import { fmtTime, hasInfiniteLives, MAX_LIVES, msToMidnight, nextLifeIn, persist, save, syncLives } from '../core/save.ts';
 import {
-  dailyAvailable, festival, festivalClaimable, festivalEndsIn, grant, questsClaimable, racePlace, raceEndsIn, type Reward,
+  dailyAvailable, dailyDeal, dealBought, festival, festivalClaimable, festivalEndsIn, grant, HUNT_SIZE, huntActive, huntEndsIn, huntKeys,
+  huntOpened, huntStartsIn, passClaimable, passEndsIn, PIGGY_CAP, piggyFull, questsClaimable, racePlace, raceEndsIn, type Reward,
 } from '../meta/events.ts';
 import { itemIconSVG, mascotSVG, roomSVG } from '../meta/roomArt.ts';
 import { ROOMS, roomTotalCost, type Room, type RoomTask } from '../meta/rooms.ts';
 import { prepareRoom, roomIsPainted } from '../art/paintedRoom.ts';
 import { btn, h, icon, mochiSay, modal, rewardChips } from './dom.ts';
 import { nav } from './nav.ts';
-import { showDaily, showFestival, showLevelStart, showLives, showQuests, showRace, showSettings, showShop } from './popups.ts';
+import {
+  showDaily, showDeal, showFestival, showHunt, showLevelStart, showLives, showPass, showPiggy, showQuests, showRace, showSettings, showShop,
+} from './popups.ts';
 
 let teardown: (() => void) | null = null;
 
@@ -78,6 +81,11 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
   const eFest = evt(h('span', { class: 'ic emoji', style: `--glow:${fest.color}` }, fest.icon), showFestival);
   const eRace = evt(icon('flag'), showRace);
   const side = h('div', { class: 'side-left' }, eDaily.el, eQuests.el, eFest.el, eRace.el);
+  const ePass = evt(icon('ticket'), showPass);
+  const eHunt = evt(icon('chest'), showHunt);
+  const ePiggy = evt(icon('piggy'), showPiggy);
+  const eDeal = evt(icon('tag'), showDeal);
+  const sideRight = h('div', { class: 'side-right' }, ePass.el, eHunt.el, ePiggy.el, eDeal.el);
 
   // ----- bottom -----
   const tasksBadge = h('span', { class: 'badge hidden' }, '!');
@@ -86,7 +94,7 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
   const playBtn = btn(h('span', { class: 'btn-col' }, h('span', {}, t('play')), playLabel), 'green huge play-btn', () => showLevelStart(save.level));
   const bottom = h('div', { class: 'bottom-bar' }, tasksBtn, playBtn);
 
-  const screen = h('div', { class: 'screen home' }, roomEl, h('div', { class: 'home-shade' }), topbar, banner, side, bottom);
+  const screen = h('div', { class: 'screen home' }, roomEl, h('div', { class: 'home-shade' }), topbar, banner, side, sideRight, bottom);
   app.append(screen);
   // Painted rooms need their images (and perspective floors) ready; re-render once they are.
   if (roomIsPainted(room.id)) void prepareRoom(room.id).then(() => { if (roomEl.isConnected) renderRoom(); });
@@ -117,9 +125,21 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
     setBadge(eFest.badge, festivalClaimable());
     eRace.label.textContent = fmtTime(raceEndsIn());
     setBadge(eRace.badge, racePlace() !== null && !save.race.claimed ? '!' : 0);
+    ePass.label.textContent = fmtTime(passEndsIn());
+    setBadge(ePass.badge, passClaimable());
+    const hunting = huntActive();
+    eHunt.el.classList.toggle('off', !hunting);
+    eHunt.label.textContent = fmtTime(hunting ? huntEndsIn() : huntStartsIn());
+    setBadge(eHunt.badge, hunting && huntOpened().length < HUNT_SIZE ? huntKeys() : 0);
+    ePiggy.label.textContent = piggyFull() ? t('fullTag') : `${Math.floor((save.piggy.coins / PIGGY_CAP) * 100)}%`;
+    setBadge(ePiggy.badge, piggyFull() ? '!' : 0);
+    eDeal.label.textContent = fmtTime(msToMidnight());
+    setBadge(eDeal.badge, !dealBought() && save.coins >= dailyDeal().price ? '!' : 0);
     const next = allDone ? null : room.tasks.find((tk) => save.done[tk.id] === undefined);
-    tasksBadge.classList.toggle('hidden', !next || save.stars < next.cost);
-    tasksBtn.classList.toggle('pulse', !!next && save.stars >= next.cost);
+    const affordable = !!next && save.stars >= next.cost;
+    setBadge(tasksBadge, affordable ? '!' : save.stars);
+    tasksBadge.classList.toggle('count', !affordable);
+    tasksBtn.classList.toggle('pulse', affordable);
   };
   refresh();
   const iv = setInterval(refresh, 1000);
@@ -165,6 +185,7 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
   function stylePicker(task: RoomTask) {
     bottom.classList.add('hidden');
     side.classList.add('hidden');
+    sideRight.classList.add('hidden');
     const options = h('div', { class: 'style-options' });
     const renderOptions = () => {
       options.innerHTML = '';
@@ -192,6 +213,7 @@ export function showHome(opts: { fromWin?: boolean } = {}) {
         setTimeout(() => picker.remove(), 250);
         bottom.classList.remove('hidden');
         side.classList.remove('hidden');
+        sideRight.classList.remove('hidden');
         afterTask();
       }),
     );

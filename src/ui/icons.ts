@@ -105,6 +105,31 @@ export const ICON = {
     <path d="M32 22v12l8 5" fill="none" stroke="${OL}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
     <rect x="27" y="4" width="10" height="7" rx="2.5" fill="url(#ic-pink)" ${o(3)}/>
     ${shine('M15 28a18 18 0 0 1 8-9', 3)}`),
+  ticket: svg(`<g transform="rotate(-14 32 32)">
+    <path d="M6 18h52v9a5 5 0 0 0 0 10v9H6v-9a5 5 0 0 0 0-10z" transform="translate(0 2.5)" fill="#40289e" ${o()}/>
+    <path d="M6 18h52v9a5 5 0 0 0 0 10v9H6v-9a5 5 0 0 0 0-10z" fill="url(#ic-purple)" ${o()}/>
+    <path d="M44 20v24" stroke="#fff" stroke-width="2.5" stroke-dasharray="3 3.5" opacity=".7"/>
+    <path d="M25 22.5l2.6 5.4 5.9.7-4.3 4.1 1.1 5.8-5.3-2.9-5.3 2.9 1.1-5.8-4.3-4.1 5.9-.7z" fill="url(#ic-gold)" stroke="${OL}" stroke-width="2.5" stroke-linejoin="round"/>
+    ${shine('M10 22.5h12', 3, 0.8)}</g>${twinkle(53, 12, 5.5)}`),
+  piggy: svg(`<path d="M17 47l-1 9h8l1-6M39 50l1 6h8l-1-9" fill="#e0567f" ${o(3)}/>
+    <ellipse cx="32" cy="36" rx="25" ry="20" fill="url(#ic-pink)" ${o()}/>
+    <path d="M14 22l-2-11 11 6z" fill="#ff7a9a" ${o(3)}/>
+    <ellipse cx="53" cy="37" rx="6" ry="7.5" fill="#ff9ab2" ${o(3)}/>
+    <circle cx="51.5" cy="35" r="1.5" fill="${OL}"/><circle cx="54.5" cy="39" r="1.5" fill="${OL}"/>
+    <circle cx="40" cy="29" r="2.8" fill="${OL}"/>
+    <rect x="23" y="16" width="14" height="4.5" rx="2.2" fill="${OL}"/>
+    ${shine('M15 32a17 13 0 0 1 9-11', 3.5, 0.75)}${twinkle(52, 12, 5)}`),
+  key: svg(`<circle cx="21" cy="24" r="14" fill="url(#ic-gold)" ${o()}/>
+    <circle cx="21" cy="24" r="5.5" fill="#fff8e0" ${o(3)}/>
+    <path d="M30 33l22 22M44 47l-6 6M50 53l-5 5" fill="none" stroke="${OL}" stroke-width="11" stroke-linecap="round"/>
+    <path d="M30 33l22 22M44 47l-6 6M50 53l-5 5" fill="none" stroke="#ffcc2e" stroke-width="5.5" stroke-linecap="round"/>
+    ${shine('M11 20a10 10 0 0 1 6-6', 3)}${twinkle(52, 14, 6)}`),
+  tag: svg(`<path d="M30 6h22a6 6 0 0 1 6 6v22L32 60 4 32z" transform="translate(0 2.5)" fill="#a8541c" ${o()}/>
+    <path d="M30 6h22a6 6 0 0 1 6 6v22L32 60 4 32z" fill="url(#ic-gold)" ${o()}/>
+    <circle cx="47" cy="17" r="4.5" fill="#fff8e0" ${o(3)}/>
+    <path d="M23 41l14-14" stroke="${OL}" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="24" cy="30" r="3.5" fill="none" stroke="${OL}" stroke-width="3.5"/><circle cx="36" cy="40" r="3.5" fill="none" stroke="${OL}" stroke-width="3.5"/>
+    ${shine('M28 10.5h12', 3, 0.85)}`),
 };
 
 /** Shared gradients, injected once (icons reference them by id). */

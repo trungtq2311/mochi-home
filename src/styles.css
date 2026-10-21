@@ -1037,3 +1037,126 @@ canvas.board { position: absolute; inset: 0; touch-action: none; }
   .banner { animation: bannerFade 1.7s linear both !important; }
   .splash-rays, .win-stars::before { animation: none !important; }
 }
+
+/* =====================================================================
+   Live events: Mochi Pass, weekend treasure hunt, piggy bank, daily deal
+   ===================================================================== */
+
+/* right-hand event column (mirrors .side-left) */
+.side-right { position: absolute; right: 14px; top: calc(var(--safe-top) + 140px); display: flex; flex-direction: column; gap: 24px; z-index: 2; }
+.side-right .evt-label { --sc: #7a3c00; background: linear-gradient(#ffd55a, #f39a0c); }
+.evt.off > .ic { filter: grayscale(.7) brightness(.95) drop-shadow(0 2px 1px rgba(80, 40, 0, .25)); opacity: .8; }
+.side-right .evt.off .evt-label { --sc: #4e4762; background: linear-gradient(#c9c2d8, #8f87a6); }
+@media (min-width: 560px) { .side-right { right: max(14px, calc(50% - 250px)); } }
+
+/* tasks button: star count when nothing is affordable yet */
+.tasks-btn .badge.count { --sc: #8a4700; background: linear-gradient(#fff08a, #ffb51f); color: #fff; animation: none; }
+
+/* modal colourways */
+.modal.pass { --frame: #8a6bff; --frame-2: #5636cf; --rb: #c3b0ff; --rb-2: #7a5cf0; --rb-dark: #40289e; --rb-sc: #2b1a70; }
+.modal.hunt { --frame: #ffb62e; --frame-2: #c97700; --rb: #ffd970; --rb-2: #f29a0e; --rb-dark: #a85a00; --rb-sc: #6b3500; }
+.modal.piggy { --frame: #ff7ea0; --frame-2: #d0406a; --rb: #ffa3bb; --rb-2: #ec5683; --rb-dark: #9c1f48; --rb-sc: #6b0f30; }
+.modal.deal { --frame: #5fd13a; --frame-2: #2f9a1c; --rb: #a6f57a; --rb-2: #45bd2a; --rb-dark: #1f7614; --rb-sc: #1b5a10; }
+
+/* Mochi Pass */
+.pass-season { font-weight: 800; font-size: 15px; line-height: 1.1; color: var(--brown); }
+.modal.pass .fest-points { font-size: 26px; }
+.pass-progress { margin-bottom: 4px; }
+.pass-progress .bar.big { margin: 12px 2px 4px; }
+.pass-progress .bar.big span { line-height: 24px; }
+.pass-progress .fill { background: linear-gradient(#c4b2ff, #8a6bff 60%, #5b3dd6); }
+.pass-track { margin-top: 6px; }
+.pass-num {
+  --sc: #2b1a70;
+  flex: none; width: 32px; height: 32px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center; padding-bottom: 1px;
+  background: radial-gradient(circle at 40% 30%, #d9ccff, #8a6bff 65%, #5b3dd6);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .15), 0 0 0 2px var(--line), 0 2px 0 2px var(--line);
+  color: #fff; font-weight: 800; font-size: 15px; line-height: 1;
+  text-shadow: 0 -1.2px 0 var(--sc), 0 1.2px 0 var(--sc), -1.2px 0 0 var(--sc), 1.2px 0 0 var(--sc), 0 2px 0 var(--sc);
+}
+.milestone.big { background: linear-gradient(#fff8d8, #ffe08a); box-shadow: inset 0 2px 0 #fff, 0 0 0 2px #f0b93a, 0 3px 0 2px #d18d0e; }
+.milestone.big .pass-num { --sc: #8a4700; background: radial-gradient(circle at 40% 30%, #fff6b0, #ffc21f 60%, #e08a00); }
+.milestone.big.ready { background: linear-gradient(#fffbe8, #ffeaa0); box-shadow: inset 0 2px 0 #fff, 0 0 0 2.5px #ffb51f, 0 3px 0 2.5px #d18d0e, 0 0 14px 2px rgba(255, 200, 50, .7); }
+.milestone.current { box-shadow: inset 0 2px 0 #fff, 0 0 0 2.5px #9d8bff, 0 3px 0 2.5px #6a4be0; }
+.pass-at { flex: none; font-weight: 800; font-size: 13px; color: var(--ink-soft); }
+
+/* weekend treasure hunt */
+.hunt-hero .ic { width: 96px; height: 96px; filter: drop-shadow(0 6px 5px rgba(100, 50, 0, .3)); animation: float 2.6s ease-in-out infinite; }
+.modal.hunt .chips { margin-bottom: 6px; }
+.hunt-head { display: flex; align-items: center; gap: 12px; }
+.hunt-head .muted { font-size: 13px; line-height: 1.25; }
+.hunt-keys {
+  flex: none; display: flex; flex-direction: column; align-items: center; padding: 6px 10px 4px; border-radius: 18px;
+  background: linear-gradient(#fff8d8, #ffdf85);
+  box-shadow: inset 0 2px 0 #fff, 0 0 0 2px #f0b93a, 0 3px 0 2px #d18d0e;
+}
+.hunt-keys .ic { width: 40px; height: 40px; }
+.hunt-keys b { --sc: #7a3c00; font-size: 22px; font-weight: 800; line-height: 1; color: #fff;
+  text-shadow: 0 -2px 0 var(--sc), 0 2px 0 var(--sc), -2px 0 0 var(--sc), 2px 0 0 var(--sc), 0 3px 0 var(--sc); }
+.hunt-grand {
+  display: flex; align-items: center; gap: 8px; margin: 12px 0 10px; padding: 6px 10px; border-radius: 16px;
+  background: rgba(214, 160, 90, .12); box-shadow: inset 0 0 0 2px rgba(214, 160, 90, .3);
+}
+.hunt-grand > div { flex: 1; min-width: 0; }
+.hunt-grand b { font-size: 13px; color: var(--brown-2); text-transform: uppercase; letter-spacing: .5px; }
+.hunt-grand .chips { justify-content: flex-start; margin: 0; }
+.hunt-grand .chip { font-size: 12px; }
+.hunt-grand .chip .ic { width: 18px; height: 18px; }
+.hunt-grand > .ic { width: 40px; height: 40px; }
+.hunt-grand > .ic:last-child:not(:first-child) { width: 28px; height: 28px; }
+.hunt-grand.got { opacity: .6; }
+.hunt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 2px; }
+.hunt-cell {
+  position: relative; aspect-ratio: 1; border: none; padding: 6px; border-radius: 16px; min-width: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 50% 35%, #fff8e6, #f5d9a8 70%, #e7bd7c);
+  box-shadow: inset 0 2px 0 #fff, inset 0 -3px 0 rgba(160, 90, 20, .2), 0 0 0 2px #d9a560, 0 3px 0 2px #a86c2f;
+  transition: transform .25s var(--spring);
+}
+.hunt-cell > .ic { width: 100%; height: 100%; filter: drop-shadow(0 3px 2px rgba(100, 50, 0, .3)); }
+.hunt-cell.can > .ic { animation: wiggle 2.4s ease-in-out infinite; }
+.hunt-cell.can:nth-child(3n) > .ic { animation-delay: .5s; }
+.hunt-cell.can:nth-child(3n+1) > .ic { animation-delay: 1.1s; }
+.hunt-cell:active:not(.open) { transform: scale(.9); transition-duration: .06s; }
+.hunt-cell.open { padding: 3px; background: linear-gradient(#fffefa, #fff2dc); box-shadow: inset 0 0 0 2px rgba(214, 160, 90, .35); }
+.hunt-cell.open .chips { flex-direction: column; gap: 2px; }
+.hunt-cell.open .chip { padding: 0 5px 0 1px; font-size: 11.5px; box-shadow: none; background: none; }
+.hunt-cell.open .chip .ic { width: 22px; height: 22px; }
+.hunt-cell.grand { background: radial-gradient(circle at 50% 40%, #fffbe0, #ffe27a 60%, #ffbf2a); box-shadow: inset 0 2px 0 #fff, 0 0 0 2.5px #ffb31a, 0 3px 0 2.5px #c47800, 0 0 16px 3px rgba(255, 210, 60, .8); }
+.hunt-cell.grand > .ic { width: 80%; height: 80%; }
+.hunt-cell.just { animation: chestPop .5s var(--pop) both; }
+@keyframes chestPop { 0% { transform: scale(.4) rotate(-10deg); filter: brightness(2); } 100% { transform: none; filter: none; } }
+
+/* piggy bank */
+.piggy-hero { position: relative; width: 140px; height: 120px; margin: 0 auto; }
+.piggy-hero .ic { width: 100%; height: 100%; filter: drop-shadow(0 6px 5px rgba(120, 10, 50, .3)); animation: float 2.6s ease-in-out infinite; }
+.piggy-hero.full .ic { animation: wiggle 1.6s ease-in-out infinite; filter: drop-shadow(0 0 14px rgba(255, 210, 60, .9)) drop-shadow(0 6px 5px rgba(120, 10, 50, .3)); }
+.modal.piggy .bar.big span { line-height: 24px; }
+.modal.piggy .fill { background: linear-gradient(#fff2a6, #ffcc2e 60%, #e99400); }
+
+/* daily deal */
+.deal-card {
+  position: relative; margin: 14px 4px 6px; padding: 18px 10px 12px; border-radius: 20px;
+  background: linear-gradient(#efffe4, #d6f7c4);
+  box-shadow: inset 0 2px 0 #fff, 0 0 0 2.5px #7cc35d, 0 3px 0 2.5px #4c9a32, 0 7px 10px rgba(40, 90, 20, .15);
+}
+.deal-off {
+  --sc: #6b0d20;
+  position: absolute; top: -14px; right: -6px; rotate: 8deg; padding: 2px 12px 4px; border-radius: 12px;
+  background: linear-gradient(#ff8094, #ec2a50); color: #fff; font-weight: 800; font-size: 20px; line-height: 1.1;
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .5), 0 0 0 2px var(--line), 0 3px 0 2px var(--line);
+  text-shadow: 0 -1.5px 0 var(--sc), 0 1.5px 0 var(--sc), -1.5px 0 0 var(--sc), 1.5px 0 0 var(--sc), 0 2.5px 0 var(--sc);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+.deal-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 10px; }
+.deal-item { position: relative; width: 58px; height: 58px; }
+.deal-item .ic { width: 100%; height: 100%; filter: drop-shadow(0 3px 2px rgba(40, 60, 20, .3)); }
+.deal-item b { --sc: #2b1a70; position: absolute; right: -8px; bottom: -6px; color: #fff; font-weight: 800; font-size: 17px;
+  text-shadow: 0 -1.5px 0 var(--sc), 0 1.5px 0 var(--sc), -1.5px 0 0 var(--sc), 1.5px 0 0 var(--sc), 0 2.5px 0 var(--sc); }
+.deal-was { display: inline-flex; align-items: center; gap: 3px; margin-top: 10px; font-weight: 800; font-size: 17px; color: var(--ink-soft); }
+.deal-was .ic { width: 22px; height: 22px; opacity: .7; }
+.deal-was s { text-decoration-thickness: 2.5px; text-decoration-color: #ec2a50; }
+.deal-card.got > :not(.stamp) { opacity: .45; filter: grayscale(.4); }
+.deal-card .stamp { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.deal-card .stamp .ic { width: 64px; height: 64px; transform: rotate(-12deg); filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .25)); }
